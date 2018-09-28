@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0052)https://demo.themeregion.com/jobs-updated/index.html -->
+<!-- saved from url=(0052)https:http://localhost:8000/uiindex.html -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -27,11 +27,11 @@
     <link href='https://fonts.googleapis.com/css?family=Signika+Negative:400,300,600,700' rel='stylesheet' type='text/css'>
 
     <!-- icons -->
-	<link rel="icon" href="https://demo.themeregion.com/jobs-updated/images/ico/favicon.ico">	
-    <link rel="apple-touch-icon" sizes="144x144" href="https://demo.themeregion.com/jobs-updated/images/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="https://demo.themeregion.com/jobs-updated/images/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="https://demo.themeregion.com/jobs-updated/images/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon" sizes="57x57" href="https://demo.themeregion.com/jobs-updated/images/ico/apple-touch-icon-57-precomposed.png">
+	<link rel="icon" href="https:http://localhost:8000/uiimages/ico/favicon.ico">	
+    <link rel="apple-touch-icon" sizes="144x144" href="https:http://localhost:8000/uiimages/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="https:http://localhost:8000/uiimages/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https:http://localhost:8000/uiimages/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="https:http://localhost:8000/uiimages/ico/apple-touch-icon-57-precomposed.png">
     <!-- icons -->
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -64,21 +64,17 @@
 					<div class="collapse navbar-collapse" id="navbar-collapse">
 						<ul class="nav navbar-nav">
 							<li class="active"><a href="http://localhost:8000/ui">Home</a></li>
-							<li><a href="https://demo.themeregion.com/jobs-updated/job-list.html">Job list</a></li>
-							<li><a href="https://demo.themeregion.com/jobs-updated/details.html">Job Details</a></li>
-							<li><a href="https://demo.themeregion.com/jobs-updated/resume.html">Resume</a></li> 
+							<li><a href="http://localhost:8000/lists">Job list</a></li>
+							<li><a href="http://localhost:8000/job">Job Details</a></li>
+							<li><a href="http://localhost:8000/uiresume.html">Resume</a></li>
 							<li class="dropdown"><a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">Pages<span class="caret"></span></a>
 								<ul class="dropdown-menu">
-									<li><a href="https://demo.themeregion.com/jobs-updated/profile.html">Profile</a></li>
-									<li><a href="https://demo.themeregion.com/jobs-updated/post-resume.html">Post Resume</a></li>
-									<li><a href="https://demo.themeregion.com/jobs-updated/post.html">Job Post</a></li>
-									<li><a href="https://demo.themeregion.com/jobs-updated/edit-resume.html">Edit Resume</a></li>
-									<li><a href="https://demo.themeregion.com/jobs-updated/profile-details.html">profile Details</a></li>
-									<li><a href="https://demo.themeregion.com/jobs-updated/bookmark.html">Bookmark</a></li>
-									<li><a href="https://demo.themeregion.com/jobs-updated/applied-job.html">Applied Job</a></li>
-									<li><a href="https://demo.themeregion.com/jobs-updated/delete-account.html">Close Account</a></li>
-									<li><a href="https://demo.themeregion.com/jobs-updated/signup.html">Job Signup</a></li>
-									<li><a href="https://demo.themeregion.com/jobs-updated/signin.html">Job Signin</a></li>
+									<li><a href="http://localhost:8000/uiprofile.html">Profile</a></li>
+									<li><a href="http://localhost:8000/uipost-resume.html">Submit Resume</a></li>
+									<li><a href="http://localhost:8000/uipost.html">Job Post</a></li>
+									<li><a href="http://localhost:8000/uiedit-resume.html">About Us</a></li>
+									<li><a href="http://localhost:8000/uiprofile-details.html">Contact Us</a></li>
+									<li><a href="http://localhost:8000/policy">Privacy Policy</a></li>
 								</ul>
 							</li>
 						</ul>
@@ -89,8 +85,8 @@
 				<div class="nav-right">				
 					<ul class="sign-in">
 						<li><i class="fa fa-user"></i></li>
-						<li><a href="https://demo.themeregion.com/jobs-updated/signin.html">Sign In</a></li>
-						<li><a href="https://demo.themeregion.com/jobs-updated/signup.html">Register</a></li>
+						<li><a href="https:http://localhost:8000/uisignin.html">Sign In</a></li>
+						<li><a href="http://localhost:8000/registers">Register</a></li>
 					</ul><!-- sign-in -->					
 
 					<a href="http://localhost:8000/posts" class="btn">Post Your Job</a>
@@ -106,14 +102,14 @@
 			<h1 class="title">The Easiest Way to Get Your New Job</h1>
 			<h3>We offer 12000 jobs vacation right now</h3>
 			<div class="banner-form">
-				<form action="https://demo.themeregion.com/jobs-updated/index.html#">
+				<form action="https:http://localhost:8000/uiindex.html#">
 					<input type="text" class="form-control" placeholder="Type your key word">
 					<div class="dropdown category-dropdown">						
-						<a data-toggle="dropdown" href="https://demo.themeregion.com/jobs-updated/index.html#"><span class="change-text">Job Location</span> <i class="fa fa-angle-down"></i></a>
+						<a data-toggle="dropdown" href="https:http://localhost:8000/uiindex.html#"><span class="change-text">Job Location</span> <i class="fa fa-angle-down"></i></a>
 						<ul class="dropdown-menu category-change">
-							<li><a href="https://demo.themeregion.com/jobs-updated/index.html#">Location 1</a></li>
-							<li><a href="https://demo.themeregion.com/jobs-updated/index.html#">Location 2</a></li>
-							<li><a href="https://demo.themeregion.com/jobs-updated/index.html#">Location 3</a></li>
+							<li><a href="https:http://localhost:8000/uiindex.html#">Location 1</a></li>
+							<li><a href="https:http://localhost:8000/uiindex.html#">Location 2</a></li>
+							<li><a href="https:http://localhost:8000/uiindex.html#">Location 3</a></li>
 						</ul>								
 					</div><!-- category-change -->
 					<button type="submit" class="btn btn-primary" value="Search">Search</button>
@@ -121,10 +117,10 @@
 			</div><!-- banner-form -->
 			
 			<ul class="banner-socail list-inline">
-				<li><a href="https://demo.themeregion.com/jobs-updated/index.html#" title="Facebook"><i class="fa fa-facebook"></i></a></li>
-				<li><a href="https://demo.themeregion.com/jobs-updated/index.html#" title="Twitter"><i class="fa fa-twitter"></i></a></li>
-				<li><a href="https://demo.themeregion.com/jobs-updated/index.html#" title="Google Plus"><i class="fa fa-google-plus"></i></a></li>
-				<li><a href="https://demo.themeregion.com/jobs-updated/index.html#" title="Youtube"><i class="fa fa-youtube"></i></a></li>
+				<li><a href="https:http://localhost:8000/uiindex.html#" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+				<li><a href="https:http://localhost:8000/uiindex.html#" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+				<li><a href="https:http://localhost:8000/uiindex.html#" title="Google Plus"><i class="fa fa-google-plus"></i></a></li>
+				<li><a href="https:http://localhost:8000/uiindex.html#" title="Youtube"><i class="fa fa-youtube"></i></a></li>
 			</ul><!-- banner-socail -->
 		</div><!-- container -->
 	</div><!-- banner-section -->
@@ -132,114 +128,14 @@
 	<div class="page">
 		<div class="container">
             <br/>
-			{{--<div class="section category-items job-category-items  text-center">--}}
-				{{--<ul class="category-list">--}}
-					{{--<li class="category-item">--}}
-						{{--<a href="https://demo.themeregion.com/jobs-updated/job-list.html">--}}
-							{{--<div class="category-icon"><img src="/img/1.png" alt="images" class="img-responsive"></div>--}}
-							{{--<span class="category-title">Accounting/Finance</span>--}}
-							{{--<span class="category-quantity">(1298)</span>--}}
-						{{--</a>--}}
-					{{--</li><!-- category-item -->--}}
-
-					{{--<li class="category-item">--}}
-						{{--<a href="https://demo.themeregion.com/jobs-updated/job-list.html">--}}
-							{{--<div class="category-icon"><img src="/img/2.png" alt="images" class="img-responsive"></div>--}}
-							{{--<span class="category-title">Education/Training</span>--}}
-							{{--<span class="category-quantity">(76212)</span>--}}
-						{{--</a>--}}
-					{{--</li><!-- category-item -->--}}
-
-					{{--<li class="category-item">--}}
-						{{--<a href="https://demo.themeregion.com/jobs-updated/job-list.html">--}}
-							{{--<div class="category-icon"><img src="/img/3.png" alt="images" class="img-responsive"></div>--}}
-							{{--<span class="category-title">Engineer/Architects</span>--}}
-							{{--<span class="category-quantity">(212)</span>--}}
-						{{--</a>--}}
-					{{--</li><!-- category-item -->--}}
-
-					{{--<li class="category-item">--}}
-						{{--<a href="https://demo.themeregion.com/jobs-updated/job-list.html">--}}
-							{{--<div class="category-icon"><img src="/img/4.png" alt="images" class="img-responsive"></div>--}}
-							{{--<span class="category-title">Garments/Textile</span>--}}
-							{{--<span class="category-quantity">(972)</span>--}}
-						{{--</a>--}}
-					{{--</li><!-- category-item -->--}}
-
-					{{--<li class="category-item">--}}
-						{{--<a href="https://demo.themeregion.com/jobs-updated/job-list.html">--}}
-							{{--<div class="category-icon"><img src="/img/5.png" alt="images" class="img-responsive"></div>--}}
-							{{--<span class="category-title">HR/Org. Development</span>--}}
-							{{--<span class="category-quantity">(1298)</span>--}}
-						{{--</a>--}}
-					{{--</li><!-- category-item -->--}}
-
-					{{--<li class="category-item">--}}
-						{{--<a href="https://demo.themeregion.com/jobs-updated/job-list.html">--}}
-							{{--<div class="category-icon"><img src="/img/6.png" alt="images" class="img-responsive"></div>--}}
-							{{--<span class="category-title">Design/Creative</span>--}}
-							{{--<span class="category-quantity">(76212)</span>--}}
-						{{--</a>--}}
-					{{--</li><!-- category-item -->--}}
-
-					{{--<li class="category-item">--}}
-						{{--<a href="https://demo.themeregion.com/jobs-updated/job-list.html">--}}
-							{{--<div class="category-icon"><img src="/img/7.png" alt="images" class="img-responsive"></div>--}}
-							{{--<span class="category-title">Research/Consultancy</span>--}}
-							{{--<span class="category-quantity">(1298)</span>--}}
-						{{--</a>--}}
-					{{--</li><!-- category-item -->--}}
-
-					{{--<li class="category-item">--}}
-						{{--<a href="https://demo.themeregion.com/jobs-updated/job-list.html">--}}
-							{{--<div class="category-icon"><img src="/img/8.png" alt="images" class="img-responsive"></div>--}}
-							{{--<span class="category-title">Medical/Pharma</span>--}}
-							{{--<span class="category-quantity">(76212)</span>--}}
-						{{--</a>--}}
-					{{--</li><!-- category-item -->--}}
-
-					{{--<li class="category-item">--}}
-						{{--<a href="https://demo.themeregion.com/jobs-updated/job-list.html">--}}
-							{{--<div class="category-icon"><img src="/img/9.png" alt="images" class="img-responsive"></div>--}}
-							{{--<span class="category-title">Music &amp; Arts</span>--}}
-							{{--<span class="category-quantity">(212)</span>--}}
-						{{--</a>--}}
-					{{--</li><!-- category-item -->--}}
-
-					{{--<li class="category-item">--}}
-						{{--<a href="https://demo.themeregion.com/jobs-updated/job-list.html">--}}
-							{{--<div class="category-icon"><img src="/img/10.png" alt="images" class="img-responsive"></div>--}}
-							{{--<span class="category-title">Marketing/Sales</span>--}}
-							{{--<span class="category-quantity">(1298)</span>--}}
-						{{--</a>--}}
-					{{--</li><!-- category-item -->--}}
-
-					{{--<li class="category-item">--}}
-						{{--<a href="https://demo.themeregion.com/jobs-updated/job-list.html">--}}
-							{{--<div class="category-icon"><img src="/img/11.png" alt="images" class="img-responsive"></div>--}}
-							{{--<span class="category-title">Production/Operation</span>--}}
-							{{--<span class="category-quantity">(124)</span>--}}
-						{{--</a>--}}
-					{{--</li><!-- category-item -->--}}
-
-					{{--<li class="category-item">--}}
-						{{--<a href="https://demo.themeregion.com/jobs-updated/job-list.html">--}}
-							{{--<div class="category-icon"><img src="/img/12.png" alt="images" class="img-responsive"></div>--}}
-							{{--<span class="category-title">Miscellaneous</span>--}}
-							{{--<span class="category-quantity">(972)</span>--}}
-						{{--</a>--}}
-					{{--</li><!-- category-item -->--}}
-				{{--</ul>--}}
-			{{--</div><!-- category ad -->--}}
-
 			<div class="section latest-jobs-ads">
 				<div class="section-title tab-manu">
 					<h4>Latest Jobs</h4>
 					 <!-- Nav tabs -->
 					<ul class="nav nav-tabs" role="tablist">
-						<li role="presentation"><a href="https://demo.themeregion.com/jobs-updated/index.html#hot-jobs" data-toggle="tab">Hot Jobs</a></li>
-						<li role="presentation"><a href="https://demo.themeregion.com/jobs-updated/index.html#recent-jobs" data-toggle="tab">Recent Jobs</a></li>
-						<li role="presentation" class="active"><a href="https://demo.themeregion.com/jobs-updated/index.html#popular-jobs" data-toggle="tab">Popular Jobs</a></li>
+						<li role="presentation"><a href="https:http://localhost:8000/uiindex.html#hot-jobs" data-toggle="tab">Hot Jobs</a></li>
+						<li role="presentation"><a href="https:http://localhost:8000/uiindex.html#recent-jobs" data-toggle="tab">Recent Jobs</a></li>
+						<li role="presentation" class="active"><a href="https:http://localhost:8000/uiindex.html#popular-jobs" data-toggle="tab">Popular Jobs</a></li>
 					</ul>
 				</div>
 
@@ -249,23 +145,23 @@
 							<div class="item-info">
 								<div class="item-image-box">
 									<div class="item-image">
-										<a href="https://demo.themeregion.com/jobs-updated/job-details.html"><img src="/img/3(1).png" alt="Image" class="img-responsive"></a>
+										<a href="https:http://localhost:8000/uijob-details.html"><img src="/img/3(1).png" alt="Image" class="img-responsive"></a>
 									</div><!-- item-image -->
 								</div>
 
 								<div class="ad-info">
-									<span><a href="https://demo.themeregion.com/jobs-updated/job-details.html" class="title">CTO</a> @ <a href="https://demo.themeregion.com/jobs-updated/index.html#">Volja Events &amp; Entertainment</a></span>
+									<span><a href="https:http://localhost:8000/uijob-details.html" class="title">CTO</a> @ <a href="https:http://localhost:8000/uiindex.html#">Volja Events &amp; Entertainment</a></span>
 									<div class="ad-meta">
 										<ul>
-											<li><a href="https://demo.themeregion.com/jobs-updated/index.html#"><i class="fa fa-map-marker" aria-hidden="true"></i>San Francisco, CA, US </a></li>
-											<li><a href="https://demo.themeregion.com/jobs-updated/index.html#"><i class="fa fa-clock-o" aria-hidden="true"></i>Full Time</a></li>
-											<li><a href="https://demo.themeregion.com/jobs-updated/index.html#"><i class="fa fa-money" aria-hidden="true"></i>$25,000 - $35,000</a></li>
-											<li><a href="https://demo.themeregion.com/jobs-updated/index.html#"><i class="fa fa-tags" aria-hidden="true"></i>HR/Org. Development</a></li>
+											<li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-map-marker" aria-hidden="true"></i>San Francisco, CA, US </a></li>
+											<li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-clock-o" aria-hidden="true"></i>Full Time</a></li>
+											<li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-money" aria-hidden="true"></i>$25,000 - $35,000</a></li>
+											<li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-tags" aria-hidden="true"></i>HR/Org. Development</a></li>
 										</ul>
 									</div><!-- ad-meta -->
 								</div><!-- ad-info -->
 								<div class="button">
-									<a href="https://demo.themeregion.com/jobs-updated/index.html#" class="btn btn-primary">Apply Now</a>
+									<a href="https:http://localhost:8000/uiindex.html#" class="btn btn-primary">Apply Now</a>
 								</div>
 							</div><!-- item-info -->
 						</div><!-- ad-item -->
@@ -274,23 +170,23 @@
 							<div class="item-info">
 								<div class="item-image-box">
 									<div class="item-image">
-										<a href="https://demo.themeregion.com/jobs-updated/job-details.html"><img src="/img/1(1).png" alt="Image" class="img-responsive"></a>
+										<a href="https:http://localhost:8000/uijob-details.html"><img src="/img/1(1).png" alt="Image" class="img-responsive"></a>
 									</div><!-- item-image -->
 								</div>
 
 								<div class="ad-info">
-									<span><a href="http://localhost:8000/job" class="title">Project Manager</a> @ <a href="https://demo.themeregion.com/jobs-updated/index.html#">Dominos Pizza</a></span>
+									<span><a href="http://localhost:8000/job" class="title">Project Manager</a> @ <a href="https:http://localhost:8000/uiindex.html#">Dominos Pizza</a></span>
 									<div class="ad-meta">
 										<ul>
-											<li><a href="https://demo.themeregion.com/jobs-updated/index.html#"><i class="fa fa-map-marker" aria-hidden="true"></i>San Francisco, CA, US </a></li>
-											<li><a href="https://demo.themeregion.com/jobs-updated/index.html#"><i class="fa fa-clock-o" aria-hidden="true"></i>Full Time</a></li>
-											<li><a href="https://demo.themeregion.com/jobs-updated/index.html#"><i class="fa fa-money" aria-hidden="true"></i>$25,000 - $35,000</a></li>
-											<li><a href="https://demo.themeregion.com/jobs-updated/index.html#"><i class="fa fa-tags" aria-hidden="true"></i>HR/Org. Development</a></li>
+											<li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-map-marker" aria-hidden="true"></i>San Francisco, CA, US </a></li>
+											<li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-clock-o" aria-hidden="true"></i>Full Time</a></li>
+											<li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-money" aria-hidden="true"></i>$25,000 - $35,000</a></li>
+											<li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-tags" aria-hidden="true"></i>HR/Org. Development</a></li>
 										</ul>
 									</div><!-- ad-meta -->
 								</div><!-- ad-info -->
 								<div class="button">
-									<a href="https://demo.themeregion.com/jobs-updated/index.html#" class="btn btn-primary">Apply Now</a>
+									<a href="https:http://localhost:8000/uiindex.html#" class="btn btn-primary">Apply Now</a>
 								</div>
 							</div><!-- item-info -->
 						</div><!-- ad-item -->
@@ -299,23 +195,23 @@
 							<div class="item-info">
 								<div class="item-image-box">
 									<div class="item-image">
-										<a href="https://demo.themeregion.com/jobs-updated/job-details.html"><img src="/img/2(1).png" alt="Image" class="img-responsive"></a>
+										<a href="https:http://localhost:8000/uijob-details.html"><img src="/img/2(1).png" alt="Image" class="img-responsive"></a>
 									</div><!-- item-image -->
 								</div>
 
 								<div class="ad-info">
-									<span><a href="http://localhost:8000/job" class="title">Graphics Designer</a> @ <a href="https://demo.themeregion.com/jobs-updated/index.html#">AOK Security</a></span>
+									<span><a href="http://localhost:8000/job" class="title">Graphics Designer</a> @ <a href="https:http://localhost:8000/uiindex.html#">AOK Security</a></span>
 									<div class="ad-meta">
 										<ul>
-											<li><a href="https://demo.themeregion.com/jobs-updated/index.html#"><i class="fa fa-map-marker" aria-hidden="true"></i>San Francisco, CA, US </a></li>
-											<li><a href="https://demo.themeregion.com/jobs-updated/index.html#"><i class="fa fa-clock-o" aria-hidden="true"></i>Full Time</a></li>
-											<li><a href="https://demo.themeregion.com/jobs-updated/index.html#"><i class="fa fa-money" aria-hidden="true"></i>$25,000 - $35,000</a></li>
-											<li><a href="https://demo.themeregion.com/jobs-updated/index.html#"><i class="fa fa-tags" aria-hidden="true"></i>HR/Org. Development</a></li>
+											<li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-map-marker" aria-hidden="true"></i>San Francisco, CA, US </a></li>
+											<li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-clock-o" aria-hidden="true"></i>Full Time</a></li>
+											<li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-money" aria-hidden="true"></i>$25,000 - $35,000</a></li>
+											<li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-tags" aria-hidden="true"></i>HR/Org. Development</a></li>
 										</ul>
 									</div><!-- ad-meta -->
 								</div><!-- ad-info -->
 								<div class="button">
-									<a href="https://demo.themeregion.com/jobs-updated/index.html#" class="btn btn-primary">Apply Now</a>
+									<a href="https:http://localhost:8000/uiindex.html#" class="btn btn-primary">Apply Now</a>
 								</div>
 							</div><!-- item-info -->
 						</div><!-- ad-item -->
@@ -324,23 +220,23 @@
 							<div class="item-info">
 								<div class="item-image-box">
 									<div class="item-image">
-										<a href="https://demo.themeregion.com/jobs-updated/job-details.html"><img src="/img/4(1).png" alt="Image" class="img-responsive"></a>
+										<a href="https:http://localhost:8000/uijob-details.html"><img src="/img/4(1).png" alt="Image" class="img-responsive"></a>
 									</div><!-- item-image -->
 								</div>
 
 								<div class="ad-info">
-									<span><a href="http://localhost:8000/job" class="title">Human Resource Manager</a> @ <a href="https://demo.themeregion.com/jobs-updated/index.html#">Dropbox Inc</a></span>
+									<span><a href="http://localhost:8000/job" class="title">Human Resource Manager</a> @ <a href="https:http://localhost:8000/uiindex.html#">Dropbox Inc</a></span>
 									<div class="ad-meta">
 										<ul>
-											<li><a href="https://demo.themeregion.com/jobs-updated/index.html#"><i class="fa fa-map-marker" aria-hidden="true"></i>San Francisco, CA, US </a></li>
-											<li><a href="https://demo.themeregion.com/jobs-updated/index.html#"><i class="fa fa-clock-o" aria-hidden="true"></i>Full Time</a></li>
-											<li><a href="https://demo.themeregion.com/jobs-updated/index.html#"><i class="fa fa-money" aria-hidden="true"></i>$25,000 - $35,000</a></li>
-											<li><a href="https://demo.themeregion.com/jobs-updated/index.html#"><i class="fa fa-tags" aria-hidden="true"></i>HR/Org. Development</a></li>
+											<li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-map-marker" aria-hidden="true"></i>San Francisco, CA, US </a></li>
+											<li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-clock-o" aria-hidden="true"></i>Full Time</a></li>
+											<li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-money" aria-hidden="true"></i>$25,000 - $35,000</a></li>
+											<li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-tags" aria-hidden="true"></i>HR/Org. Development</a></li>
 										</ul>
 									</div><!-- ad-meta -->
 								</div><!-- ad-info -->
 								<div class="button">
-									<a href="https://demo.themeregion.com/jobs-updated/index.html#" class="btn btn-primary">Apply Now</a>
+									<a href="https:http://localhost:8000/uiindex.html#" class="btn btn-primary">Apply Now</a>
 								</div>
 							</div><!-- item-info -->
 						</div><!-- ad-item -->
@@ -352,23 +248,23 @@
 							<div class="item-info">
 								<div class="item-image-box">
 									<div class="item-image">
-										<a href="https://demo.themeregion.com/jobs-updated/job-details.html"><img src="/img/2(1).png" alt="Image" class="img-responsive"></a>
+										<a href="https:http://localhost:8000/uijob-details.html"><img src="/img/2(1).png" alt="Image" class="img-responsive"></a>
 									</div><!-- item-image -->
 								</div>
 
 								<div class="ad-info">
-									<span><a href="http://localhost:8000/job" class="title">Graphics Designer</a> @ <a href="https://demo.themeregion.com/jobs-updated/index.html#">AOK Security</a></span>
+									<span><a href="http://localhost:8000/job" class="title">Graphics Designer</a> @ <a href="https:http://localhost:8000/uiindex.html#">AOK Security</a></span>
 									<div class="ad-meta">
 										<ul>
-											<li><a href="https://demo.themeregion.com/jobs-updated/index.html#"><i class="fa fa-map-marker" aria-hidden="true"></i>San Francisco, CA, US </a></li>
-											<li><a href="https://demo.themeregion.com/jobs-updated/index.html#"><i class="fa fa-clock-o" aria-hidden="true"></i>Full Time</a></li>
-											<li><a href="https://demo.themeregion.com/jobs-updated/index.html#"><i class="fa fa-money" aria-hidden="true"></i>$25,000 - $35,000</a></li>
-											<li><a href="https://demo.themeregion.com/jobs-updated/index.html#"><i class="fa fa-tags" aria-hidden="true"></i>HR/Org. Development</a></li>
+											<li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-map-marker" aria-hidden="true"></i>San Francisco, CA, US </a></li>
+											<li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-clock-o" aria-hidden="true"></i>Full Time</a></li>
+											<li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-money" aria-hidden="true"></i>$25,000 - $35,000</a></li>
+											<li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-tags" aria-hidden="true"></i>HR/Org. Development</a></li>
 										</ul>
 									</div><!-- ad-meta -->
 								</div><!-- ad-info -->
 								<div class="button">
-									<a href="https://demo.themeregion.com/jobs-updated/index.html#" class="btn btn-primary">Apply Now</a>
+									<a href="https:http://localhost:8000/uiindex.html#" class="btn btn-primary">Apply Now</a>
 								</div>
 							</div><!-- item-info -->
 						</div><!-- ad-item -->
@@ -377,23 +273,23 @@
 							<div class="item-info">
 								<div class="item-image-box">
 									<div class="item-image">
-										<a href="https://demo.themeregion.com/jobs-updated/job-details.html"><img src="/img/1(1).png" alt="Image" class="img-responsive"></a>
+										<a href="https:http://localhost:8000/uijob-details.html"><img src="/img/1(1).png" alt="Image" class="img-responsive"></a>
 									</div><!-- item-image -->
 								</div>
 
 								<div class="ad-info">
-									<span><a href="http://localhost:8000/job" class="title">Project Manager</a> @ <a href="https://demo.themeregion.com/jobs-updated/index.html#">Dominos Pizza</a></span>
+									<span><a href="http://localhost:8000/job" class="title">Project Manager</a> @ <a href="https:http://localhost:8000/uiindex.html#">Dominos Pizza</a></span>
 									<div class="ad-meta">
 										<ul>
-											<li><a href="https://demo.themeregion.com/jobs-updated/index.html#"><i class="fa fa-map-marker" aria-hidden="true"></i>San Francisco, CA, US </a></li>
-											<li><a href="https://demo.themeregion.com/jobs-updated/index.html#"><i class="fa fa-clock-o" aria-hidden="true"></i>Full Time</a></li>
-											<li><a href="https://demo.themeregion.com/jobs-updated/index.html#"><i class="fa fa-money" aria-hidden="true"></i>$25,000 - $35,000</a></li>
-											<li><a href="https://demo.themeregion.com/jobs-updated/index.html#"><i class="fa fa-tags" aria-hidden="true"></i>HR/Org. Development</a></li>
+											<li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-map-marker" aria-hidden="true"></i>San Francisco, CA, US </a></li>
+											<li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-clock-o" aria-hidden="true"></i>Full Time</a></li>
+											<li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-money" aria-hidden="true"></i>$25,000 - $35,000</a></li>
+											<li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-tags" aria-hidden="true"></i>HR/Org. Development</a></li>
 										</ul>
 									</div><!-- ad-meta -->
 								</div><!-- ad-info -->
 								<div class="button">
-									<a href="https://demo.themeregion.com/jobs-updated/index.html#" class="btn btn-primary">Apply Now</a>
+									<a href="https:http://localhost:8000/uiindex.html#" class="btn btn-primary">Apply Now</a>
 								</div>
 							</div><!-- item-info -->
 						</div><!-- ad-item -->
@@ -402,23 +298,23 @@
 							<div class="item-info">
 								<div class="item-image-box">
 									<div class="item-image">
-										<a href="https://demo.themeregion.com/jobs-updated/job-details.html"><img src="/img/4(1).png" alt="Image" class="img-responsive"></a>
+										<a href="https:http://localhost:8000/uijob-details.html"><img src="/img/4(1).png" alt="Image" class="img-responsive"></a>
 									</div><!-- item-image -->
 								</div>
 
 								<div class="ad-info">
-									<span><a href="http://localhost:8000/job" class="title">Human Resource Manager</a> @ <a href="https://demo.themeregion.com/jobs-updated/index.html#">Dropbox Inc</a></span>
+									<span><a href="http://localhost:8000/job" class="title">Human Resource Manager</a> @ <a href="https:http://localhost:8000/uiindex.html#">Dropbox Inc</a></span>
 									<div class="ad-meta">
 										<ul>
-											<li><a href="https://demo.themeregion.com/jobs-updated/index.html#"><i class="fa fa-map-marker" aria-hidden="true"></i>San Francisco, CA, US </a></li>
-											<li><a href="https://demo.themeregion.com/jobs-updated/index.html#"><i class="fa fa-clock-o" aria-hidden="true"></i>Full Time</a></li>
-											<li><a href="https://demo.themeregion.com/jobs-updated/index.html#"><i class="fa fa-money" aria-hidden="true"></i>$25,000 - $35,000</a></li>
-											<li><a href="https://demo.themeregion.com/jobs-updated/index.html#"><i class="fa fa-tags" aria-hidden="true"></i>HR/Org. Development</a></li>
+											<li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-map-marker" aria-hidden="true"></i>San Francisco, CA, US </a></li>
+											<li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-clock-o" aria-hidden="true"></i>Full Time</a></li>
+											<li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-money" aria-hidden="true"></i>$25,000 - $35,000</a></li>
+											<li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-tags" aria-hidden="true"></i>HR/Org. Development</a></li>
 										</ul>
 									</div><!-- ad-meta -->
 								</div><!-- ad-info -->
 								<div class="button">
-									<a href="https://demo.themeregion.com/jobs-updated/index.html#" class="btn btn-primary">Apply Now</a>
+									<a href="https:http://localhost:8000/uiindex.html#" class="btn btn-primary">Apply Now</a>
 								</div>
 							</div><!-- item-info -->
 						</div><!-- ad-item -->
@@ -427,23 +323,23 @@
 							<div class="item-info">
 								<div class="item-image-box">
 									<div class="item-image">
-										<a href="https://demo.themeregion.com/jobs-updated/job-details.html"><img src="/img/3(1).png" alt="Image" class="img-responsive"></a>
+										<a href="https:http://localhost:8000/uijob-details.html"><img src="/img/3(1).png" alt="Image" class="img-responsive"></a>
 									</div><!-- item-image -->
 								</div>
 
 								<div class="ad-info">
-									<span><a href="http://localhost:8000/job" class="title">CTO</a> @ <a href="https://demo.themeregion.com/jobs-updated/index.html#">Volja Events &amp; Entertainment</a></span>
+									<span><a href="http://localhost:8000/job" class="title">CTO</a> @ <a href="https:http://localhost:8000/uiindex.html#">Volja Events &amp; Entertainment</a></span>
 									<div class="ad-meta">
 										<ul>
-											<li><a href="https://demo.themeregion.com/jobs-updated/index.html#"><i class="fa fa-map-marker" aria-hidden="true"></i>San Francisco, CA, US </a></li>
-											<li><a href="https://demo.themeregion.com/jobs-updated/index.html#"><i class="fa fa-clock-o" aria-hidden="true"></i>Full Time</a></li>
-											<li><a href="https://demo.themeregion.com/jobs-updated/index.html#"><i class="fa fa-money" aria-hidden="true"></i>$25,000 - $35,000</a></li>
-											<li><a href="https://demo.themeregion.com/jobs-updated/index.html#"><i class="fa fa-tags" aria-hidden="true"></i>HR/Org. Development</a></li>
+											<li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-map-marker" aria-hidden="true"></i>San Francisco, CA, US </a></li>
+											<li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-clock-o" aria-hidden="true"></i>Full Time</a></li>
+											<li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-money" aria-hidden="true"></i>$25,000 - $35,000</a></li>
+											<li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-tags" aria-hidden="true"></i>HR/Org. Development</a></li>
 										</ul>
 									</div><!-- ad-meta -->
 								</div><!-- ad-info -->
 								<div class="button">
-									<a href="https://demo.themeregion.com/jobs-updated/index.html#" class="btn btn-primary">Apply Now</a>
+									<a href="https:http://localhost:8000/uiindex.html#" class="btn btn-primary">Apply Now</a>
 								</div>
 							</div><!-- item-info -->
 						</div><!-- ad-item -->
@@ -454,23 +350,23 @@
 							<div class="item-info">
 								<div class="item-image-box">
 									<div class="item-image">
-										<a href="https://demo.themeregion.com/jobs-updated/job-details.html"><img src="/img/1(1).png" alt="Image" class="img-responsive"></a>
+										<a href="https:http://localhost:8000/uijob-details.html"><img src="/img/1(1).png" alt="Image" class="img-responsive"></a>
 									</div><!-- item-image -->
 								</div>
 
 								<div class="ad-info">
-									<span><a href="http://localhost:8000/job" class="title">Project Manager</a> @ <a href="https://demo.themeregion.com/jobs-updated/index.html#">Dominos Pizza</a></span>
+									<span><a href="http://localhost:8000/job" class="title">Project Manager</a> @ <a href="https:http://localhost:8000/uiindex.html#">Dominos Pizza</a></span>
 									<div class="ad-meta">
 										<ul>
-											<li><a href="https://demo.themeregion.com/jobs-updated/index.html#"><i class="fa fa-map-marker" aria-hidden="true"></i>San Francisco, CA, US </a></li>
-											<li><a href="https://demo.themeregion.com/jobs-updated/index.html#"><i class="fa fa-clock-o" aria-hidden="true"></i>Full Time</a></li>
-											<li><a href="https://demo.themeregion.com/jobs-updated/index.html#"><i class="fa fa-money" aria-hidden="true"></i>$25,000 - $35,000</a></li>
-											<li><a href="https://demo.themeregion.com/jobs-updated/index.html#"><i class="fa fa-tags" aria-hidden="true"></i>HR/Org. Development</a></li>
+											<li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-map-marker" aria-hidden="true"></i>San Francisco, CA, US </a></li>
+											<li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-clock-o" aria-hidden="true"></i>Full Time</a></li>
+											<li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-money" aria-hidden="true"></i>$25,000 - $35,000</a></li>
+											<li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-tags" aria-hidden="true"></i>HR/Org. Development</a></li>
 										</ul>
 									</div><!-- ad-meta -->
 								</div><!-- ad-info -->
 								<div class="button">
-									<a href="https://demo.themeregion.com/jobs-updated/index.html#" class="btn btn-primary">Apply Now</a>
+									<a href="https:http://localhost:8000/uiindex.html#" class="btn btn-primary">Apply Now</a>
 								</div>
 							</div><!-- item-info -->
 						</div><!-- ad-item -->
@@ -479,23 +375,23 @@
 							<div class="item-info">
 								<div class="item-image-box">
 									<div class="item-image">
-										<a href="https://demo.themeregion.com/jobs-updated/job-details.html"><img src="/img/2(1).png" alt="Image" class="img-responsive"></a>
+										<a href="https:http://localhost:8000/uijob-details.html"><img src="/img/2(1).png" alt="Image" class="img-responsive"></a>
 									</div><!-- item-image -->
 								</div>
 
 								<div class="ad-info">
-									<span><a href="http://localhost:8000/job" class="title">Graphics Designer</a> @ <a href="https://demo.themeregion.com/jobs-updated/index.html#">AOK Security</a></span>
+									<span><a href="http://localhost:8000/job" class="title">Graphics Designer</a> @ <a href="https:http://localhost:8000/uiindex.html#">AOK Security</a></span>
 									<div class="ad-meta">
 										<ul>
-											<li><a href="https://demo.themeregion.com/jobs-updated/index.html#"><i class="fa fa-map-marker" aria-hidden="true"></i>San Francisco, CA, US </a></li>
-											<li><a href="https://demo.themeregion.com/jobs-updated/index.html#"><i class="fa fa-clock-o" aria-hidden="true"></i>Full Time</a></li>
-											<li><a href="https://demo.themeregion.com/jobs-updated/index.html#"><i class="fa fa-money" aria-hidden="true"></i>$25,000 - $35,000</a></li>
-											<li><a href="https://demo.themeregion.com/jobs-updated/index.html#"><i class="fa fa-tags" aria-hidden="true"></i>HR/Org. Development</a></li>
+											<li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-map-marker" aria-hidden="true"></i>San Francisco, CA, US </a></li>
+											<li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-clock-o" aria-hidden="true"></i>Full Time</a></li>
+											<li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-money" aria-hidden="true"></i>$25,000 - $35,000</a></li>
+											<li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-tags" aria-hidden="true"></i>HR/Org. Development</a></li>
 										</ul>
 									</div><!-- ad-meta -->
 								</div><!-- ad-info -->
 								<div class="button">
-									<a href="https://demo.themeregion.com/jobs-updated/index.html#" class="btn btn-primary">Apply Now</a>
+									<a href="https:http://localhost:8000/uiindex.html#" class="btn btn-primary">Apply Now</a>
 								</div>
 							</div><!-- item-info -->
 						</div><!-- ad-item -->
@@ -504,23 +400,23 @@
 							<div class="item-info">
 								<div class="item-image-box">
 									<div class="item-image">
-										<a href="https://demo.themeregion.com/jobs-updated/job-details.html"><img src="/img/3(1).png" alt="Image" class="img-responsive"></a>
+										<a href="https:http://localhost:8000/uijob-details.html"><img src="/img/3(1).png" alt="Image" class="img-responsive"></a>
 									</div><!-- item-image -->
 								</div>
 
 								<div class="ad-info">
-									<span><a href="http://localhost:8000/job" class="title">CTO</a> @ <a href="https://demo.themeregion.com/jobs-updated/index.html#">Volja Events &amp; Entertainment</a></span>
+									<span><a href="http://localhost:8000/job" class="title">CTO</a> @ <a href="https:http://localhost:8000/uiindex.html#">Volja Events &amp; Entertainment</a></span>
 									<div class="ad-meta">
 										<ul>
-											<li><a href="https://demo.themeregion.com/jobs-updated/index.html#"><i class="fa fa-map-marker" aria-hidden="true"></i>San Francisco, CA, US </a></li>
-											<li><a href="https://demo.themeregion.com/jobs-updated/index.html#"><i class="fa fa-clock-o" aria-hidden="true"></i>Full Time</a></li>
-											<li><a href="https://demo.themeregion.com/jobs-updated/index.html#"><i class="fa fa-money" aria-hidden="true"></i>$25,000 - $35,000</a></li>
-											<li><a href="https://demo.themeregion.com/jobs-updated/index.html#"><i class="fa fa-tags" aria-hidden="true"></i>HR/Org. Development</a></li>
+											<li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-map-marker" aria-hidden="true"></i>San Francisco, CA, US </a></li>
+											<li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-clock-o" aria-hidden="true"></i>Full Time</a></li>
+											<li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-money" aria-hidden="true"></i>$25,000 - $35,000</a></li>
+											<li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-tags" aria-hidden="true"></i>HR/Org. Development</a></li>
 										</ul>
 									</div><!-- ad-meta -->
 								</div><!-- ad-info -->
 								<div class="button">
-									<a href="https://demo.themeregion.com/jobs-updated/index.html#" class="btn btn-primary">Apply Now</a>
+									<a href="https:http://localhost:8000/uiindex.html#" class="btn btn-primary">Apply Now</a>
 								</div>
 							</div><!-- item-info -->
 						</div><!-- ad-item -->
@@ -529,23 +425,23 @@
 							<div class="item-info">
 								<div class="item-image-box">
 									<div class="item-image">
-										<a href="https://demo.themeregion.com/jobs-updated/job-details.html"><img src="/img/3(1).png" alt="Image" class="img-responsive"></a>
+										<a href="https:http://localhost:8000/uijob-details.html"><img src="/img/3(1).png" alt="Image" class="img-responsive"></a>
 									</div><!-- item-image -->
 								</div>
 
 								<div class="ad-info">
-									<span><a href="http://localhost:8000/job" class="title">Human Resource Manager</a> @ <a href="https://demo.themeregion.com/jobs-updated/index.html#">Dropbox Inc</a></span>
+									<span><a href="http://localhost:8000/job" class="title">Human Resource Manager</a> @ <a href="https:http://localhost:8000/uiindex.html#">Dropbox Inc</a></span>
 									<div class="ad-meta">
 										<ul>
-											<li><a href="https://demo.themeregion.com/jobs-updated/index.html#"><i class="fa fa-map-marker" aria-hidden="true"></i>San Francisco, CA, US </a></li>
-											<li><a href="https://demo.themeregion.com/jobs-updated/index.html#"><i class="fa fa-clock-o" aria-hidden="true"></i>Full Time</a></li>
-											<li><a href="https://demo.themeregion.com/jobs-updated/index.html#"><i class="fa fa-money" aria-hidden="true"></i>$25,000 - $35,000</a></li>
-											<li><a href="https://demo.themeregion.com/jobs-updated/index.html#"><i class="fa fa-tags" aria-hidden="true"></i>HR/Org. Development</a></li>
+											<li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-map-marker" aria-hidden="true"></i>San Francisco, CA, US </a></li>
+											<li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-clock-o" aria-hidden="true"></i>Full Time</a></li>
+											<li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-money" aria-hidden="true"></i>$25,000 - $35,000</a></li>
+											<li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-tags" aria-hidden="true"></i>HR/Org. Development</a></li>
 										</ul>
 									</div><!-- ad-meta -->
 								</div><!-- ad-info -->
 								<div class="button">
-									<a href="https://demo.themeregion.com/jobs-updated/index.html#" class="btn btn-primary">Apply Now</a>
+									<a href="https:http://localhost:8000/uiindex.html#" class="btn btn-primary">Apply Now</a>
 								</div>
 							</div><!-- item-info -->
 						</div><!-- ad-item -->
@@ -554,19 +450,19 @@
 			</div><!-- trending ads -->
 
 			<div class="ad-section text-center">
-				<a href="https://demo.themeregion.com/jobs-updated/index.html#"><img src="/img/3.jpg" alt="Image" class="img-responsive"></a>
+				<a href="https:http://localhost:8000/uiindex.html#"><img src="/img/3.jpg" alt="Image" class="img-responsive"></a>
 			</div><!-- ad-section -->
 
 			<div class="section workshop-traning">
 				<div class="section-title">
 					<h4>Workshop Traning</h4>
-					<a href="https://demo.themeregion.com/jobs-updated/index.html#" class="btn btn-primary">See all</a>
+					<a href="https:http://localhost:8000/uiindex.html#" class="btn btn-primary">See all</a>
 				</div>
 				<div class="row">
 					<div class="col-sm-6">
 						<div class="workshop">
 							<img src="/img/5(1).png" alt="Image" class="img-responsive">
-							<h3><a href="https://demo.themeregion.com/jobs-updated/index.html#">Business Process Management Training</a></h3>
+							<h3><a href="https:http://localhost:8000/uiindex.html#">Business Process Management Training</a></h3>
 							<h4>Course Duration: 3 Month ( Sat, Mon, Fri)</h4>
 							<div class="workshop-price">
 								<h5>Course instructor: Kim Jon ley</h5>
@@ -574,10 +470,10 @@
 							</div>
 							<div class="ad-meta">
 								<div class="meta-content">
-									<span class="dated"><a href="https://demo.themeregion.com/jobs-updated/index.html#">7 Jan 10:10 pm </a></span>
+									<span class="dated"><a href="https:http://localhost:8000/uiindex.html#">7 Jan 10:10 pm </a></span>
 								</div>
 								<div class="user-option pull-right">
-									<a href="https://demo.themeregion.com/jobs-updated/index.html#"><i class="fa fa-map-marker"></i> </a>
+									<a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-map-marker"></i> </a>
 								</div>
 							</div>
 						</div>
@@ -585,7 +481,7 @@
 					<div class="col-sm-6">
 						<div class="workshop">
 							<img src="/img/6(1).png" alt="Image" class="img-responsive">
-							<h3><a href="https://demo.themeregion.com/jobs-updated/index.html#">Employee Motivation and Engagement</a></h3>
+							<h3><a href="https:http://localhost:8000/uiindex.html#">Employee Motivation and Engagement</a></h3>
 							<h4>Course Duration: 3 Month ( Sat, Mon, Fri)</h4>
 							<div class="workshop-price">
 								<h5>Course instructor: Kim Jon ley</h5>
@@ -593,10 +489,10 @@
 							</div>
 							<div class="ad-meta">
 								<div class="meta-content">
-									<span class="dated"><a href="https://demo.themeregion.com/jobs-updated/index.html#">7 Jan 10:10 pm </a></span>
+									<span class="dated"><a href="https:http://localhost:8000/uiindex.html#">7 Jan 10:10 pm </a></span>
 								</div>
 								<div class="user-option pull-right">
-									<a href="https://demo.themeregion.com/jobs-updated/index.html#"><i class="fa fa-map-marker"></i> </a>
+									<a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-map-marker"></i> </a>
 								</div>
 							</div>
 						</div>
@@ -658,7 +554,7 @@
 			<div class="row">
 				<!-- download-app -->
 				<div class="col-sm-4">
-					<a href="https://demo.themeregion.com/jobs-updated/index.html#" class="download-app">
+					<a href="https:http://localhost:8000/uiindex.html#" class="download-app">
 						<img src="/img/16.png" alt="Image" class="img-responsive">
 						<span class="pull-left">
 							<span>available on</span>
@@ -669,7 +565,7 @@
 
 				<!-- download-app -->
 				<div class="col-sm-4">
-					<a href="https://demo.themeregion.com/jobs-updated/index.html#" class="download-app">
+					<a href="https:http://localhost:8000/uiindex.html#" class="download-app">
 						<img src="/img/17.png" alt="Image" class="img-responsive">
 						<span class="pull-left">
 							<span>available on</span>
@@ -680,7 +576,7 @@
 
 				<!-- download-app -->
 				<div class="col-sm-4">
-					<a href="https://demo.themeregion.com/jobs-updated/index.html#" class="download-app">
+					<a href="https:http://localhost:8000/uiindex.html#" class="download-app">
 						<img src="/img/18.png" alt="Image" class="img-responsive">
 						<span class="pull-left">
 							<span>available on</span>
@@ -703,12 +599,12 @@
 						<div class="footer-widget">
 							<h3>Quik Links</h3>
 							<ul>
-								<li><a href="https://demo.themeregion.com/jobs-updated/index.html#">About Us</a></li>
-								<li><a href="https://demo.themeregion.com/jobs-updated/index.html#">Contact Us</a></li>
-								<li><a href="https://demo.themeregion.com/jobs-updated/index.html#">Careers</a></li>
-								<li><a href="https://demo.themeregion.com/jobs-updated/index.html#">All Cities</a></li>
-								<li><a href="https://demo.themeregion.com/jobs-updated/index.html#">Help &amp; Support</a></li>
-								<li><a href="https://demo.themeregion.com/jobs-updated/index.html#">Advertise With Us</a></li>
+								<li><a href="https:http://localhost:8000/uiindex.html#">About Us</a></li>
+								<li><a href="https:http://localhost:8000/uiindex.html#">Contact Us</a></li>
+								<li><a href="https:http://localhost:8000/uiindex.html#">Careers</a></li>
+								<li><a href="https:http://localhost:8000/uiindex.html#">All Cities</a></li>
+								<li><a href="https:http://localhost:8000/uiindex.html#">Help &amp; Support</a></li>
+								<li><a href="https:http://localhost:8000/uiindex.html#">Advertise With Us</a></li>
 							</ul>
 						</div>
 					</div><!-- footer-widget -->
@@ -718,12 +614,12 @@
 						<div class="footer-widget">
 							<h3>How to sell fast</h3>
 							<ul>
-								<li><a href="https://demo.themeregion.com/jobs-updated/index.html#">How to sell fast</a></li>
-								<li><a href="https://demo.themeregion.com/jobs-updated/index.html#">Membership</a></li>
-								<li><a href="https://demo.themeregion.com/jobs-updated/index.html#">Banner Advertising</a></li>
-								<li><a href="https://demo.themeregion.com/jobs-updated/index.html#">Promote your ad</a></li>
-								<li><a href="https://demo.themeregion.com/jobs-updated/index.html#">Jobs Delivers</a></li>
-								<li><a href="https://demo.themeregion.com/jobs-updated/index.html#">FAQ</a></li>
+								<li><a href="https:http://localhost:8000/uiindex.html#">How to sell fast</a></li>
+								<li><a href="https:http://localhost:8000/uiindex.html#">Membership</a></li>
+								<li><a href="https:http://localhost:8000/uiindex.html#">Banner Advertising</a></li>
+								<li><a href="https:http://localhost:8000/uiindex.html#">Promote your ad</a></li>
+								<li><a href="https:http://localhost:8000/uiindex.html#">Jobs Delivers</a></li>
+								<li><a href="https:http://localhost:8000/uiindex.html#">FAQ</a></li>
 							</ul>
 						</div>
 					</div><!-- footer-widget -->
@@ -733,10 +629,10 @@
 						<div class="footer-widget social-widget">
 							<h3>Follow us on</h3>
 							<ul>
-								<li><a href="https://demo.themeregion.com/jobs-updated/index.html#"><i class="fa fa-facebook-official"></i>Facebook</a></li>
-								<li><a href="https://demo.themeregion.com/jobs-updated/index.html#"><i class="fa fa-twitter-square"></i>Twitter</a></li>
-								<li><a href="https://demo.themeregion.com/jobs-updated/index.html#"><i class="fa fa-google-plus-square"></i>Google+</a></li>
-								<li><a href="https://demo.themeregion.com/jobs-updated/index.html#"><i class="fa fa-youtube-play"></i>youtube</a></li>
+								<li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-facebook-official"></i>Facebook</a></li>
+								<li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-twitter-square"></i>Twitter</a></li>
+								<li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-google-plus-square"></i>Google+</a></li>
+								<li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-youtube-play"></i>youtube</a></li>
 							</ul>
 						</div>
 					</div><!-- footer-widget -->
@@ -747,7 +643,7 @@
 							<h3>Newsletter</h3>
 							<p>Jobs is Worldest leading Portal platform that brings!</p>
 							<!-- form -->
-							<form action="https://demo.themeregion.com/jobs-updated/index.html#">
+							<form action="https:http://localhost:8000/uiindex.html#">
 								<input type="email" class="form-control" placeholder="Your email id">
 								<button type="submit" class="btn btn-primary">Sign Up</button>
 							</form><!-- form -->			
@@ -759,7 +655,7 @@
 
 		<div class="footer-bottom clearfix text-center">
 			<div class="container">
-				<p>Copyright © <a href="https://demo.themeregion.com/jobs-updated/index.html#">Jobs</a> 2017. Developed by <a href="http://themeregion.com/">ThemeRegion</a></p>
+				<p>Copyright © <a href="https:http://localhost:8000/uiindex.html#">Jobs</a> 2017. Developed by <a href="http://themeregion.com/">ThemeRegion</a></p>
 			</div>
 		</div><!-- footer-bottom -->
 	</footer><!-- footer -->

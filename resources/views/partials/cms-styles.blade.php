@@ -16,6 +16,7 @@
 
 		<link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
 		<link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet">
+		{{--<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/FontAwesome.otf" rel="stylesheet">--}}
 
 		<!-- SmartAdmin Styles : Caution! DO NOT change the order -->
 		{{--<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-production-plugins.min.css">--}}
@@ -32,7 +33,7 @@
 		<!-- We recommend you use "your_style.css" to override SmartAdmin
 		     specific styles this will also ensure you retrain your customization with each SmartAdmin update.
 		<link rel="stylesheet" type="text/css" media="screen" href="css/your_style.css"> -->
-
+		<link rel="stylesheet" href="{{ asset('css/css') }}">
 		<!-- Demo purpose only: goes with demo.js, you can delete this css when designing your own WebApp -->
 		<link rel="stylesheet" type="text/css" media="screen" href="{{asset('css/demo.min.css')}}">
 
@@ -57,6 +58,14 @@
 		<link rel="apple-touch-startup-image" href="{{asset('img/splash/ipad-landscape.png')}}" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)">
 		<link rel="apple-touch-startup-image" href="{{asset('img/splash/ipad-portrait.png')}}" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)">
 		<link rel="apple-touch-startup-image" href="{{asset('img/splash/iphone.png')}}" media="screen and (max-device-width: 320px)">
-
+		<style type="text/css">
+			body {
+				font-family: "Open Sans",Arial,Helvetica,Sans-Serif;
+				font-size: 13px;
+				line-height: 1.42857143;
+				color: #333;
+				background-color: #fff;
+			}
+			.jqstooltip { position: absolute;left: 0px;top: 0px;visibility: hidden;background: rgb(0, 0, 0) transparent;background-color: rgba(0,0,0,0.6);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";color: white;font: 10px arial, san serif;text-align: left;white-space: nowrap;padding: 5px;border: 1px solid white;z-index: 10000;}.jqsfield { color: white;font: 10px arial, san serif;text-align: left;}</style></head>
 	</head>
 	

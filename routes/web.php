@@ -19,7 +19,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/test' ,'TestController@index');
-Route::get('/login','\Login\LoginController@index')->name('login');
+Route::get('/logins','LoginController@index')->name('logins');
 
 
 Route::get('/tickets', 'TicketController@index');
@@ -33,5 +33,8 @@ Route::patch('/edit/ticket/{id}','TicketController@update');
 Route::delete('/delete/ticket/{id}','TicketController@destroy');
 Route::get('/ui', 'UiController@index');
 Route::get('/posts', 'UiController@posts');
-Route::get('/register', 'UiController@register');
+Route::get('/registers', 'UiController@register');
 Route::get('/job', 'UiController@job');
+Route::get('/lists', 'UiController@lists');
+
+Route::get('/policy', 'UiController@policy');

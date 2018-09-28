@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class UiController extends Controller
+class LoginController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,37 +13,8 @@ class UiController extends Controller
      */
     public function index()
     {
-
-        return view('layouts-ui.ui-main');
         //
-    }
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public  function posts()
-    {
-        return view('UI.postjob');
-    }
-    public  function register()
-    {
-
-        return view('UI.register');
-    }
-    public function job()
-    {
-        return view('UI.Jobs');
-    }
-    public  function lists()
-    {
-
-        return view('UI.list');
-
-    }
-    public  function policy()
-    {
-        return view('UI.policy');
+        return view('Login.login');
     }
 
     /**

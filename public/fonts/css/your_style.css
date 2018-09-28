@@ -17,3 +17,10 @@
  * - BODY
  * - CUSTOM STYLES
  */
+body {
+    font-family: "Open Sans",Arial,Helvetica,Sans-Serif;
+    font-size: 13px;
+    line-height: 1.42857143;
+    color: #333;
+    background-color: #fff;
+}
