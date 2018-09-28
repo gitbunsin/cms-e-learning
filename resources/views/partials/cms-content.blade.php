@@ -7,7 +7,7 @@
     <div class="col-xs-12 col-sm-5 col-md-5 col-lg-8">
         <ul id="sparks" class="">
             <li class="sparks-info">
-                <h5> My Income <span class="txt-color-blue">$47,171</span></h5>
+                <h5><span class="txt-color-blue">$47,171</span></h5>
                 <div class="sparkline txt-color-blue hidden-mobile hidden-md hidden-sm">
                     1300, 1877, 2500, 2577, 2000, 2100, 3000, 2700, 3631, 2471, 2700, 3631, 2471
                 </div>
@@ -85,8 +85,8 @@
                                     <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
                                         <span class="demo-liveupdate-1"> <span class="onoffswitch-title">Live switch</span> <span class="onoffswitch">
                                                 <input type="checkbox" name="start_interval" class="onoffswitch-checkbox" id="start_interval">
-                                                <label class="onoffswitch-label" for="start_interval"> 
-                                                    <span class="onoffswitch-inner" data-swchon-text="ON" data-swchoff-text="OFF"></span> 
+                                                <label class="onoffswitch-label" for="start_interval">
+                                                    <span class="onoffswitch-inner" data-swchon-text="ON" data-swchoff-text="OFF"></span>
                                                     <span class="onoffswitch-switch"></span> </label> </span> </span>
                                         <div id="updating-chart" class="chart-large txt-color-blue"></div>
 
@@ -420,7 +420,7 @@
                                     <div class="message-text">
                                         <time>
                                             2014-01-13
-                                        </time> <a href="javascript:void(0);" class="username">John Doe</a> Haha! Yeah I know what you mean. Thanks for the file Sadi! <i class="fa fa-smile-o txt-color-orange"></i> 
+                                        </time> <a href="javascript:void(0);" class="username">John Doe</a> Haha! Yeah I know what you mean. Thanks for the file Sadi! <i class="fa fa-smile-o txt-color-orange"></i>
                                     </div>
                                 </li>
                             </ul>

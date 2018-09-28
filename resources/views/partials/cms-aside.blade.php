@@ -23,7 +23,7 @@
 						<a href="index.html" title="Dashboard"><i class="fa fa-lg fa-fw fa-home"></i> <span class="menu-item-parent">Dashboard</span></a>
 					</li>
 					<li>
-						<a href="inbox.html"><i class="fa fa-lg fa-fw fa-inbox"></i> <span class="menu-item-parent">Inbox</span><span class="badge pull-right inbox-badge">14</span></a>
+						<a href="http://localhost:8000/home"><i class="fa fa-lg fa-fw fa-inbox"></i> <span class="menu-item-parent">Articles1</span></a>
 					</li>
 					<li>
 						<a href="#"><i class="fa fa-lg fa-fw fa-bar-chart-o"></i> <span class="menu-item-parent">Graphs</span></a>
@@ -257,23 +257,6 @@
 							</li>
 							<li>
 								<a href="ckeditor.html">CK Editor</a>
-							</li>
-						</ul>
-					</li>
-					<li class="top-menu-invisible">
-						<a href="#"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> <span class="menu-item-parent">SmartAdmin Intel</span></a>
-						<ul>
-							<li>
-								<a href="difver.html"><i class="fa fa-stack-overflow"></i> Different Versions</a>
-							</li>
-							<li>
-								<a href="applayout.html"><i class="fa fa-cube"></i> App Settings</a>
-							</li>
-							<li>
-								<a href="http://bootstraphunter.com/smartadmin/BUGTRACK/track_/documentation/index.html" target="_blank"><i class="fa fa-book"></i> Documentation</a>
-							</li>
-							<li>
-								<a href="http://bootstraphunter.com/smartadmin/BUGTRACK/track_/" target="_blank"><i class="fa fa-bug"></i> Bug Tracker</a>
 							</li>
 						</ul>
 					</li>
