@@ -17,12 +17,48 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/test' ,'TestController@index');
+//Route::get('/home', 'FrontendController@index')->name('home');
+Route::get('/admin' ,'Backend\TestController@index');
 Route::get('/logins','LoginController@index')->name('logins');
 
+/************************************************************************************
+ *                                  Backend routes
+ ************************************************************************************/
 
-Route::get('/tickets', 'TicketController@index');
+Route::group(['namespace' => 'Backend', 'prefix' => 'administration', 'middleware' => ['auth']], function ($request) {
+
+    Route::get('/', 'DashboardController@index');
+
+
+});
+
+/************************************************************************************
+ *                                  Frontend routes
+ ************************************************************************************/
+
+Route::group(['namespace' => 'Frontend'], function () {
+    Route::get('/', function () {
+        return redirect('ui');
+    });
+
+
+});
+Route::get('/posts', 'UiController@posts');
+Route::get('/registers', 'UiController@register');
+Route::get('/job', 'UiController@job');
+Route::get('/lists', 'UiController@lists');
+Route::get('/policy', 'UiController@policy');
+Route::get('/singin', 'UiController@singin');
+Route::get('/ui', 'UiController@index');
+
+//RegisterEmoloyee
+Route::get('/register', 'RegistrationController@create');
+Route::post('/register', 'RegistrationController@store');
+
+
+
+
+Route::get('/tickets', 'ticketController@index');
 Route::get('/create/ticket','TicketController@create');
 Route::post('/create/ticket','TicketController@store');
 
@@ -31,10 +67,3 @@ Route::patch('/edit/ticket/{id}','TicketController@update');
 
 
 Route::delete('/delete/ticket/{id}','TicketController@destroy');
-Route::get('/ui', 'UiController@index');
-Route::get('/posts', 'UiController@posts');
-Route::get('/registers', 'UiController@register');
-Route::get('/job', 'UiController@job');
-Route::get('/lists', 'UiController@lists');
-
-Route::get('/policy', 'UiController@policy');

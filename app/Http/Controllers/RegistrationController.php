@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 
-class UiController extends Controller
+class RegistrationController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,41 +14,7 @@ class UiController extends Controller
      */
     public function index()
     {
-
-        return view('layouts-ui.ui-main');
         //
-    }
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public  function posts()
-    {
-        return view('UI.postjob');
-    }
-    public  function register()
-    {
-
-        return view('UI.register');
-    }
-    public function job()
-    {
-        return view('UI.Jobs');
-    }
-    public  function lists()
-    {
-
-        return view('UI.list');
-
-    }
-    public  function policy()
-    {
-        return view('UI.policy');
-    }
-    public  function singin(){
-
-        return view('UI.signin');
     }
 
     /**
@@ -57,6 +24,7 @@ class UiController extends Controller
      */
     public function create()
     {
+        return view('UI.register');
         //
     }
 
@@ -66,10 +34,21 @@ class UiController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store()
     {
-        //
+        $this->validate(request(), [
+            'name' => 'required',
+            'email' => 'required|email',
+            'password' => 'required|confirmed'
+        ]);
+
+        $user = User::create(request(['name', 'email', 'password']));
+
+        auth()->login($user);
+
+        return redirect()->to('/admin');
     }
+        //
 
     /**
      * Display the specified resource.

@@ -24,13 +24,13 @@
 					<div class="user-account job-user-account">
 						<h2>Create An Account</h2>
 							<ul class="nav nav-tabs text-center" role="tablist">
-								<li role="presentation" class=""><a href="#find-job" aria-controls="find-job" role="tab" data-toggle="tab">Find A Job</a></li>
-								<li role="presentation" class="active"><a href="#post-job" aria-controls="post-job" role="tab" data-toggle="tab">Post A Job</a></li>
+								<li role="presentation" class="active"><a href="https://demo.themeregion.com/jobs-updated/signup.html#find-job" aria-controls="find-job" role="tab" data-toggle="tab">Find A Job</a></li>
+								<li role="presentation"><a href="https://demo.themeregion.com/jobs-updated/signup.html#post-job" aria-controls="post-job" role="tab" data-toggle="tab">Post A Job</a></li>
 							</ul>
 
 							<div class="tab-content">
-								<div role="tabpanel" class="tab-pane" id="find-job">
-									<form method="POST" action="/register">
+								<div role="tabpanel" class="tab-pane active" id="find-job">
+									<form action="https://demo.themeregion.com/jobs-updated/signup.html#">
 										<div class="form-group">
 											<input type="text" class="form-control" placeholder="Name">
 										</div>
@@ -56,17 +56,16 @@
 										{{--</select><!-- select -->--}}
 
 										<div class="checkbox">
-											<label class="pull-left" for="signing">
-												<input type="checkbox" name="signing" id="signing"> By signing up for an account you agree to our Terms and Conditions </label>
+											<label class="pull-left checked" for="signing"><input type="checkbox" name="signing" id="signing"> By signing up for an account you agree to our Terms and Conditions </label>
 										</div><!-- checkbox -->
 										<button type="submit" class="btn">Registration</button>
 									</form>
 								</div>
-								<div role="tabpanel" class="tab-pane  active" id="post-job">
+								<div role="tabpanel" class="tab-pane" id="post-job">
 									<form method="POST" action="/register">
 										{{ csrf_field() }}
 										<div class="form-group">
-											<input type="text" class="form-control" placeholder="Company Name" id="name" name="name" >
+											<input type="text" class="form-control" placeholder="Employer Name" id="name" name="name" >
 										</div>
 										<div class="form-group">
 											<input type="email" class="form-control" placeholder="Email Id" id="email" name="email">
@@ -82,10 +81,9 @@
 											{{--<input type="text" class="form-control" placeholder="Contact Number">--}}
 										{{--</div>--}}
 										<div class="checkbox">
-											<label class="pull-left" for="signing-2">
-												<input type="checkbox" name="signing-2" id="signing-2">By signing up for an account you agree to our Terms and Conditions</label>
+											<label class="pull-left checked" for="signing-2"><input type="checkbox" name="signing-2" id="signing-2">By signing up for an account you agree to our Terms and Conditions</label>
 										</div><!-- checkbox -->
-										<button type="submit" class="btn">Registration</button>
+										<button style="cursor: pointer" type="submit" class="btn">Registration</button>
 									</form>
 								</div>
 							</div>				

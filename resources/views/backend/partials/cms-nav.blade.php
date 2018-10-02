@@ -1,248 +1,169 @@
-<aside id="left-panel">
-
-			<!-- User info -->
-			<div class="login-info">
-				<span> <!-- User image size is adjusted inside CSS, it should stay as it --> 
-					
-					<a href="javascript:void(0);" id="show-shortcut" data-action="toggleShortcut">
-						<img src="img/avatars/sunny.png" alt="me" class="online" />
-							 @if( auth()->check() )
-								 <span>
-									 {{ auth()->user()->name }}
-								 </span>
-							@endif
-						<i class="fa fa-angle-down"></i>
-					</a> 
-					
-				</span>
-			</div>
-			<!-- end user info -->
-
-			<!-- NAVIGATION : This navigation is also responsive-->
-			<nav>
+<nav>
 				<ul>
 					<li class="active">
 						<a href="index.html" title="Dashboard"><i class="fa fa-lg fa-fw fa-home"></i> <span class="menu-item-parent">Dashboard</span></a>
 					</li>
 					<li>
-						<a href="http://localhost:8000/home"><i class="fa fa-lg fa-fw fa-inbox"></i> <span class="menu-item-parent">Articles1</span></a>
+						<a href="inbox.html"><i class="fa fa-lg fa-fw fa-inbox"></i> <span class="menu-item-parent">Inbox</span><span class="badge pull-right inbox-badge">14</span></a>
 					</li>
 					<li>
-						<a href="#"><i class="fa fa-lg fa-fw fa-bar-chart-o"></i> <span class="menu-item-parent">Admin</span></a>
+						<a href="#"><i class="fa fa-lg fa-fw fa-bar-chart-o"></i> <span class="menu-item-parent">Graphs</span></a>
 						<ul>
 							<li>
-								<a href="#">User management</a>
-								<ul>
-									<li>
-										<a href="fa.html"><i class="fa fa-plane"></i>Users</a>
-									</li>
-								</ul>
+								<a href="flot.html">Flot Chart</a>
 							</li>
 							<li>
-								<a href="#">Job</a>
-								<ul>
-									<li>
-										<a href="fa.html"><i class="fa fa-plane"></i>Job Title</a>
-									</li>
-									<li>
-										<a href="fa.html"><i class="fa fa-plane"></i>Pay Grades</a>
-									</li>
-									<li>
-										<a href="fa.html"><i class="fa fa-plane"></i>Employee Status</a>
-									</li>
-									<li>
-										<a href="fa.html"><i class="fa fa-plane"></i>Job Categories</a>
-									</li>
-									<li>
-										<a href="fa.html"><i class="fa fa-plane"></i>Work Shifts</a>
-									</li>
-								</ul>
-							</li>
-
-							<li>
-								<a href="#">Organization</a>
-								<ul>
-									<li>
-										<a href="fa.html"><i class="fa fa-plane"></i>General Information</a>
-									</li>
-									<li>
-										<a href="fa.html"><i class="fa fa-plane"></i>Locations</a>
-									</li>
-									<li>
-										<a href="fa.html"><i class="fa fa-plane"></i>Strature</a>
-									</li>
-								</ul>
+								<a href="morris.html">Morris Charts</a>
 							</li>
 							<li>
-								<a href="#">Qualifications </a>
-								<ul>
-									<li>
-										<a href="fa.html"><i class="fa fa-plane"></i>Skills</a>
-									</li>
-									<li>
-										<a href="fa.html"><i class="fa fa-plane"></i>Education</a>
-									</li>
-									<li>
-										<a href="fa.html"><i class="fa fa-plane"></i>Licenses</a>
-									</li>
-									<li>
-										<a href="fa.html"><i class="fa fa-plane"></i>Language</a>
-									</li>
-									<li>
-										<a href="fa.html"><i class="fa fa-plane"></i>Memberships</a>
-									</li>
-								</ul>
-
+								<a href="inline-charts.html">Inline Charts</a>
 							</li>
 							<li>
-								<a href="#">Nationalities<span class="badge pull-right inbox-badge bg-color-yellow"></span></a>
+								<a href="dygraphs.html">Dygraphs</a>
 							</li>
 							<li>
-								<a href="#">Configuration<span class="badge pull-right inbox-badge bg-color-yellow"></span></a>
-								<ul>
-									<li>
-										<a href="fa.html"><i class=""></i>Email Configuration</a>
-									</li>
-									<li>
-										<a href="fa.html"><i class=""></i>Email Subscription</a>
-									</li>
-									<li>
-										<a href="fa.html"><i class=""></i>Localization </a>
-									</li>
-									<li>
-										<a href="fa.html"><i class=""></i>Modules</a>
-									</li>
-									<li>
-										<a href="fa.html"><i class=""></i>Socia Media Authentication</a>
-									</li>
-									<li>
-										<a href="fa.html"><i class=""></i>Register OAuth Client</a>
-									</li>
-								</ul>
+								<a href="chartjs.html">Chart.js <span class="badge pull-right inbox-badge bg-color-yellow">new</span></a>
 							</li>
 						</ul>
 					</li>
 					<li>
-						<a href="#"><i class="fa fa-lg fa-fw fa-table"></i> <span class="menu-item-parent">PIM</span></a>
+						<a href="#"><i class="fa fa-lg fa-fw fa-table"></i> <span class="menu-item-parent">Tables</span></a>
 						<ul>
 							<li>
-								<a href="table.html">Configuration</a>
+								<a href="table.html">Normal Tables</a>
 							</li>
 							<li>
-								<a href="datatables.html">Employee List<span class="badge inbox-badge bg-color-greenLight"></span></a>
+								<a href="datatables.html">Data Tables <span class="badge inbox-badge bg-color-greenLight">v1.10</span></a>
 							</li>
 							<li>
-								<a href="jqgrid.html">Add Employee</a>
-							</li>
-							<li>
-								<a href="jqgrid.html">Reports</a>
+								<a href="jqgrid.html">Jquery Grid</a>
 							</li>
 						</ul>
 					</li>
 					<li>
-						<a href="#"><i class="fa fa-lg fa-fw fa-comment-o"></i> <span class="menu-item-parent">Leave</span></a>
+						<a href="#"><i class="fa fa-lg fa-fw fa-pencil-square-o"></i> <span class="menu-item-parent">Forms</span></a>
 						<ul>
 							<li>
-								<a href="form-elements.html">Leave requests</a>
+								<a href="form-elements.html">Smart Form Elements</a>
 							</li>
 							<li>
-								<a href="form-templates.html">Leave balance</a>
+								<a href="form-templates.html">Smart Form Layouts</a>
 							</li>
 							<li>
-								<a href="validation.html">Reports</a>
+								<a href="validation.html">Smart Form Validation</a>
 							</li>
 							<li>
-								<a href="bootstrap-forms.html">List of types</a>
+								<a href="bootstrap-forms.html">Bootstrap Form Elements</a>
 							</li>
 							<li>
-								<a href="bootstrap-validator.html">Organaztion</a>
+								<a href="bootstrap-validator.html">Bootstrap Form Validation</a>
 							</li>
 							<li>
-								<a href="plugins.html">List of employees</a>
+								<a href="plugins.html">Form Plugins</a>
 							</li>
 							<li>
-								<a href="wizard.html">Calendars</a>
+								<a href="wizard.html">Wizards</a>
 							</li>
 							<li>
-								<a href="other-editors.html">Approval</a>
+								<a href="other-editors.html">Bootstrap Editors</a>
 							</li>
 							<li>
-								<a href="dropzone.html">List of postions </a>
+								<a href="dropzone.html">Dropzone </a>
 							</li>
 							<li>
-								<a href="image-editor.html">List of contracts <span class="badge pull-right inbox-badge bg-color-yellow">new</span></a>
+								<a href="image-editor.html">Image Cropping <span class="badge pull-right inbox-badge bg-color-yellow">new</span></a>
 							</li>
 						</ul>
 					</li>
 					<li>
-						<a href="#"><i class="fa fa-lg fa-fw fa-pencil-square-o"></i> <span class="menu-item-parent">Time</span></a>
-					</li>
-					<li>
-						<a href="#"><i class="fa fa-lg fa-fw fa-list-alt"></i> <span class="menu-item-parent">Recruitment</span></a>
-
+						<a href="#"><i class="fa fa-lg fa-fw fa-desktop"></i> <span class="menu-item-parent">UI Elements</span></a>
 						<ul>
 							<li>
-								<a href="form-elements.html">Query CVS</a>
+								<a href="general-elements.html">General Elements</a>
 							</li>
 							<li>
-								<a href="">Edit Company</a>
+								<a href="buttons.html">Buttons</a>
 							</li>
 							<li>
-								<a href="">Create Department</a>
-							</li>
-							<li>
-								<a href="">Post JOB</a>
-							</li>
-							<li>
-								<a href="">Candidate</a>
-							</li>
-							<li>
-								<a href="">Interview</a>
-							</li>
-						</ul>
-					</li>
-					<li>
-						<a href="#"><i class="fa fa-lg fa-fw fa-puzzle-piece"></i> <span class="menu-item-parent">My Info</span></a>
-					</li>
-					<li>
-						<a href="#"><i class="fa fa-lg fa-fw fa-desktop"></i> <span class="menu-item-parent">Performance</span></a>
-						<ul>
-							<li>
-								<a href="#">Configure</a>
+								<a href="#">Icons</a>
 								<ul>
 									<li>
-										<a href="fa.html"><i class="fa fa-plane"></i>KPIs</a>
-									</li>
-									<li>
-										<a href="glyph.html"><i class="glyphicon glyphicon-plane"></i>Trackers</a>
-									</li>
-								</ul>
-							</li>
-							<li>
-								<a href="#">Manage Reviews</a>
-								<ul>
-									<li>
-										<a href="fa.html"><i class="fa fa-plane"></i>Manage Review</a>
+										<a href="fa.html"><i class="fa fa-plane"></i> Font Awesome</a>
 									</li>	
 									<li>
-										<a href="glyph.html"><i class="glyphicon glyphicon-plane"></i>My Reviews</a>
+										<a href="glyph.html"><i class="glyphicon glyphicon-plane"></i> Glyph Icons</a>
 									</li>	
 									<li>
-										<a href="flags.html"><i class="fa fa-flag"></i>Review List</a>
+										<a href="flags.html"><i class="fa fa-flag"></i> Flags</a>
 									</li>
 								</ul>
 							</li>
 							<li>
-								<a href="grid.html">My Trackers</a>
+								<a href="grid.html">Grid</a>
 							</li>
 							<li>
-								<a href="treeview.html">Employee Trackers</a>
+								<a href="treeview.html">Tree View</a>
+							</li>
+							<li>
+								<a href="nestable-list.html">Nestable Lists</a>
+							</li>
+							<li>
+								<a href="jqui.html">JQuery UI</a>
+							</li>
+							<li>
+								<a href="typography.html">Typography</a>
+							</li>
+							<li>
+								<a href="#">Six Level Menu</a>
+								<ul>
+									<li>
+										<a href="#"><i class="fa fa-fw fa-folder-open"></i> Item #2</a>
+										<ul>
+											<li>
+												<a href="#"><i class="fa fa-fw fa-folder-open"></i> Sub #2.1 </a>
+												<ul>
+													<li>
+														<a href="#"><i class="fa fa-fw fa-file-text"></i> Item #2.1.1</a>
+													</li>
+													<li>
+														<a href="#"><i class="fa fa-fw fa-plus"></i> Expand</a>
+														<ul>
+															<li>
+																<a href="#"><i class="fa fa-fw fa-file-text"></i> File</a>
+															</li>
+															<li>
+																<a href="#"><i class="fa fa-fw fa-trash-o"></i> Delete</a></li>
+														</ul>
+													</li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<a href="#"><i class="fa fa-fw fa-folder-open"></i> Item #3</a>
+		
+										<ul>
+											<li>
+												<a href="#"><i class="fa fa-fw fa-folder-open"></i> 3ed Level </a>
+												<ul>
+													<li>
+														<a href="#"><i class="fa fa-fw fa-file-text"></i> File</a>
+													</li>
+													<li>
+														<a href="#"><i class="fa fa-fw fa-file-text"></i> File</a>
+													</li>
+												</ul>
+											</li>
+										</ul>
+		
+									</li>
+								</ul>
 							</li>
 						</ul>
 					</li>
 				
 					<li>
-						<a href="calendar.html"><i class="fa fa-lg fa-fw fa-calendar"><em>3</em></i> <span class="menu-item-parent">Directory</span></a>
+						<a href="calendar.html"><i class="fa fa-lg fa-fw fa-calendar"><em>3</em></i> <span class="menu-item-parent">Calendar</span></a>
 					</li>
 					<li>
 						<a href="widgets.html"><i class="fa fa-lg fa-fw fa-list-alt"></i> <span class="menu-item-parent">Widgets</span></a>
@@ -317,6 +238,23 @@
 							</li>
 							<li>
 								<a href="ckeditor.html">CK Editor</a>
+							</li>
+						</ul>
+					</li>
+					<li class="top-menu-invisible">
+						<a href="#"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> <span class="menu-item-parent">SmartAdmin Intel</span></a>
+						<ul>
+							<li>
+								<a href="difver.html"><i class="fa fa-stack-overflow"></i> Different Versions</a>
+							</li>
+							<li>
+								<a href="applayout.html"><i class="fa fa-cube"></i> App Settings</a>
+							</li>
+							<li>
+								<a href="http://bootstraphunter.com/smartadmin/BUGTRACK/track_/documentation/index.html" target="_blank"><i class="fa fa-book"></i> Documentation</a>
+							</li>
+							<li>
+								<a href="http://bootstraphunter.com/smartadmin/BUGTRACK/track_/" target="_blank"><i class="fa fa-bug"></i> Bug Tracker</a>
 							</li>
 						</ul>
 					</li>
@@ -463,4 +401,3 @@
 					
 				</ul>
 			</nav>
-		</aside>

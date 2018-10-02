@@ -16,6 +16,7 @@ class TicketController extends Controller
     public function index()
     {
         $tickets = Ticket::where('user_id', auth()->user()->id)->get();
+        $all = Ticket::all();
 
         return view('user.index',compact('tickets'));
     }
@@ -42,9 +43,9 @@ class TicketController extends Controller
             'title'=> 'required'
         ]);
         $ticket = new Ticket();
-        $data['user_id'] = 4;
-        $data['title'] = $request->input('title');
-        $data['description'] = $request->input('description');
+//        $data['user_id'] = 4;
+//        $data['title'] = $request->input('title');
+//        $data['description'] = $request->input('description');
         $ticket->saveTicket($data);
         return redirect('/home')->with('success', 'New support ticket has been created! Wait sometime to get resolved');
     }

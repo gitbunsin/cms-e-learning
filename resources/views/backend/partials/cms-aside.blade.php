@@ -179,27 +179,6 @@
 					</li>
 					<li>
 						<a href="#"><i class="fa fa-lg fa-fw fa-list-alt"></i> <span class="menu-item-parent">Recruitment</span></a>
-
-						<ul>
-							<li>
-								<a href="form-elements.html">Query CVS</a>
-							</li>
-							<li>
-								<a href="">Edit Company</a>
-							</li>
-							<li>
-								<a href="">Create Department</a>
-							</li>
-							<li>
-								<a href="">Post JOB</a>
-							</li>
-							<li>
-								<a href="">Candidate</a>
-							</li>
-							<li>
-								<a href="">Interview</a>
-							</li>
-						</ul>
 					</li>
 					<li>
 						<a href="#"><i class="fa fa-lg fa-fw fa-puzzle-piece"></i> <span class="menu-item-parent">My Info</span></a>
