@@ -18,17 +18,19 @@ Route::get('/', function () {
 Auth::routes();
 
 //Route::get('/home', 'FrontendController@index')->name('home');
-Route::get('/admin' ,'Backend\TestController@index');
-Route::get('/logins','LoginController@index')->name('logins');
+Route::get('/administration' ,'Backend\BackendController@index');
+
 
 /************************************************************************************
  *                                  Backend routes
  ************************************************************************************/
 
-Route::group(['namespace' => 'Backend', 'prefix' => 'administration', 'middleware' => ['auth']], function ($request) {
+Route::group(['namespace' => 'Backend', 'prefix' => 'administration'], function ($request) {
 
-    Route::get('/', 'DashboardController@index');
-
+    Route::resource('cadidate', 'CandidateController');
+    Route::resource('companyProfile', 'CompanyController');
+    Route::resource('vacancy', 'VacanciesController');
+    Route::resource('job','JobController');
 
 });
 
@@ -41,19 +43,22 @@ Route::group(['namespace' => 'Frontend'], function () {
         return redirect('ui');
     });
 
-
+    Route::get('/posts', 'UiController@posts');
+//    Route::get('/registers', 'UiController@register');
+    Route::get('/job', 'UiController@job');
+    Route::get('/lists', 'UiController@lists');
+    Route::get('/policy', 'UiController@policy');
+    Route::get('/singin', 'UiController@singin');
+    Route::resource('registers', 'RegistrationController');
 });
-Route::get('/posts', 'UiController@posts');
-Route::get('/registers', 'UiController@register');
-Route::get('/job', 'UiController@job');
-Route::get('/lists', 'UiController@lists');
-Route::get('/policy', 'UiController@policy');
-Route::get('/singin', 'UiController@singin');
-Route::get('/ui', 'UiController@index');
 
-//RegisterEmoloyee
-Route::get('/register', 'RegistrationController@create');
-Route::post('/register', 'RegistrationController@store');
+
+
+
+Route::get('/ui', 'Frontend\UiController@index');
+
+
+//Route::post('registers', 'RegistrationController@store');
 
 
 

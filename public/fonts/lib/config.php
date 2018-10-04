@@ -23,7 +23,7 @@ require_once("func.global.php");
 require_once("smartui/class.smartutil.php");
 require_once("smartui/class.smartui.php");
 
-// smart UI plugins
+// smart pages plugins
 require_once("smartui/class.smartui-widget.php");
 require_once("smartui/class.smartui-datatable.php");
 require_once("smartui/class.smartui-button.php");
@@ -35,7 +35,7 @@ require_once("smartui/class.smartui-nav.php");
 
 SmartUI::$icon_source = 'fa';
 
-// register our UI plugins
+// register our pages plugins
 SmartUI::register('widget', 'Widget');
 SmartUI::register('datatable', 'DataTable');
 SmartUI::register('button', 'Button');

@@ -1,6 +1,6 @@
 <?php
 
-//CONFIGURATION for SmartAdmin UI
+//CONFIGURATION for SmartAdmin pages
 
 //ribbon breadcrumbs config
 //array("Display Name" => "URL");
@@ -28,7 +28,7 @@ $page_nav = array(
 		"icon" => "fa-home"
 	),
 	"smartui" => array(
-		"title" => "Smart UI",
+		"title" => "Smart pages",
 		"icon" => "fa-code",
 		"sub" => array(
 			"general" => array(
@@ -171,7 +171,7 @@ $page_nav = array(
 		)
 	),
     "ui_elements" => array(
-        "title" => "UI Elements",
+        "title" => "pages Elements",
         "icon" => "fa-desktop",
         "sub" => array(
             "general" => array(
@@ -215,7 +215,7 @@ $page_nav = array(
                 "url" => APP_URL."/nestable-list.php"
             ),
             "jquery_ui" => array(
-                "title" => "jQuery UI",
+                "title" => "jQuery pages",
                 "url" => APP_URL."/jqui.php"
             ),
             "typo" => array(

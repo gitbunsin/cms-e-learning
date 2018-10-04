@@ -46,7 +46,7 @@
 		<!-- JQUERY SELECT2 INPUT -->
 		<script src="{{ asset('js/plugin/select2/select2.min.js')}}"></script>
 
-		<!-- JQUERY UI + Bootstrap Slider -->
+		<!-- JQUERY pages + Bootstrap Slider -->
 		<script src="{{ asset('js/plugin/bootstrap-slider/bootstrap-slider.min.js')}}"></script>
 
 		<!-- browser msie issue fix -->
@@ -71,7 +71,7 @@
 		<!-- Voice command : plugin -->
 		<script src="{{ asset('js/speech/voicecommand.min.js')}}"></script>
 
-		<!-- SmartChat UI : plugin -->
+		<!-- SmartChat pages : plugin -->
 		<script src="{{ asset('js/smart-chat-ui/smart.chat.ui.min.js')}}"></script>
 		<script src="{{ asset('js/smart-chat-ui/smart.chat.manager.min.js')}}"></script>
 
@@ -668,3 +668,4 @@
 			})();
 
 		</script>
+</html>

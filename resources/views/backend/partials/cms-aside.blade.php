@@ -1,3 +1,4 @@
+
 <aside id="left-panel">
 
 			<!-- User info -->
@@ -6,11 +7,10 @@
 					
 					<a href="javascript:void(0);" id="show-shortcut" data-action="toggleShortcut">
 						<img src="img/avatars/sunny.png" alt="me" class="online" />
-							 @if( auth()->check() )
-								 <span>
-									 {{ auth()->user()->name }}
-								 </span>
-							@endif
+						@if(Session::get('user_data'))
+							<span>{{ Session::get('user_data')->name }}</span>
+						@else <span>{{'No Register'}}</span>
+						@endif
 						<i class="fa fa-angle-down"></i>
 					</a> 
 					
@@ -23,9 +23,6 @@
 				<ul>
 					<li class="active">
 						<a href="index.html" title="Dashboard"><i class="fa fa-lg fa-fw fa-home"></i> <span class="menu-item-parent">Dashboard</span></a>
-					</li>
-					<li>
-						<a href="http://localhost:8000/home"><i class="fa fa-lg fa-fw fa-inbox"></i> <span class="menu-item-parent">Articles1</span></a>
 					</li>
 					<li>
 						<a href="#"><i class="fa fa-lg fa-fw fa-bar-chart-o"></i> <span class="menu-item-parent">Admin</span></a>
@@ -175,10 +172,32 @@
 						</ul>
 					</li>
 					<li>
-						<a href="#"><i class="fa fa-lg fa-fw fa-pencil-square-o"></i> <span class="menu-item-parent">Time</span></a>
+						<a href="#"><i class="fa fa-lg fa-fw fa-pencil-square-o"></i><span class="menu-item-parent">Time</span></a>
 					</li>
+
 					<li>
-						<a href="#"><i class="fa fa-lg fa-fw fa-list-alt"></i> <span class="menu-item-parent">Recruitment</span></a>
+						<a href="#"><i class="fa fa-lg fa-fw fa-pencil-square-o"></i> <span class="menu-item-parent">Recruitment</span></a>
+					 <ul>
+						 <li>
+							 <a href="">Query CV</a>
+						 </li>
+						 <li>
+							 <a href="">Create Department</a>
+						 </li>
+						 <li class="{{ Request::segment(2) == "companyProfile" ? "active" : " " }}">
+							 <a href="{{ url('administration/companyProfile') }}">Company Profiles</a>
+						 </li>
+						 <li class="{{ Request::segment(2) == "job" ? "active" : " " }}">
+							 <a href="{{url ('administration/job')}}">Post Job</a>
+						 </li>
+						 <li class="{{ Request::segment(2) == "cadidate" ? "active" : " " }}">
+							 <a href="{{url('administration/cadidate')}}">Candidate</a>
+						 </li>
+						 <li class="{{ Request::segment(2) == "vacancy" ? "active" : " " }}">
+							 <a href="{{url('administration/vacancy')}}">Vacancy</a>
+						 </li>
+
+					 </ul>
 					</li>
 					<li>
 						<a href="#"><i class="fa fa-lg fa-fw fa-puzzle-piece"></i> <span class="menu-item-parent">My Info</span></a>

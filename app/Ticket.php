@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Ticket extends Model
 {
     //
-//    protected $table = 'tb_job';
+    protected $table = 'tickets';
     protected $fillable = ['user_id', 'title', 'description'];
     public function saveTicket($data)
     {
