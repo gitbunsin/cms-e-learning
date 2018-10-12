@@ -8,6 +8,8 @@ use App\Http\Controllers\Controller;
 //use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 use App\User;
+use Illuminate\Support\Facades\Input;
+use Prophecy\Exception\Doubler\InterfaceNotFoundException;
 use Session;
 
 
@@ -40,7 +42,7 @@ class RegistrationController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store()
+    public function store(Request $request)
     {
         $this->validate(request(), [
             'name' => 'required',
@@ -48,13 +50,35 @@ class RegistrationController extends Controller
             'password' => 'required|min:3|max:20',
             'confirm_password' => 'required|min:3|max:20|same:password',
         ]);
-
-        $user = User::create(request(['name', 'email', 'password']));
+        $user = new User();
+//        dd($user);
+        $user->name = Input::get('name');
+        $user->email = Input::get('email');
+        $user->password = Input::get('password');
+        $user->status = 1;
+        $user->save();
         Session::put('user_data', $user);
        // dd($user)
 //        auth()->login($user);
      return redirect('/administration');
 
+    }
+    public  function RegisterEmployee()
+    {
+        $this->validate(request(), [
+            'email_emp' => 'required',
+            'email_emp' => 'required|email',
+            'password_emp' => 'required|min:3|max:20',
+            'confirm_password_emp' => 'required|min:3|max:20|same:password_emp',
+//            'mobile_number' =>'required',
+        ]);
+        $employee_user = new User();
+        $employee_user->name = Input::get('email_emp');
+        $employee_user->email = Input::get('email_emp');
+        $employee_user->password = Input::get('password_emp');
+        $employee_user->status = 0;
+        $employee_user->save();
+     return redirect('/lists');
     }
         //
 

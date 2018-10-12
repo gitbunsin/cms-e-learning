@@ -50,6 +50,8 @@ Route::group(['namespace' => 'Frontend'], function () {
     Route::get('/policy', 'UiController@policy');
     Route::get('/singin', 'UiController@singin');
     Route::resource('registers', 'RegistrationController');
+    Route::post('/RegisterEmployee','RegistrationController@RegisterEmployee');
+    Route::post('/singin','LoginController@singin');
 });
 
 

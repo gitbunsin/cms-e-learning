@@ -30,22 +30,28 @@
 
                     <div class="tab-content">
                         <div role="tabpanel" class="tab-pane" id="find-job">
-                            <form action="">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Name">
+                            <form method="POST" enctype="multipart/form-data" id="register" action="{{url('RegisterEmployee')}}">
+                                {{ csrf_field() }}
+                                <div class="form-group  {{ $errors->has('employee_name') ? 'has-error' : '' }}" >
+                                    <input id="employee_name" name="employee_name" type="text" class="form-control" placeholder="employee name">
+                                    <span class="text-danger">{{ $errors->first('employee_name') }}</span>
                                 </div>
-                                <div class="form-group">
-                                    <input type="email" class="form-control" placeholder="Email Id">
+                                <div class="form-group  {{ $errors->has('email_emp') ? 'has-error' : '' }}">
+                                    <input id="email_emp" name="email_emp" type="email" class="form-control" placeholder="Email Id">
+                                    <span class="text-danger">{{ $errors->first('email_emp') }}</span>
                                 </div>
-                                <div class="form-group">
-                                    <input type="password" class="form-control" placeholder="Password">
+                                <div class="form-group  {{ $errors->has('password_emp') ? 'has-error' : '' }}">
+                                    <input id="password_emp" name="password_emp" type="password" class="form-control" placeholder="Password">
+                                    <span class="text-danger">{{ $errors->first('password_emp') }}</span>
                                 </div>
-                                <div class="form-group">
-                                    <input type="password" class="form-control" placeholder="Confirm Password">
+                                <div class="form-group  {{ $errors->has('confirm_password_emp') ? 'has-error' : '' }}">
+                                    <input id="confirm_password_emp" name="confirm_password_emp" type="password" class="form-control" placeholder="Confirm Password">
+                                    <span class="text-danger">{{ $errors->first('confirm_password_emp') }}</span>
                                 </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Mobile Number">
-                                </div>
+                                {{--<div class="form-group  {{ $errors->has('mobile_number') ? 'has-error' : '' }}">--}}
+                                    {{--<input id="mobile_number" name="mobile_number" type="text" class="form-control" placeholder="Mobile Number">--}}
+                                    {{--<span class="text-danger">{{ $errors->first('name') }}</span>--}}
+                                {{--</div>--}}
                                 <!-- select -->
                                 {{--<select class="form-control">--}}
                                 {{--<option value="#">Select City</option>--}}
@@ -62,7 +68,7 @@
                             </form>
                         </div>
                         <div role="tabpanel" class="tab-pane active" id="post-job">
-                            <form method="POST" action="{{url('registers')}}">
+                            <form enctype="multipart/form-data" id="validate_register" method="POST" action="{{url('registers')}}">
                                 {{ csrf_field() }}
                                 <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
                                     <input type="text" class="form-control" placeholder="Company Name" id="name" name="name" >
@@ -98,76 +104,7 @@
 </section><!-- signup-page -->
 
 <!-- footer -->
-<footer id="footer" class="clearfix">
-    <!-- footer-top -->
-    <section class="footer-top clearfix">
-        <div class="container">
-            <div class="row">
-                <!-- footer-widget -->
-                <div class="col-sm-3">
-                    <div class="footer-widget">
-                        <h3>Quik Links</h3>
-                        <ul>
-                            <li><a href="https://demo.themeregion.com/jobs-updated/signup.html#">About Us</a></li>
-                            <li><a href="https://demo.themeregion.com/jobs-updated/signup.html#">Contact Us</a></li>
-                            <li><a href="https://demo.themeregion.com/jobs-updated/signup.html#">Careers</a></li>
-                            <li><a href="https://demo.themeregion.com/jobs-updated/signup.html#">All Cities</a></li>
-                            <li><a href="https://demo.themeregion.com/jobs-updated/signup.html#">Help &amp; Support</a></li>
-                            <li><a href="https://demo.themeregion.com/jobs-updated/signup.html#">Advertise With Us</a></li>
-                        </ul>
-                    </div>
-                </div><!-- footer-widget -->
-
-                <!-- footer-widget -->
-                <div class="col-sm-3">
-                    <div class="footer-widget">
-                        <h3>How to sell fast</h3>
-                        <ul>
-                            <li><a href="https://demo.themeregion.com/jobs-updated/signup.html#">How to sell fast</a></li>
-                            <li><a href="https://demo.themeregion.com/jobs-updated/signup.html#">Membership</a></li>
-                            <li><a href="https://demo.themeregion.com/jobs-updated/signup.html#">Banner Advertising</a></li>
-                            <li><a href="https://demo.themeregion.com/jobs-updated/signup.html#">Promote your ad</a></li>
-                            <li><a href="https://demo.themeregion.com/jobs-updated/signup.html#">Jobs Delivers</a></li>
-                            <li><a href="https://demo.themeregion.com/jobs-updated/signup.html#">FAQ</a></li>
-                        </ul>
-                    </div>
-                </div><!-- footer-widget -->
-
-                <!-- footer-widget -->
-                <div class="col-sm-3">
-                    <div class="footer-widget social-widget">
-                        <h3>Follow us on</h3>
-                        <ul>
-                            <li><a href="https://demo.themeregion.com/jobs-updated/signup.html#"><i class="fa fa-facebook-official"></i>Facebook</a></li>
-                            <li><a href="https://demo.themeregion.com/jobs-updated/signup.html#"><i class="fa fa-twitter-square"></i>Twitter</a></li>
-                            <li><a href="https://demo.themeregion.com/jobs-updated/signup.html#"><i class="fa fa-google-plus-square"></i>Google+</a></li>
-                            <li><a href="https://demo.themeregion.com/jobs-updated/signup.html#"><i class="fa fa-youtube-play"></i>youtube</a></li>
-                        </ul>
-                    </div>
-                </div><!-- footer-widget -->
-
-                <!-- footer-widget -->
-                <div class="col-sm-3">
-                    <div class="footer-widget news-letter">
-                        <h3>Newsletter</h3>
-                        <p>Jobs is Worldest leading Portal platform that brings!</p>
-                        <!-- form -->
-                        <form action="https://demo.themeregion.com/jobs-updated/signup.html#">
-                            <input type="email" class="form-control" placeholder="Your email id">
-                            <button type="submit" class="btn btn-primary">Sign Up</button>
-                        </form><!-- form -->
-                    </div>
-                </div><!-- footer-widget -->
-            </div><!-- row -->
-        </div><!-- container -->
-    </section><!-- footer-top -->
-
-    <div class="footer-bottom clearfix text-center">
-        <div class="container">
-            <p>Copyright © <a href="https://demo.themeregion.com/jobs-updated/signup.html#">Jobs</a> 2017. Developed by <a href="http://themeregion.com/">ThemeRegion</a></p>
-        </div>
-    </div><!-- footer-bottom -->
-</footer><!-- footer -->
+@include('frontend.partials.ui-footer')
 
 <!--/Preset Style Chooser-->
 <div class="style-chooser">
@@ -187,4 +124,63 @@
 <!-- JS -->
 @include('frontend.partials.ui-script')
 
-</body></html>
+</body>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>
+    if (!window.jQuery) {
+        document.write('<script src="js/libs/jquery-2.1.1.min.js"><\/script>');
+    }
+</script>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+<script>
+    if (!window.jQuery.ui) {
+        document.write('<script src="js/libs/jquery-ui-1.10.3.min.js"><\/script>');
+    }
+</script>
+
+<script type="text/javascript">
+
+    // DO NOT REMOVE : GLOBAL FUNCTIONS!
+
+    $(document).ready(function() {
+
+        pageSetUp();
+        $('#startdate').datepicker({
+            // format: 'DD - dd MM yyyy'
+        });
+        var $loginForm = $("#validate_register").validate({
+            // Rules for form validation
+            rules : {
+                job_title : {
+                    required : true
+                },
+                job_description : {
+                    required : true,
+                },
+                note:{
+                    required:true
+                }
+            },
+
+            // Messages for form validation
+            messages : {
+                job_title : {
+                    required : 'Please enter Job_title'
+                },
+                job_description : {
+                    required: 'Please enter your job desciption'
+                },
+                note:{
+                    required:'please enter noted of job description'
+                }
+            },
+            // Do not change code below
+            errorPlacement : function(error, element) {
+                error.insertAfter(element.parent());
+            }
+        });
+    });
+
+</script>
+</html>

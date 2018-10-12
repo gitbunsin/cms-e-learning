@@ -24,12 +24,15 @@
 					<div class="user-account">
 						<h2>User Login</h2>
 						<!-- form -->
-						<form method="POST" action="/login">
-							<div class="form-group">
-								<input type="text" class="form-control" placeholder="Username" id="email" name="email">
+						<form enctype="multipart/form-data"  method="POST" action="/singin">
+							{{ csrf_field() }}
+							<div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
+								<input type="text" class="form-control" placeholder="email" id="email" name="email">
+								<span class="text-danger">{{ $errors->first('email') }}</span>
 							</div>
-							<div class="form-group">
+							<div class="form-group {{ $errors->has('password') ? 'has-error' : '' }}">
 								<input type="password" class="form-control" placeholder="Password" id="password" name="password">
+								<span class="text-danger">{{ $errors->first('password') }}</span>
 							</div>
 							<button style="cursor: pointer" type="submit" href="#" class="btn">Login</button>
 						</form><!-- form -->
@@ -49,78 +52,8 @@
 			</div><!-- row -->	
 		</div><!-- container -->
 	</section><!-- signin-page -->
-	
-	<!-- footer -->
-	<footer id="footer" class="clearfix">
-		<!-- footer-top -->
-		<section class="footer-top clearfix">
-			<div class="container">
-				<div class="row">
-					<!-- footer-widget -->
-					<div class="col-sm-3">
-						<div class="footer-widget">
-							<h3>Quik Links</h3>
-							<ul>
-								<li><a href="https://demo.themeregion.com/jobs-updated/signin.html#">About Us</a></li>
-								<li><a href="https://demo.themeregion.com/jobs-updated/signin.html#">Contact Us</a></li>
-								<li><a href="https://demo.themeregion.com/jobs-updated/signin.html#">Careers</a></li>
-								<li><a href="https://demo.themeregion.com/jobs-updated/signin.html#">All Cities</a></li>
-								<li><a href="https://demo.themeregion.com/jobs-updated/signin.html#">Help &amp; Support</a></li>
-								<li><a href="https://demo.themeregion.com/jobs-updated/signin.html#">Advertise With Us</a></li>
-							</ul>
-						</div>
-					</div><!-- footer-widget -->
 
-					<!-- footer-widget -->
-					<div class="col-sm-3">
-						<div class="footer-widget">
-							<h3>How to sell fast</h3>
-							<ul>
-								<li><a href="https://demo.themeregion.com/jobs-updated/signin.html#">How to sell fast</a></li>
-								<li><a href="https://demo.themeregion.com/jobs-updated/signin.html#">Membership</a></li>
-								<li><a href="https://demo.themeregion.com/jobs-updated/signin.html#">Banner Advertising</a></li>
-								<li><a href="https://demo.themeregion.com/jobs-updated/signin.html#">Promote your ad</a></li>
-								<li><a href="https://demo.themeregion.com/jobs-updated/signin.html#">Jobs Delivers</a></li>
-								<li><a href="https://demo.themeregion.com/jobs-updated/signin.html#">FAQ</a></li>
-							</ul>
-						</div>
-					</div><!-- footer-widget -->
-
-					<!-- footer-widget -->
-					<div class="col-sm-3">
-						<div class="footer-widget social-widget">
-							<h3>Follow us on</h3>
-							<ul>
-								<li><a href="https://demo.themeregion.com/jobs-updated/signin.html#"><i class="fa fa-facebook-official"></i>Facebook</a></li>
-								<li><a href="https://demo.themeregion.com/jobs-updated/signin.html#"><i class="fa fa-twitter-square"></i>Twitter</a></li>
-								<li><a href="https://demo.themeregion.com/jobs-updated/signin.html#"><i class="fa fa-google-plus-square"></i>Google+</a></li>
-								<li><a href="https://demo.themeregion.com/jobs-updated/signin.html#"><i class="fa fa-youtube-play"></i>youtube</a></li>
-							</ul>
-						</div>
-					</div><!-- footer-widget -->
-
-					<!-- footer-widget -->
-					<div class="col-sm-3">
-						<div class="footer-widget news-letter">
-							<h3>Newsletter</h3>
-							<p>Jobs is Worldest leading Portal platform that brings!</p>
-							<!-- form -->
-							<form action="https://demo.themeregion.com/jobs-updated/signin.html#">
-								<input type="email" class="form-control" placeholder="Your email id">
-								<button type="submit" class="btn btn-primary">Sign Up</button>
-							</form><!-- form -->			
-						</div>
-					</div><!-- footer-widget -->
-				</div><!-- row -->
-			</div><!-- container -->
-		</section><!-- footer-top -->
-
-		<div class="footer-bottom clearfix text-center">
-			<div class="container">
-				<p>Copyright © <a href="https://demo.themeregion.com/jobs-updated/signin.html#">Jobs</a> 2017. Developed by <a href="http://themeregion.com/">ThemeRegion</a></p>
-			</div>
-		</div><!-- footer-bottom -->
-	</footer><!-- footer -->
+	@include('frontend.partials.ui-footer')
 	
 	<!--/Preset Style Chooser--> 
 	<div class="style-chooser">
