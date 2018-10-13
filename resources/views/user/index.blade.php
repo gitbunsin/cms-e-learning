@@ -54,21 +54,21 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                {{--@foreach($tickets as $ticket)--}}
-                                    {{--<tr>--}}
-                                        {{--<td>{{$ticket->id}}</td>--}}
-                                        {{--<td>{{$ticket->title}}</td>--}}
-                                        {{--<td>{{$ticket->description}}</td>--}}
-                                        {{--<td><a href="{{action('TicketController@edit',$ticket->id)}}" class="btn btn-primary">Edit</a></td>--}}
-                                        {{--<td>--}}
-                                            {{--<form action="{{action('TicketController@destroy', $ticket->id)}}" method="post">--}}
-                                                {{--{{csrf_field()}}--}}
-                                                {{--<input name="_method" type="hidden" value="DELETE">--}}
-                                                {{--<button class="btn btn-danger" type="submit">Delete</button>--}}
-                                            {{--</form>--}}
-                                        {{--</td>--}}
-                                    {{--</tr>--}}
-                                {{--@endforeach--}}
+                                @foreach($tickets as $ticket)
+                                    <tr>
+                                        <td>{{$ticket->id}}</td>
+                                        <td>{{$ticket->title}}</td>
+                                        <td>{{$ticket->description}}</td>
+                                        <td><a href="{{action('TicketController@edit',$ticket->id)}}" class="btn btn-primary">Edit</a></td>
+                                        <td>
+                                            <form action="{{action('TicketController@destroy', $ticket->id)}}" method="post">
+                                                {{csrf_field()}}
+                                                <input name="_method" type="hidden" value="DELETE">
+                                                <button class="btn btn-danger" type="submit">Delete</button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                @endforeach
                                 </tbody>
                             </table>
                         </div>

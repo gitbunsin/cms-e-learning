@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Job;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 
@@ -68,11 +69,12 @@ class JobController extends Controller
      * @param  \App\Job  $job
      * @return \Illuminate\Http\Response
      */
-    public function edit(Job $job)
+    public function edit($id)
     {
-        //
+        $jobs = Job::where('id',$id)->first();
+        //dd($jobs);
+        return view('backend.Recruiment.Job.edit', compact('jobs', 'id'));
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -80,19 +82,33 @@ class JobController extends Controller
      * @param  \App\Job  $job
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Job $job)
+    public function update( Request $request , $id)
     {
-        //
+        $job = Job::findOrFail($id);
+        //dd($job);
+        $input = $request->all();
+        $job->fill($input)->save();
+        $request->session()->flash('alert-success', 'New Job has been updated!!!');
+        return redirect('/administration/job');
+//        $hello ="i'm so ok";
+//        dd($hello);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Job  $job
+     * @param  \App\Job $job
      * @return \Illuminate\Http\Response
+     * @throws \Exception
      */
-    public function destroy(Job $job)
+    public function destroy($id)
     {
+//        $hello ="I will deleted you from my heart";
+//        dd($hello);
+        $job = Job::findOrFail($id);
+        $job->delete();
+        Session::flash('alert-danger', 'Job successfully deleted!');
+        return redirect('/administration/job');
         //
     }
 }
