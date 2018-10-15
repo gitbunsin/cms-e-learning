@@ -27,7 +27,7 @@ Route::get('/administration' ,'Backend\BackendController@index');
 
 Route::group(['namespace' => 'Backend', 'prefix' => 'administration'], function ($request) {
 
-    Route::resource('cadidate', 'CandidateController');
+    Route::resource('candidate', 'CandidateController');
     Route::resource('companyProfile', 'CompanyController');
     Route::resource('vacancy', 'VacanciesController');
     Route::resource('job','JobController');

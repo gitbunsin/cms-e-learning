@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Vacancy;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Session;
 
 class VacanciesController extends Controller
 {
@@ -74,6 +75,8 @@ class VacanciesController extends Controller
     public function edit($id)
     {
         //
+        $vacancy = Vacancy::FindorFail($id);
+        return view('backend.Recruiment.Vacancy.edit',compact('vacancy','id'));
     }
 
     /**
@@ -85,6 +88,13 @@ class VacanciesController extends Controller
      */
     public function update(Request $request, $id)
     {
+
+        $vacancy = Vacancy::findOrFail($id);
+//        dd($candidate);
+        $input = $request->all();
+        $vacancy->fill($input)->save();
+        $request->session()->flash('alert-success', 'New Candidate has been updated!!!');
+        return redirect('/administration/vacancy');
         //
     }
 
@@ -96,6 +106,10 @@ class VacanciesController extends Controller
      */
     public function destroy($id)
     {
-        //
+
+        $vacancy = Vacancy::findOrFail($id);
+        $vacancy->delete();
+        Session::flash('alert-danger', 'Job successfully deleted!');
+        return redirect('/administration/candidate');
     }
 }

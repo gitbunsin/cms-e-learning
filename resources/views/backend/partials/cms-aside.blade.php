@@ -190,8 +190,8 @@
                     <li class="{{ Request::segment(2) == "job" ? "active" : " " }}">
                         <a href="{{url ('administration/job')}}">Post Job</a>
                     </li>
-                    <li class="{{ Request::segment(2) == "cadidate" ? "active" : " " }}">
-                        <a href="{{url('administration/cadidate')}}">Candidate</a>
+                    <li class="{{ Request::segment(2) == "candidate" ? "active" : " " }}">
+                        <a href="{{url('administration/candidate')}}">Candidate</a>
                     </li>
                     <li class="{{ Request::segment(2) == "vacancy" ? "active" : " " }}">
                         <a href="{{url('administration/vacancy')}}">Vacancy</a>

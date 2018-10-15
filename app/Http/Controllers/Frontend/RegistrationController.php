@@ -44,23 +44,25 @@ class RegistrationController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate(request(), [
-            'name' => 'required',
-            'email' => 'required|email',
-            'password' => 'required|min:3|max:20',
-            'confirm_password' => 'required|min:3|max:20|same:password',
-        ]);
-        $user = new User();
-//        dd($user);
-        $user->name = Input::get('name');
-        $user->email = Input::get('email');
-        $user->password = Input::get('password');
-        $user->status = 1;
-        $user->save();
-        Session::put('user_data', $user);
-       // dd($user)
-//        auth()->login($user);
-     return redirect('/administration');
+        $hello ="Hello";
+        dd($hello);
+//        $this->validate(request(), [
+//            'name' => 'required',
+//            'email' => 'required|email',
+//            'password' => 'required|min:3|max:20',
+//            'confirm_password' => 'required|min:3|max:20|same:password',
+//        ]);
+//        $user = new User();
+////        dd($user);
+//        $user->name = Input::get('name');
+//        $user->email = Input::get('email');
+//        $user->password = Input::get('password');
+//        $user->status = 1;
+//        $user->save();
+//        Session::put('user_data', $user);
+//       // dd($user)
+////        auth()->login($user);
+//     return redirect('/administration');
 
     }
     public  function RegisterEmployee()

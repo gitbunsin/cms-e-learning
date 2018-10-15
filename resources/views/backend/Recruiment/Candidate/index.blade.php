@@ -9,7 +9,7 @@
             <!-- NEW WIDGET START -->
             <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <div class="pull-right">
-                    <a href="{{url('administration/cadidate/create')}}"><h4 class="alert-heading"><i style="font-size:30px;" class="fa fa-plus-square"></i></h4></a>
+                    <a href="{{url('administration/candidate/create')}}"><h4 class="alert-heading"><i style="font-size:30px;" class="fa fa-plus-square"></i></h4></a>
                 </div>
                 <br/><br/>
                 <!-- Widget ID (each widget will need unique ID)-->
@@ -64,9 +64,13 @@
                                         <td>{{$candidates->status}}</td>
                                         <td>{{$candidates->comment}}</td>
                                         <td>{{$candidates->date_of_application}}</td>
-                                        <td>
-                                            <a href=""><button class="btn btn-primary btn-xs" ><span class="glyphicon glyphicon-pencil"></span></button></a>
-                                            <a href=""><button class="btn btn-danger btn-xs" ><span class="glyphicon glyphicon-trash"></span></button></a>
+                                        <td  class="d-flex flex-row">
+                                            <a href="{{ url('administration/candidate/' .$candidates->id. '/edit') }}"><button class="btn btn-primary btn-xs" ><span class="glyphicon glyphicon-pencil"></span></button></a>
+                                            <form action="{{url('administration/candidate/' .$candidates->id)}}" method="post">
+                                                {{csrf_field()}}
+                                                <input name="_method" type="hidden" value="DELETE">
+                                                <a href="{{ url('administration/candidate/' .$candidates->id) }}"><button class="btn btn-danger btn-xs" ><span class="glyphicon glyphicon-trash"></span></button></a>
+                                            </form>
                                         </td>
                                     </tr>
                                 @endforeach

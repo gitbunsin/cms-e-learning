@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use App\Candidate;
 use App\CandidateAttachment;
@@ -59,13 +60,10 @@ class CandidateController extends Controller
             $image = $request->file('cv_file_id');
             $mytime = \Carbon\Carbon::now()->toDateTimeString();
             $name = $image->getClientOriginalName();
-//            dd($name);
-            $myname = date('Y-m-d H:i:s').".$name";
-//            $myname = $mytime.'_'.$name;
             $size = $image->getClientSize();
             $type = $image->getMimeType();
             $destinationPath = public_path('/uploaded');
-            $image->move($destinationPath,$myname);
+            $image->move($destinationPath,$name);
             $CandidateAttachment = new CandidateAttachment();
             $CandidateAttachment->candidate_id = 1;
             $CandidateAttachment->file_name = $name;
@@ -75,7 +73,7 @@ class CandidateController extends Controller
         }
 //         dd($request->all());
         $candidate->save();
-        return redirect('/administration/cadidate');
+        return redirect('/administration/candidate');
     }
 
     /**
@@ -97,7 +95,11 @@ class CandidateController extends Controller
      */
     public function edit($id)
     {
+
         //
+        $candidate = Candidate::where('id',$id)->first();
+//        dd($candidate);
+        return view('backend.Recruiment.Candidate.edit',compact('candidate','id'));
     }
 
     /**
@@ -109,6 +111,13 @@ class CandidateController extends Controller
      */
     public function update(Request $request, $id)
     {
+
+        $candidate = Candidate::findOrFail($id);
+//        dd($candidate);
+        $input = $request->all();
+        $candidate->fill($input)->save();
+        $request->session()->flash('alert-success', 'New Candidate has been updated!!!');
+        return redirect('/administration/candidate');
         //
     }
 
@@ -120,6 +129,10 @@ class CandidateController extends Controller
      */
     public function destroy($id)
     {
+        $candidate = Candidate::findOrFail($id);
+        $candidate->delete();
+        Session::flash('alert-danger', 'Job successfully deleted!');
+        return redirect('/administration/candidate');
         //
     }
 }

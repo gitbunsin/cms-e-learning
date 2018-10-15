@@ -12,7 +12,7 @@
 
                     <header>
                         <span class="widget-icon"> <i class="fa fa-edit"></i> </span>
-                        <h2>Add new Candidate</h2>
+                        <h2>Edit Candidate</h2>
 
                     </header>
 
@@ -29,31 +29,32 @@
                         <!-- widget content -->
                         <div class="widget-body no-padding">
 
-                            <form id="validate" method="POST" action="{{ url('administration/candidate') }}" class="smart-form" enctype="multipart/form-data" >
-                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                            <form id="validate" method="POST" action="{{ url('administration/candidate',$id) }}" class="smart-form" enctype="multipart/form-data" >
+                                {{csrf_field()}}
+                                <input name="_method" type="hidden" value="PATCH">
                                 <fieldset>
                                     <section>
                                         <label class="label">First Name</label>
                                         <label class="input">
-                                            <input type="text" maxlength="20" name="first_name" id="first_name">
+                                            <input value="{{$candidate->first_name}}" type="text" maxlength="20" name="first_name" id="first_name">
                                         </label>
                                     </section >
                                     <section>
                                         <label class="label">Middle Name</label>
                                         <label class="input">
-                                            <input type="text" maxlength="20" name="middle_name" id="middle_name">
+                                            <input value="{{$candidate->middle_name}}" type="text" maxlength="20" name="middle_name" id="middle_name">
                                         </label>
                                     </section>
                                     <section>
                                         <label class="label">last Name</label>
                                         <label class="input">
-                                            <input type="text" maxlength="20" id="last_name" name="last_name">
+                                            <input value="{{$candidate->last_name}}" type="text" maxlength="20" id="last_name" name="last_name">
                                         </label>
                                     </section>
                                     <section>
                                         <label class="label">Email</label>
                                         <label class="input">
-                                            <input type="text" id="email" name="email">
+                                            <input value="{{$candidate->email}}" type="text" id="email" name="email">
                                         </label>
                                     </section>
                                     <section>
@@ -61,23 +62,15 @@
                                         <label class="input">
                                             <input type="text" list="list">
                                             <datalist id="list">
-                                                <option value="Alexandra">Alexandra</option>
+                                                <option value="">Alexandra</option>
                                                 <option value="Alice">Alice</option>
-                                                <option value="Anastasia">Anastasia</option>
-                                                <option value="Avelina">Avelina</option>
-                                                <option value="Basilia">Basilia</option>
-                                                <option value="Beatrice">Beatrice</option>
-                                                <option value="Cassandra">Cassandra</option>
-                                                <option value="Cecil">Cecil</option>
-                                                <option value="Clemencia">Clemencia</option>
-
                                             </datalist> </label>
                                     </section>
                                     <section>
                                         <label class="label">Resume</label>
-                                            <div class="input input-file">
-                                                <span class="button"><input id="file2" type="file" name="cv_file_id" onchange="this.parentNode.nextSibling.value = this.value">Browse</span><input type="text"  placeholder="Include some files" readonly="">
-                                            </div>
+                                        <div class="input input-file">
+                                            <span class="button"><input id="file2" type="file" name="cv_file_id" onchange="this.parentNode.nextSibling.value = this.value">Browse</span><input type="text"  placeholder="Include some files" readonly="">
+                                        </div>
                                         <div class="note">
                                             <strong>Note:</strong> Accepts .docx, .doc, .odt, .pdf, .rtf, .txt up to 1MB
                                         </div>
@@ -85,13 +78,13 @@
                                     <section>
                                         <label class="label">KeyWord</label>
                                         <label class="input">
-                                            <input placeholder="Enter comma separated words..." type="text" maxlength="10">
+                                            <input value="{{$candidate->keywords}}" placeholder="Enter comma separated words..." type="text" maxlength="10">
                                         </label>
                                     </section>
                                     <section>
                                         <label class="label">Comment</label>
                                         <label class="textarea">
-                                            <textarea rows="3" class="custom-scroll"></textarea>
+                                            <textarea rows="3" class="custom-scroll">{{$candidate->comment}}</textarea>
                                         </label>
                                         <div class="note">
                                             <strong>Note:</strong> height of the textarea depends on the rows attribute.
@@ -99,7 +92,7 @@
                                     </section>
                                     <section class="col-lg-12">
                                         <label class="input"> <i class="icon-append fa fa-calendar"></i>
-                                            <input type="text" name="date-of-application" placeholder="Request activation on" class="datepicker">
+                                            <input value="{{$candidate->date_of_application}}" type="text" name="date-of-application" placeholder="Request activation on" class="datepicker">
                                         </label>
                                     </section>
                                 </fieldset>
@@ -161,7 +154,7 @@
                         maxlength : 20
                     },
                     middle_name : {
-                      required:true
+                        required:true
                     },
                     email:{
                         required : true,
@@ -178,7 +171,7 @@
                         required: 'Please enter your last name'
                     },
                     middle_name : {
-                      required:'Pleae inter middle name'
+                        required:'Pleae inter middle name'
                     },
                     email :{
                         required:'please enter correct email'

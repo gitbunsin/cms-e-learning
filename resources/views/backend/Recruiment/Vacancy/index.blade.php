@@ -49,9 +49,13 @@
                                         <td>{{$vacancies->job_title_code}}</td>
                                         <td>{{$vacancies->description}}</td>
                                         <td>{{$vacancies->status}}</td>
-                                        <td>
-                                            <a href=""><button class="btn btn-primary btn-xs" ><span class="glyphicon glyphicon-pencil"></span></button></a>
-                                            <a href=""><button class="btn btn-danger btn-xs" ><span class="glyphicon glyphicon-trash"></span></button></a>
+                                        <td  class="d-flex flex-row">
+                                            <a href="{{ url('administration/vacancy/' .$vacancies->id. '/edit') }}"><button class="btn btn-primary btn-xs" ><span class="glyphicon glyphicon-pencil"></span></button></a>
+                                            <form action="{{url('administration/vacancy/' .$vacancies->id)}}" method="post">
+                                                {{csrf_field()}}
+                                                <input name="_method" type="hidden" value="DELETE">
+                                                <a href="{{ url('administration/vacancy/' .$vacancies->id) }}"><button class="btn btn-danger btn-xs" ><span class="glyphicon glyphicon-trash"></span></button></a>
+                                            </form>
                                         </td>
                                     </tr>
                                 @endforeach

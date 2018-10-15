@@ -50,24 +50,14 @@
                                         <td>{{$jobs->job_description}}</td>
                                         <td>{{$jobs->note}}</td>
                                         <td>{{$jobs->is_deleted}}</td>
-                                        <td ng-repeat="c in page.columns" ng-style="{ width: c.Width + '%' }">
-                                            <span>
-                                               <a href="{{ url('administration/job/' . $jobs->id . '/edit') }}"><button class="btn btn-primary btn-xs" ><span class="glyphicon glyphicon-pencil"></span></button></a>
-                                                <button type="button" class="btn btn-primary"
-                                                        title="Select Financial Instrument" ng-click="selectCompanies()"
-                                                        style="float: right;">
-                                                    <i class="fa fa-pencil-square-o"></i>
-                                                </button>
-                                            </span>
+                                        <td  class="d-flex flex-row">
+                                            <a href="{{ url('administration/job/' . $jobs->id . '/edit') }}"><button class="btn btn-primary btn-xs" ><span class="glyphicon glyphicon-pencil"></span></button></a>
+                                            <form action="{{url('administration/job/' . $jobs->id)}}" method="post">
+                                                {{csrf_field()}}
+                                                <input name="_method" type="hidden" value="DELETE">
+                                                <a href="{{ url('administration/job/' . $jobs->id) }}"><button class="btn btn-danger btn-xs" ><span class="glyphicon glyphicon-trash"></span></button></a>
+                                            </form>
                                         </td>
-                                        {{--<td  class="d-flex flex-row">--}}
-                                        {{--<a href="{{ url('administration/job/' . $jobs->id . '/edit') }}"><button class="btn btn-primary btn-xs" ><span class="glyphicon glyphicon-pencil"></span></button></a>--}}
-                                        {{--<form action="{{url('administration/job/' . $jobs->id)}}" method="post">--}}
-                                        {{--{{csrf_field()}}--}}
-                                        {{--<input name="_method" type="hidden" value="DELETE">--}}
-                                        {{--<a href="{{ url('administration/job/' . $jobs->id) }}"><button class="btn btn-danger btn-xs" ><span class="glyphicon glyphicon-trash"></span></button></a>--}}
-                                        {{--</form>--}}
-                                        {{--</td>--}}
                                     </tr>
                                 @endforeach
                                 </tbody>

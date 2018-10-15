@@ -40,6 +40,46 @@
                                     <input id="email_emp" name="email_emp" type="email" class="form-control" placeholder="Email Id">
                                     <span class="text-danger">{{ $errors->first('email_emp') }}</span>
                                 </div>
+
+                                <select class="form-control">
+                                    <option value="#">Gender*</option>
+                                    <option value="#">London UK</option>
+                                    <option value="#">Newyork, USA</option>
+                                    <option value="#">Seoul, Korea</option>
+                                    <option value="#">Beijing, China</option>
+                                </select>
+                                <div class="form-group  {{ $errors->has('mobile_number') ? 'has-error' : '' }}">
+                                    <input id="mobile_number" name="mobile_number" type="text" class="form-control" placeholder="Url">
+                                    <span class="text-danger">{{ $errors->first('name') }}</span>
+                                </div>
+
+                                <div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
+                                    <textarea rows="4" class="form-control  " placeholder="Postal Address**" name="Company Profile*"></textarea>
+                                    <span class="text-danger">{{ $errors->first('email') }}</span>
+                                </div>
+                                <select class="form-control">
+                                    <option value="#">Current Resident City*</option>
+                                    <option value="#">London UK</option>
+                                    <option value="#">Newyork, USA</option>
+                                    <option value="#">Seoul, Korea</option>
+                                    <option value="#">Beijing, China</option>
+                                </select>
+
+                                <div class="form-group {{ $errors->has('confirm_password') ? 'has-error' : '' }}">
+                                    <input type="password" class="form-control" placeholder="phone" id="confirm_password"
+                                           name="confirm_password">
+                                    <span class="text-danger">{{ $errors->first('confirm_password') }}</span>
+                                </div>
+                                <div class="form-group {{ $errors->has('confirm_password') ? 'has-error' : '' }}">
+                                    <input type="password" class="form-control" placeholder="Residance Phone*" id="confirm_password"
+                                           name="confirm_password">
+                                    <span class="text-danger">{{ $errors->first('confirm_password') }}</span>
+                                </div>
+                                <div class="form-group {{ $errors->has('confirm_password') ? 'has-error' : '' }}">
+                                    <input type="password" class="form-control" placeholder="Mobile*" id="confirm_password"
+                                           name="confirm_password">
+                                    <span class="text-danger">{{ $errors->first('confirm_password') }}</span>
+                                </div>
                                 <div class="form-group  {{ $errors->has('password_emp') ? 'has-error' : '' }}">
                                     <input id="password_emp" name="password_emp" type="password" class="form-control" placeholder="Password">
                                     <span class="text-danger">{{ $errors->first('password_emp') }}</span>
@@ -48,18 +88,6 @@
                                     <input id="confirm_password_emp" name="confirm_password_emp" type="password" class="form-control" placeholder="Confirm Password">
                                     <span class="text-danger">{{ $errors->first('confirm_password_emp') }}</span>
                                 </div>
-                                {{--<div class="form-group  {{ $errors->has('mobile_number') ? 'has-error' : '' }}">--}}
-                                    {{--<input id="mobile_number" name="mobile_number" type="text" class="form-control" placeholder="Mobile Number">--}}
-                                    {{--<span class="text-danger">{{ $errors->first('name') }}</span>--}}
-                                {{--</div>--}}
-                                <!-- select -->
-                                {{--<select class="form-control">--}}
-                                {{--<option value="#">Select City</option>--}}
-                                {{--<option value="#">London UK</option>--}}
-                                {{--<option value="#">Newyork, USA</option>--}}
-                                {{--<option value="#">Seoul, Korea</option>--}}
-                                {{--<option value="#">Beijing, China</option>--}}
-                                {{--</select><!-- select -->--}}
 
                                 <div class="checkbox">
                                     <label class="pull-left checked" for="signing"><input type="checkbox" name="signing" id="signing"> By signing up for an account you agree to our Terms and Conditions </label>
@@ -78,6 +106,58 @@
                                     <input type="email" class="form-control" placeholder="Email Id" id="email" name="email">
                                     <span class="text-danger">{{ $errors->first('email') }}</span>
                                 </div>
+                                <div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
+                                    <input type="email" class="form-control" placeholder="Alternate Email" id="email" name="email">
+                                    <span class="text-danger">{{ $errors->first('email') }}</span>
+                                </div>
+                                <div class="form-group {{ $errors->has('Postal_Address') ? 'has-error' : '' }}">
+                                    <textarea rows="4" class="form-control  " placeholder="Postal Address*" name="Postal_Address*"></textarea>
+                                    <span class="text-danger">{{ $errors->first('Postal_Address') }}</span>
+                                </div>
+
+
+                                <select name="city" class="form-control">
+                                    <option value="#">Select City</option>
+                                    <option value="#">London UK</option>
+                                    <option value="#">Newyork, USA</option>
+                                    <option value="#">Seoul, Korea</option>
+                                    <option value="#">Beijing, China</option>
+                                </select>
+                                <div class="form-group  {{ $errors->has('Url') ? 'has-error' : '' }}">
+                                    <input id="mobile_number" name="mobile_number" type="text" class="form-control" placeholder="Url">
+                                    <span class="text-danger">{{ $errors->first('Url') }}</span>
+                                </div>
+                                <select name="main_business" class="form-control">
+                                    <option value="#">Main Business Area*</option>
+                                    <option value="#">London UK</option>
+                                    <option value="#">Newyork, USA</option>
+                                    <option value="#">Seoul, Korea</option>
+                                    <option value="#">Beijing, China</option>
+                                </select>
+
+                                <div class="form-group {{ $errors->has('Company_Profile') ? 'has-error' : '' }}">
+                                    <textarea  rows="4" class="form-control" placeholder="Company Profile*" name="Company_Profile"></textarea>
+                                    <span class="text-danger">{{ $errors->first('Company_Profile') }}</span>
+                                </div>
+                                <div class="form-group {{ $errors->has('confirm_password') ? 'has-error' : '' }}">
+                                    <input type="password" class="form-control" placeholder="phone" id="confirm_password"
+                                           name="confirm_password">
+                                    <span class="text-danger">{{ $errors->first('confirm_password') }}</span>
+                                </div>
+                                <div class="form-group {{ $errors->has('fax') ? 'has-error' : '' }}">
+                                    <input type="password" class="form-control" placeholder="fax" id="confirm_password"
+                                           name="confirm_password">
+                                    <span class="text-danger">{{ $errors->first('fax') }}</span>
+                                </div>
+                                <div class="form-group {{ $errors->has('confirm_password') ? 'has-error' : '' }}">
+                                    <input type="password" class="form-control" placeholder="Mobile" id="confirm_password"
+                                           name="confirm_password">
+                                    <span class="text-danger">{{ $errors->first('confirm_password') }}</span>
+                                </div>
+                                <div class="form-group {{ $errors->has('logo') ? 'has-error' : '' }}">
+                                    <input type="file" class="form-control" placeholder="logo" id="file" name="file">
+                                    <span class="text-danger">{{ $errors->first('logo') }}</span>
+                                </div>
                                 <div class="form-group {{ $errors->has('password') ? 'has-error' : '' }}">
                                     <input type="password" class="form-control" placeholder="Password" id="password" name="password">
                                     <span class="text-danger">{{ $errors->first('password') }}</span>
@@ -87,9 +167,6 @@
                                            name="confirm_password">
                                     <span class="text-danger">{{ $errors->first('confirm_password') }}</span>
                                 </div>
-                                {{--<div class="form-group">--}}
-                                {{--<input type="text" class="form-control" placeholder="Contact Number">--}}
-                                {{--</div>--}}
                                 <div class="checkbox">
                                     <label class="pull-left" for="signing-2"><input type="checkbox" name="signing-2" id="signing-2">By signing up for an account you agree to our Terms and Conditions</label>
                                 </div><!-- checkbox -->
