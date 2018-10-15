@@ -175,10 +175,9 @@
                 <a href="#"><i class="fa fa-lg fa-fw fa-pencil-square-o"></i><span class="menu-item-parent">Time</span></a>
             </li>
 
-            <li>
-                <a href="#"><i class="fa fa-lg fa-fw fa-pencil-square-o"></i> <span class="menu-item-parent">Recruitment</span></a>
-                <ul>
-                    <li>
+            <li {{ \Illuminate\Support\Facades\Auth::user()->s == "1" ? "open" : " " }}>
+                <a class="open" href="#"><i class="fa fa-lg fa-fw fa-pencil-square-o"></i> <span class="menu-item-parent">Recruitment</span></a>
+                    <li style="display: block">
                         <a href="">Query CV</a>
                     </li>
                     <li>

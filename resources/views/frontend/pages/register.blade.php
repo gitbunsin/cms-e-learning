@@ -70,10 +70,10 @@
                                            name="confirm_password">
                                     <span class="text-danger">{{ $errors->first('confirm_password') }}</span>
                                 </div>
-                                <div class="form-group {{ $errors->has('confirm_password') ? 'has-error' : '' }}">
+                                <div class="form-group {{ $errors->has('Residance_Phone') ? 'has-error' : '' }}">
                                     <input type="password" class="form-control" placeholder="Residance Phone*" id="confirm_password"
-                                           name="confirm_password">
-                                    <span class="text-danger">{{ $errors->first('confirm_password') }}</span>
+                                           name="Residance_Phone">
+                                    <span class="text-danger">{{ $errors->first('Residance_Phone') }}</span>
                                 </div>
                                 <div class="form-group {{ $errors->has('confirm_password') ? 'has-error' : '' }}">
                                     <input type="password" class="form-control" placeholder="Mobile*" id="confirm_password"

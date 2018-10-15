@@ -65,7 +65,7 @@
                                         <td>{{$candidates->comment}}</td>
                                         <td>{{$candidates->date_of_application}}</td>
                                         <td  class="d-flex flex-row">
-                                            <a href="{{ url('administration/candidate/' .$candidates->id. '/edit') }}"><button class="btn btn-primary btn-xs" ><span class="glyphicon glyphicon-pencil"></span></button></a>
+                gt                            <a href="{{ url('administration/candidate/' .$candidates->id. '/edit') }}"><button class="btn btn-primary btn-xs" ><span class="glyphicon glyphicon-pencil"></span></button></a>
                                             <form action="{{url('administration/candidate/' .$candidates->id)}}" method="post">
                                                 {{csrf_field()}}
                                                 <input name="_method" type="hidden" value="DELETE">
