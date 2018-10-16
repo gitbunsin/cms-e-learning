@@ -16,9 +16,7 @@ class JobController extends Controller
      */
     public function index()
     {
-        //
         $job = Job::all();
-        //dd($job);
         return view('backend.Recruiment.Job.index',compact('job'));
     }
 

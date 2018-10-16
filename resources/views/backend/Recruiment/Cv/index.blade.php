@@ -1,4 +1,3 @@
-
 @extends('backend.layouts.cms-layouts')
 @section('content')
     <section id="widget-grid" class="">
@@ -9,28 +8,17 @@
             <!-- NEW WIDGET START -->
             <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <div class="pull-right">
-                    <a href="{{url('administration/candidate/create')}}"><h4 class="alert-heading"><i style="font-size:30px;" class="fa fa-plus-square"></i></h4></a>
+                    <a href="{{url('administration/job/create')}}"><h4 class="alert-heading"><i style="font-size:30px;" class="fa fa-plus-square"></i></h4></a>
                 </div>
                 <br/><br/>
                 <!-- Widget ID (each widget will need unique ID)-->
                 <div class="jarviswidget jarviswidget-color-darken" id="wid-id-0" data-widget-editbutton="false">
-                    <!-- widget options:
-                    usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
-
-                    data-widget-colorbutton="false"
-                    data-widget-editbutton="false"
-                    data-widget-togglebutton="false"
-                    data-widget-deletebutton="false"
-                    data-widget-fullscreenbutton="false"
-                    data-widget-custombutton="false"
-                    data-widget-collapsed="true"
-                    data-widget-sortable="false"
-
-                    -->
                     <header>
                         <span class="widget-icon"> <i class="fa fa-table"></i> </span>
-                        <h2>List all Candidate</h2>
+                        <h2>List all Job title </h2>
+
                     </header>
+
 
                     <!-- widget div-->
                     <div>
@@ -48,29 +36,21 @@
                             <table id="dt_basic" class="table table-striped table-bordered table-hover" width="100%">
                                 <thead>
                                 <tr>
-                                    <th data-hide="phone">Vacany</th>
-                                    <th data-class="expand"><i class="fa fa-fw fa-user text-muted hidden-md hidden-sm hidden-xs"></i>Candidate</th>
-                                    <th data-hide="phone"><i class="fa fa-fw fa-phone text-muted hidden-md hidden-sm hidden-xs"></i>status</th>
-                                    <th data-hide="phone">commnet</th>
-                                    <th data-hide="date">Date-of-Application</th>
-                                    <th>Action</th>
+                                    <th data-hide="phone">CVs ID</th>
+                                    <th data-class="expand"><i class="fa fa-fw fa-user text-muted hidden-md hidden-sm hidden-xs"></i>Seekers Name</th>
+                                    <th data-hide="phone"><i class="fa fa-fw fa-phone text-muted hidden-md hidden-sm hidden-xs"></i>Photo</th>
+                                    <th data-hide="phone">Experiences</th>
+                                    <th>Download</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($candidate as $candidates)
+                                @foreach($Cv as $cvs)
                                     <tr>
-                                        <td>{{$candidates->first_name}}</td>
-                                        <td>{{$candidates->last_name}}</td>
-                                        <td>{{$candidates->status}}</td>
-                                        <td>{{$candidates->comment}}</td>
-                                        <td>{{$candidates->date_of_application}}</td>
-                                        <td style="display: flex;" class="flex">
-                                           <a href="{{ url('administration/candidate/' .$candidates->id. '/edit') }}"><button class="btn btn-primary btn-xs" ><span class="glyphicon glyphicon-pencil"></span></button></a>
-                                            <form action="{{url('administration/candidate/' .$candidates->id)}}" method="post">
-                                                {{csrf_field()}}
-                                                <input name="_method" type="hidden" value="DELETE">
-                                                <a href="{{ url('administration/candidate/' .$candidates->id) }}"><button class="btn btn-danger btn-xs" ><span class="glyphicon glyphicon-trash"></span></button></a>
-                                            </form>
+                                        <td>{{$cvs->id}}</td>
+                                        <td>{{$cvs->first_name}}{{$cvs->last_name}}</td>
+                                        <td><img width="100px;" height="70px;" src="/uploaded/{{ $cvs->file_name }}"></td>
+                                        <td>{{$cvs->file_type}}</td>
+                                        <td  class="lex">
                                         </td>
                                     </tr>
                                 @endforeach
@@ -82,6 +62,7 @@
             </article>
         </div>
     </section>
+
     <script data-pace-options='{ "restartOnRequestAfter": true }' src="js/plugin/pace/pace.min.js"></script>
 
     <!-- Link to Google CDN's jQuery + jQueryUI; fall back to local -->

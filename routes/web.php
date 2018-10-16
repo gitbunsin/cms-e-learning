@@ -31,6 +31,7 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'administration'], function 
     Route::resource('companyProfile', 'CompanyController');
     Route::resource('vacancy', 'VacanciesController');
     Route::resource('job','JobController');
+    Route::resource('cv','CvController');
 
 });
 

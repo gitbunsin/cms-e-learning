@@ -54,6 +54,9 @@ class CandidateController extends Controller
         $input  = Input::get('date-of-application');
         $dat_of_application = Carbon::parse($input )->format('Y-m-d');
         $candidate->date_of_application = $dat_of_application;
+        $candidate->save();
+        $id = $candidate->id;
+//        dd($id);
 //        $file = Input::file('cv_file_id');
         //dd($request->all());
         if ($request->hasFile('cv_file_id')) {
@@ -65,14 +68,14 @@ class CandidateController extends Controller
             $destinationPath = public_path('/uploaded');
             $image->move($destinationPath,$name);
             $CandidateAttachment = new CandidateAttachment();
-            $CandidateAttachment->candidate_id = 1;
+            $CandidateAttachment->candidate_id = $id;
             $CandidateAttachment->file_name = $name;
             $CandidateAttachment->file_size = $size;
             $CandidateAttachment->file_type = $type;
             $CandidateAttachment->save();
         }
 //         dd($request->all());
-        $candidate->save();
+
         return redirect('/administration/candidate');
     }
 

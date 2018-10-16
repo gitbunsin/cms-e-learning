@@ -37,13 +37,9 @@
                                         <label class="input">
                                             <input type="text" name="job_title" id="job_title" list="list">
                                             <datalist id="list">
-                                                <option value="Alexandra">Alexandra</option>
-                                                <option value="Alice">Alice</option>
-                                                <option value="Anastasia">Anastasia</option>
-                                                <option value="Avelina">Avelina</option>
-                                                <option value="Basilia">Basilia</option>
-                                                <option value="Beatrice">Beatrice</option>
-                                                <option value="Cassandra">Cassandra</option>
+                                                @foreach($items as $jobs)
+                                                <option value="{{$jobs->job_title}}"></option>
+                                                @endforeach
                                             </datalist> </label>
                                     </section>
                                     <section>
@@ -57,7 +53,7 @@
                                         <label class="input">
                                             <input type="text" list="list" id="hiring_manager" name="hiring_manager">
                                             <datalist id="list">
-                                                <option value="Alexandra">Alexandra</option>
+                                                <option value="Alexandra">Alexandra1</option>
                                                 <option value="Alice">Alice</option>
                                                 <option value="Anastasia">Anastasia</option>
                                             </datalist> </label>

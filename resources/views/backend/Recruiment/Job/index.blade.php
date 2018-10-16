@@ -15,7 +15,7 @@
                 <div class="jarviswidget jarviswidget-color-darken" id="wid-id-0" data-widget-editbutton="false">
                     <header>
                         <span class="widget-icon"> <i class="fa fa-table"></i> </span>
-                        <h2>List all Job title </h2>
+                        <h2> List all Query CVs</h2>
 
                     </header>
 
@@ -50,7 +50,7 @@
                                         <td>{{$jobs->job_description}}</td>
                                         <td>{{$jobs->note}}</td>
                                         <td>{{$jobs->is_deleted}}</td>
-                                        <td  class="d-flex flex-row">
+                                        <td style="display: flex;"  class="flex">
                                             <a href="{{ url('administration/job/' . $jobs->id . '/edit') }}"><button class="btn btn-primary btn-xs" ><span class="glyphicon glyphicon-pencil"></span></button></a>
                                             <form action="{{url('administration/job/' . $jobs->id)}}" method="post">
                                                 {{csrf_field()}}

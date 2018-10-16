@@ -46,15 +46,15 @@
                                 @foreach($vacancy as $vacancies)
                                     <tr>
                                         <td>{{$vacancies->name}}</td>
-                                        <td>{{$vacancies->job_title_code}}</td>
+                                        <td>{{$vacancies->job_title}}</td>
                                         <td>{{$vacancies->description}}</td>
                                         <td>{{$vacancies->status}}</td>
-                                        <td  class="d-flex flex-row">
+                                        <td style="display: flex;" class="flex">
                                             <a href="{{ url('administration/vacancy/' .$vacancies->id. '/edit') }}"><button class="btn btn-primary btn-xs" ><span class="glyphicon glyphicon-pencil"></span></button></a>
                                             <form action="{{url('administration/vacancy/' .$vacancies->id)}}" method="post">
                                                 {{csrf_field()}}
                                                 <input name="_method" type="hidden" value="DELETE">
-                                                <a href="{{ url('administration/vacancy/' .$vacancies->id) }}"><button class="btn btn-danger btn-xs" ><span class="glyphicon glyphicon-trash"></span></button></a>
+                                                <a  href="{{ url('administration/vacancy/' .$vacancies->id )}}"  ><button class=" deleteProduct btn btn-danger btn-xs glyphicon glyphicon-trash"></button></a>
                                             </form>
                                         </td>
                                     </tr>
@@ -85,6 +85,8 @@
         }
     </script>
     <script type="text/javascript">
+
+
 
         // DO NOT REMOVE : GLOBAL FUNCTIONS!
 

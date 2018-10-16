@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
+use App\Job;
 use Illuminate\Http\Request;
 use App\Vacancy;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;
 
@@ -16,7 +18,13 @@ class VacanciesController extends Controller
      */
     public function index()
     {
-        $vacancy = Vacancy::all();
+//        $vacancy = Vacancy::all();
+
+        $vacancy = DB::table('tbl_job_vacancy')
+            ->join('tbl_job_title', 'tbl_job_vacancy.job_title_code', '=', 'tbl_job_title.id')
+            ->select('tbl_job_vacancy.*', 'tbl_job_title.job_title')
+            ->get();
+//        dd($vacancy);
         //dd($vacancy);
         return view('backend.Recruiment.Vacancy.index',compact('vacancy'));
     }
@@ -29,7 +37,8 @@ class VacanciesController extends Controller
     public function create()
     {
         //
-        return view('backend.Recruiment.Vacancy.create');
+        $items = Job::all();
+        return view('backend.Recruiment.Vacancy.create',compact('items'));
     }
 
     /**
@@ -110,6 +119,7 @@ class VacanciesController extends Controller
         $vacancy = Vacancy::findOrFail($id);
         $vacancy->delete();
         Session::flash('alert-danger', 'Job successfully deleted!');
-        return redirect('/administration/candidate');
+        return redirect('/administration/vacancy');
+
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Illuminate\Auth\EloquentUserProvider;
 use Illuminate\Database\Eloquent\Model;
 
 class Vacancy extends Model
