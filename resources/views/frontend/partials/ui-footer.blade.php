@@ -64,7 +64,7 @@
 
     <div class="footer-bottom clearfix text-center">
         <div class="container">
-            <p>Copyright © <a href="https://demo.themeregion.com/jobs-updated/signup.html#">Jobs</a> 2017. Developed by <a href="http://themeregion.com/">ThemeRegion</a></p>
+            <p>Copyright © <a href="#">Jobs</a>ReaMea Technologies Co.,LTD <a href="http://themeregion.com/">Registered No : 789AQN/SA</a></p>
         </div>
     </div><!-- footer-bottom -->
 </footer><!-- footer -->

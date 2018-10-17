@@ -24,7 +24,7 @@
 					<div class="user-account">
 						<h2>User Login</h2>
 						<!-- form -->
-						<form enctype="multipart/form-data"  method="POST" action="/singin">
+						<form enctype="multipart/form-data"  method="POST" action="/ui/singin">
 							{{ csrf_field() }}
 							<div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
 								<input type="text" class="form-control" placeholder="email" id="email" name="email">

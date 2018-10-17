@@ -21,6 +21,7 @@ Auth::routes();
 Route::get('/administration' ,'Backend\BackendController@index');
 
 
+
 /************************************************************************************
  *                                  Backend routes
  ************************************************************************************/
@@ -39,14 +40,15 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'administration'], function 
  *                                  Frontend routes
  ************************************************************************************/
 
-Route::group(['namespace' => 'Frontend'], function () {
+Route::group(['namespace' => 'Frontend','prefix'=>'ui'], function () {
     Route::get('/', function () {
         return redirect('ui');
     });
 
     Route::get('/posts', 'UiController@posts');
 //    Route::get('/registers', 'UiController@register');
-    Route::get('/job', 'UiController@job');
+    Route::resource('jobs', 'JobController');
+    Route::post('/search','UiController@scopeSearch');
     Route::get('/lists', 'UiController@lists');
     Route::get('/policy', 'UiController@policy');
     Route::get('/singin', 'UiController@singin');
@@ -57,8 +59,8 @@ Route::group(['namespace' => 'Frontend'], function () {
 
 
 
-
 Route::get('/ui', 'Frontend\UiController@index');
+
 
 
 //Route::post('registers', 'RegistrationController@store');

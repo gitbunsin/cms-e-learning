@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Ticket;
+use App\JobCategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 
@@ -15,8 +15,8 @@ class TicketController extends Controller
      */
     public function index()
     {
-        $tickets = Ticket::where('user_id', auth()->user()->id)->get();
-        $all = Ticket::all();
+        $tickets = JobCategory::where('user_id', auth()->user()->id)->get();
+        $all = JobCategory::all();
 
         return view('user.index',compact('tickets'));
     }
@@ -42,7 +42,7 @@ class TicketController extends Controller
             'description'=>'required',
             'title'=> 'required'
         ]);
-        $ticket = new Ticket();
+        $ticket = new JobCategory();
 //        $data['user_id'] = 4;
 //        $data['title'] = $request->input('title');
 //        $data['description'] = $request->input('description');
@@ -58,7 +58,7 @@ class TicketController extends Controller
      */
     public function edit($id)
     {
-        $ticket = Ticket::where('user_id', auth()->user()->id)
+        $ticket = JobCategory::where('user_id', auth()->user()->id)
             ->where('id', $id)
             ->first();
 
@@ -74,7 +74,7 @@ class TicketController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $ticket = new Ticket();
+        $ticket = new JobCategory();
         $data = $this->validate($request, [
             'description'=>'required',
             'title'=> 'required'
@@ -94,9 +94,9 @@ class TicketController extends Controller
      */
     public function destroy($id)
     {
-        $ticket = Ticket::find($id);
+        $ticket = JobCategory::find($id);
         $ticket->delete();
 
-        return redirect('/home')->with('success', 'Ticket has been deleted!!');
+        return redirect('/home')->with('success', 'JobCategory has been deleted!!');
     }
 }

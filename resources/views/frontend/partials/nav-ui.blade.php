@@ -18,8 +18,7 @@
                 <div class="collapse navbar-collapse" id="navbar-collapse">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="http://localhost:8000/ui">Home</a></li>
-                        <li><a href="http://localhost:8000/lists">Job list</a></li>
-                        <li><a href="http://localhost:8000/job">Job Details</a></li>
+                        <li><a href="http://localhost:8000/ui/lists">Job list</a></li>
                         <li><a href="http://localhost:8000/uiresume.html">Resume</a></li>
                         <li class="dropdown"><a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">Pages<span class="caret"></span></a>
                             <ul class="dropdown-menu">
@@ -39,8 +38,8 @@
             <div class="nav-right">
                 <ul class="sign-in">
                     <li><i class="fa fa-user"></i></li>
-                    <li><a href="http://localhost:8000/singin">Sign In</a></li>
-                    <li><a href="{{ url('registers/create') }}">Register</a></li>
+                    <li><a href="http://localhost:8000/ui/singin">Sign In</a></li>
+                    <li><a href="{{ url('ui/registers/create') }}">Register</a></li>
                 </ul><!-- sign-in -->
 
                 <a href="http://localhost:8000/posts" class="btn">Post Your Job</a>

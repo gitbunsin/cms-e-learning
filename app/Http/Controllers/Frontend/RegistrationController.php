@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use App\Employer;
 use App\Http\Controllers\Controller;
 
 
 //use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 use App\User;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Input;
 use Prophecy\Exception\Doubler\InterfaceNotFoundException;
 use Session;
@@ -44,46 +46,59 @@ class RegistrationController extends Controller
      */
     public function store(Request $request)
     {
-//        $hello ="Hello";
-//        dd($hello);
         $this->validate(request(), [
             'name' => 'required',
             'email' => 'required|email',
-//            'Postal_Address'=>'required',
+            'Postal_Address'=>'required',
 //            'Url'=>'required',
-//            'Company_Profile'=>'required',
+            'Company_Profile'=>'required',
             'password' => 'required|min:3|max:20',
             'confirm_password' => 'required|min:3|max:20|same:password',
         ]);
-        $user = new User();
-//        dd($user);
-        $user->name = Input::get('name');
-        $user->email = Input::get('email');
-        $user->password = Input::get('password');
-        $user->status = 1;
-        $user->save();
-        Session::put('user_data', $user);
-       // dd($user)
-//        auth()->login($user);
-     return redirect('/administration');
+//        dd('I am here');
+        $employer = new Employer();
+        $employer->name = Input::get('name');
+        $employer->email = Input::get('email');
+        $employer->postal_address = Input::get('Postal_Address');
+        $employer->note = Input::get('Company_Profile');
+        $employer->city = Input::get('fax');
+        $employer->mobile = Input::get('mobile');
+        $employer->phone = Input::get('phone');
+        $employer->website = Input::get('Url');
+        $employer->pwd = Hash::make(Input::get('password'));
+        $employer->status = 1;
+//        dd($employer);
+        $employer->save();
+        Session::put('user_data', $employer);
+//       // dd($user)
+////        auth()->login($user);
+       return redirect('/administration');
 
     }
     public  function RegisterEmployee()
     {
         $this->validate(request(), [
-            'email_emp' => 'required',
+            'employee_name' => 'required',
             'email_emp' => 'required|email',
+            'Residance_Phone'=>'required',
+            'postal_address_emp'=>'required',
+            'url_emp'=>'required',
             'password_emp' => 'required|min:3|max:20',
             'confirm_password_emp' => 'required|min:3|max:20|same:password_emp',
 //            'mobile_number' =>'required',
         ]);
-        $employee_user = new User();
-        $employee_user->name = Input::get('email_emp');
-        $employee_user->email = Input::get('email_emp');
-        $employee_user->password = Input::get('password_emp');
-        $employee_user->status = 0;
-        $employee_user->save();
-     return redirect('/lists');
+//        dd('hello');
+        $employee = new User();
+        $employee->full_name = Input::get('employee_name');
+        $employee->user_email = Input::get('email_emp');
+        $employee->address = Input::get('postal_address_emp');
+        $employee->mobile = Input::get('mobile_emp');
+        $employee->tel = Input::get('phone_emp');
+        $employee->website = Input::get('url_emp');
+        $employee->pwd = Hash::make(Input::get('password_emp'));
+        $employee->status = 0;
+        $employee->save();
+     return redirect('ui/lists');
     }
         //
 

@@ -56,9 +56,10 @@ class JobController extends Controller
      * @param  \App\Job  $job
      * @return \Illuminate\Http\Response
      */
-    public function show(Job $job)
+    public function show($id)
     {
-        //
+
+       return view('backend.Recruiment.Job.');
     }
 
     /**

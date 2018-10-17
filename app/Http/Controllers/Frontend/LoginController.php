@@ -21,7 +21,6 @@ class LoginController extends Controller
      */
    public function singin(Request $request)
    {
-
       // TODO: Integrateion login user
            $rules = array(
                'email'    =>  'required',
@@ -33,7 +32,7 @@ class LoginController extends Controller
            $messages = $validate_admin_login->messages();
 
            $request->Session()->flash('alert-warning','Error: Incomplete details!');
-           return Redirect('/singin')
+           return Redirect('ui/singin')
                ->withErrors($messages)
                ->withInput(Input::except('password'));
        } else {
@@ -42,15 +41,16 @@ class LoginController extends Controller
                Input::get('email'), Hash::make(Input::get('password'))
            );
            $validate_admin = DB::table('users')
-               ->select('email','password','status')
-               ->where('email', Input::get('email'))
+               ->select('user_name','pwd','status')
+               ->where('user_name', Input::get('email'))
                ->first();
+//           dd($validate_admin);
            if($validate_admin->status == 1){
                if ($validate_admin && Hash::check(Input::get('password'), $validate_admin->password)) {
                  return redirect('/administration');
                }
            }elseif ($validate_admin->status == 0){
-              return redirect('/lists');
+              return redirect('ui/lists');
            }
        }
    }

@@ -4,9 +4,13 @@ namespace App\Http\Controllers\Frontend;
 
 // use Illuminate\Support\Facades\Input;
 // use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Backend\JobController;
+use App\Job;
+use App\JobCategory;
 use Illuminate\Http\Request;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 
 class UiController extends Controller
 {
@@ -18,8 +22,24 @@ class UiController extends Controller
     public function index()
     {
 
-        return view('frontend.layouts.ui-main');
+        $JobCategory = JobCategory::all();
+        $JobTitle = (new \App\Job)->paginate(2);
+        return view('frontend.layouts.ui-main',compact('JobCategory','JobTitle'));
         //
+    }
+
+    public function scopeSearch(Request $request)
+    {
+        $searchTerm = $request->input('searchTerm');
+//         dd($searchTerm);
+        $JobTitle = DB::table('tbl_job_title')
+            ->where('job_title', 'like', '%' .$searchTerm. '%')
+            ->orWhere('job_description', 'like', '%' .$searchTerm. '%')
+            ->get();
+//        dd($JobTitle);
+        $JobCategory = JobCategory::all();
+//        return redirect('/ui',compact('JobTitle','JobCategory'));
+        return redirect('/ui')->with(compact('JobTitle','JobCategory'));
     }
     /**
      * Display a listing of the resource.
@@ -30,10 +50,10 @@ class UiController extends Controller
     {
         return view('frontend.pages.postjob');
     }
-    public function job()
-    {
-        return view('frontend.pages.Jobs');
-    }
+//    public function job()
+//    {
+//        return view('frontend.pages.Jobs');
+//    }
     public  function lists()
     {
 
@@ -79,6 +99,8 @@ class UiController extends Controller
     public function show($id)
     {
         //
+        return view('frontend.pages.Jobs');
+
     }
 
     /**

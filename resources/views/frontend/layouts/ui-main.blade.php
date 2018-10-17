@@ -24,14 +24,15 @@
         <h1 class="title">The Easiest Way to Get Your New Job</h1>
         <h3>We offer 12000 jobs vacation right now</h3>
         <div class="banner-form">
-            <form action="https:http://localhost:8000/uiindex.html#">
-                <input type="text" class="form-control" placeholder="Type your key word">
+            <form method="POST" action="{{url('ui/search')}}">
+                <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
+                <input name="searchTerm" id="search" type="text" class="form-control" placeholder="Type your key word">
                 <div class="dropdown category-dropdown">
-                    <a data-toggle="dropdown" href="https:http://localhost:8000/uiindex.html#"><span class="change-text">Job Location</span> <i class="fa fa-angle-down"></i></a>
+                    <a data-toggle="dropdown" href="#" aria-expanded="false"><span class="change-text">Job Category</span> <i class="fa fa-angle-down"></i></a>
                     <ul class="dropdown-menu category-change">
-                        <li><a href="https:http://localhost:8000/uiindex.html#">Location 1</a></li>
-                        <li><a href="https:http://localhost:8000/uiindex.html#">Location 2</a></li>
-                        <li><a href="https:http://localhost:8000/uiindex.html#">Location 3</a></li>
+                         @foreach($JobCategory as $JobCategorys)
+                        <li><a href="#">{{$JobCategorys->name}}</a></li>
+                        @endforeach
                     </ul>
                 </div><!-- category-change -->
                 <button type="submit" class="btn btn-primary" value="Search">Search</button>
@@ -55,115 +56,11 @@
                 <h4>Latest Jobs</h4>
                 <!-- Nav tabs -->
                 <ul class="nav nav-tabs" role="tablist">
-                    <li role="presentation"><a href="https:http://localhost:8000/uiindex.html#hot-jobs" data-toggle="tab">Hot Jobs</a></li>
                     <li role="presentation"><a href="https:http://localhost:8000/uiindex.html#recent-jobs" data-toggle="tab">Recent Jobs</a></li>
-                    <li role="presentation" class="active"><a href="https:http://localhost:8000/uiindex.html#popular-jobs" data-toggle="tab">Popular Jobs</a></li>
                 </ul>
             </div>
 
             <div class="tab-content">
-                <div role="tabpanel" class="tab-pane fade in" id="hot-jobs">
-                    <div class="job-ad-item">
-                        <div class="item-info">
-                            <div class="item-image-box">
-                                <div class="item-image">
-                                    <a href="https:http://localhost:8000/uijob-details.html"><img src="/img/3(1).png" alt="Image" class="img-responsive"></a>
-                                </div><!-- item-image -->
-                            </div>
-
-                            <div class="ad-info">
-                                <span><a href="https:http://localhost:8000/uijob-details.html" class="title">CTO</a> @ <a href="https:http://localhost:8000/uiindex.html#">Volja Events &amp; Entertainment</a></span>
-                                <div class="ad-meta">
-                                    <ul>
-                                        <li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-map-marker" aria-hidden="true"></i>San Francisco, CA, US </a></li>
-                                        <li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-clock-o" aria-hidden="true"></i>Full Time</a></li>
-                                        <li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-money" aria-hidden="true"></i>$25,000 - $35,000</a></li>
-                                        <li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-tags" aria-hidden="true"></i>HR/Org. Development</a></li>
-                                    </ul>
-                                </div><!-- ad-meta -->
-                            </div><!-- ad-info -->
-                            <div class="button">
-                                <a href="https:http://localhost:8000/uiindex.html#" class="btn btn-primary">Apply Now</a>
-                            </div>
-                        </div><!-- item-info -->
-                    </div><!-- ad-item -->
-
-                    <div class="job-ad-item">
-                        <div class="item-info">
-                            <div class="item-image-box">
-                                <div class="item-image">
-                                    <a href="https:http://localhost:8000/uijob-details.html"><img src="/img/1(1).png" alt="Image" class="img-responsive"></a>
-                                </div><!-- item-image -->
-                            </div>
-
-                            <div class="ad-info">
-                                <span><a href="http://localhost:8000/job" class="title">Project Manager</a> @ <a href="https:http://localhost:8000/uiindex.html#">Dominos Pizza</a></span>
-                                <div class="ad-meta">
-                                    <ul>
-                                        <li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-map-marker" aria-hidden="true"></i>San Francisco, CA, US </a></li>
-                                        <li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-clock-o" aria-hidden="true"></i>Full Time</a></li>
-                                        <li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-money" aria-hidden="true"></i>$25,000 - $35,000</a></li>
-                                        <li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-tags" aria-hidden="true"></i>HR/Org. Development</a></li>
-                                    </ul>
-                                </div><!-- ad-meta -->
-                            </div><!-- ad-info -->
-                            <div class="button">
-                                <a href="https:http://localhost:8000/uiindex.html#" class="btn btn-primary">Apply Now</a>
-                            </div>
-                        </div><!-- item-info -->
-                    </div><!-- ad-item -->
-
-                    <div class="job-ad-item">
-                        <div class="item-info">
-                            <div class="item-image-box">
-                                <div class="item-image">
-                                    <a href="https:http://localhost:8000/uijob-details.html"><img src="/img/2(1).png" alt="Image" class="img-responsive"></a>
-                                </div><!-- item-image -->
-                            </div>
-
-                            <div class="ad-info">
-                                <span><a href="http://localhost:8000/job" class="title">Graphics Designer</a> @ <a href="https:http://localhost:8000/uiindex.html#">AOK Security</a></span>
-                                <div class="ad-meta">
-                                    <ul>
-                                        <li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-map-marker" aria-hidden="true"></i>San Francisco, CA, US </a></li>
-                                        <li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-clock-o" aria-hidden="true"></i>Full Time</a></li>
-                                        <li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-money" aria-hidden="true"></i>$25,000 - $35,000</a></li>
-                                        <li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-tags" aria-hidden="true"></i>HR/Org. Development</a></li>
-                                    </ul>
-                                </div><!-- ad-meta -->
-                            </div><!-- ad-info -->
-                            <div class="button">
-                                <a href="https:http://localhost:8000/uiindex.html#" class="btn btn-primary">Apply Now</a>
-                            </div>
-                        </div><!-- item-info -->
-                    </div><!-- ad-item -->
-
-                    <div class="job-ad-item">
-                        <div class="item-info">
-                            <div class="item-image-box">
-                                <div class="item-image">
-                                    <a href="https:http://localhost:8000/uijob-details.html"><img src="/img/4(1).png" alt="Image" class="img-responsive"></a>
-                                </div><!-- item-image -->
-                            </div>
-
-                            <div class="ad-info">
-                                <span><a href="http://localhost:8000/job" class="title">Human Resource Manager</a> @ <a href="https:http://localhost:8000/uiindex.html#">Dropbox Inc</a></span>
-                                <div class="ad-meta">
-                                    <ul>
-                                        <li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-map-marker" aria-hidden="true"></i>San Francisco, CA, US </a></li>
-                                        <li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-clock-o" aria-hidden="true"></i>Full Time</a></li>
-                                        <li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-money" aria-hidden="true"></i>$25,000 - $35,000</a></li>
-                                        <li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-tags" aria-hidden="true"></i>HR/Org. Development</a></li>
-                                    </ul>
-                                </div><!-- ad-meta -->
-                            </div><!-- ad-info -->
-                            <div class="button">
-                                <a href="https:http://localhost:8000/uiindex.html#" class="btn btn-primary">Apply Now</a>
-                            </div>
-                        </div><!-- item-info -->
-                    </div><!-- ad-item -->
-                </div><!-- tab-pane -->
-
                 <div role="tabpanel" class="tab-pane fade in" id="recent-jobs">
 
                     <div class="job-ad-item">
@@ -225,32 +122,7 @@
                             </div>
 
                             <div class="ad-info">
-                                <span><a href="http://localhost:8000/job" class="title">Human Resource Manager</a> @ <a href="https:http://localhost:8000/uiindex.html#">Dropbox Inc</a></span>
-                                <div class="ad-meta">
-                                    <ul>
-                                        <li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-map-marker" aria-hidden="true"></i>San Francisco, CA, US </a></li>
-                                        <li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-clock-o" aria-hidden="true"></i>Full Time</a></li>
-                                        <li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-money" aria-hidden="true"></i>$25,000 - $35,000</a></li>
-                                        <li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-tags" aria-hidden="true"></i>HR/Org. Development</a></li>
-                                    </ul>
-                                </div><!-- ad-meta -->
-                            </div><!-- ad-info -->
-                            <div class="button">
-                                <a href="https:http://localhost:8000/uiindex.html#" class="btn btn-primary">Apply Now</a>
-                            </div>
-                        </div><!-- item-info -->
-                    </div><!-- ad-item -->
-
-                    <div class="job-ad-item">
-                        <div class="item-info">
-                            <div class="item-image-box">
-                                <div class="item-image">
-                                    <a href="https:http://localhost:8000/uijob-details.html"><img src="/img/3(1).png" alt="Image" class="img-responsive"></a>
-                                </div><!-- item-image -->
-                            </div>
-
-                            <div class="ad-info">
-                                <span><a href="http://localhost:8000/job" class="title">CTO</a> @ <a href="https:http://localhost:8000/uiindex.html#">Volja Events &amp; Entertainment</a></span>
+                                <span><a href="#" class="title">Human Resource Manager</a> @ <a href="https:http://localhost:8000/uiindex.html#">Dropbox Inc</a></span>
                                 <div class="ad-meta">
                                     <ul>
                                         <li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-map-marker" aria-hidden="true"></i>San Francisco, CA, US </a></li>
@@ -266,7 +138,7 @@
                         </div><!-- item-info -->
                     </div><!-- ad-item -->
                 </div><!-- tab-pane -->
-
+       @foreach($JobTitle as $JobTitles)
                 <div role="tabpanel" class="tab-pane fade in active" id="popular-jobs">
                     <div class="job-ad-item">
                         <div class="item-info">
@@ -277,82 +149,7 @@
                             </div>
 
                             <div class="ad-info">
-                                <span><a href="http://localhost:8000/job" class="title">Project Manager</a> @ <a href="https:http://localhost:8000/uiindex.html#">Dominos Pizza</a></span>
-                                <div class="ad-meta">
-                                    <ul>
-                                        <li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-map-marker" aria-hidden="true"></i>San Francisco, CA, US </a></li>
-                                        <li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-clock-o" aria-hidden="true"></i>Full Time</a></li>
-                                        <li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-money" aria-hidden="true"></i>$25,000 - $35,000</a></li>
-                                        <li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-tags" aria-hidden="true"></i>HR/Org. Development</a></li>
-                                    </ul>
-                                </div><!-- ad-meta -->
-                            </div><!-- ad-info -->
-                            <div class="button">
-                                <a href="https:http://localhost:8000/uiindex.html#" class="btn btn-primary">Apply Now</a>
-                            </div>
-                        </div><!-- item-info -->
-                    </div><!-- ad-item -->
-
-                    <div class="job-ad-item">
-                        <div class="item-info">
-                            <div class="item-image-box">
-                                <div class="item-image">
-                                    <a href="https:http://localhost:8000/uijob-details.html"><img src="/img/2(1).png" alt="Image" class="img-responsive"></a>
-                                </div><!-- item-image -->
-                            </div>
-
-                            <div class="ad-info">
-                                <span><a href="http://localhost:8000/job" class="title">Graphics Designer</a> @ <a href="https:http://localhost:8000/uiindex.html#">AOK Security</a></span>
-                                <div class="ad-meta">
-                                    <ul>
-                                        <li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-map-marker" aria-hidden="true"></i>San Francisco, CA, US </a></li>
-                                        <li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-clock-o" aria-hidden="true"></i>Full Time</a></li>
-                                        <li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-money" aria-hidden="true"></i>$25,000 - $35,000</a></li>
-                                        <li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-tags" aria-hidden="true"></i>HR/Org. Development</a></li>
-                                    </ul>
-                                </div><!-- ad-meta -->
-                            </div><!-- ad-info -->
-                            <div class="button">
-                                <a href="https:http://localhost:8000/uiindex.html#" class="btn btn-primary">Apply Now</a>
-                            </div>
-                        </div><!-- item-info -->
-                    </div><!-- ad-item -->
-
-                    <div class="job-ad-item">
-                        <div class="item-info">
-                            <div class="item-image-box">
-                                <div class="item-image">
-                                    <a href="https:http://localhost:8000/uijob-details.html"><img src="/img/3(1).png" alt="Image" class="img-responsive"></a>
-                                </div><!-- item-image -->
-                            </div>
-
-                            <div class="ad-info">
-                                <span><a href="http://localhost:8000/job" class="title">CTO</a> @ <a href="https:http://localhost:8000/uiindex.html#">Volja Events &amp; Entertainment</a></span>
-                                <div class="ad-meta">
-                                    <ul>
-                                        <li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-map-marker" aria-hidden="true"></i>San Francisco, CA, US </a></li>
-                                        <li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-clock-o" aria-hidden="true"></i>Full Time</a></li>
-                                        <li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-money" aria-hidden="true"></i>$25,000 - $35,000</a></li>
-                                        <li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-tags" aria-hidden="true"></i>HR/Org. Development</a></li>
-                                    </ul>
-                                </div><!-- ad-meta -->
-                            </div><!-- ad-info -->
-                            <div class="button">
-                                <a href="https:http://localhost:8000/uiindex.html#" class="btn btn-primary">Apply Now</a>
-                            </div>
-                        </div><!-- item-info -->
-                    </div><!-- ad-item -->
-
-                    <div class="job-ad-item">
-                        <div class="item-info">
-                            <div class="item-image-box">
-                                <div class="item-image">
-                                    <a href="https:http://localhost:8000/uijob-details.html"><img src="/img/3(1).png" alt="Image" class="img-responsive"></a>
-                                </div><!-- item-image -->
-                            </div>
-
-                            <div class="ad-info">
-                                <span><a href="http://localhost:8000/job" class="title">Human Resource Manager</a> @ <a href="https:http://localhost:8000/uiindex.html#">Dropbox Inc</a></span>
+                                <span><a target="_blank" href="{{url('ui/jobs/'.$JobTitles->id)}}" class="title">{{$JobTitles->job_title}}</a></span>
                                 <div class="ad-meta">
                                     <ul>
                                         <li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-map-marker" aria-hidden="true"></i>San Francisco, CA, US </a></li>
@@ -368,6 +165,23 @@
                         </div><!-- item-info -->
                     </div><!-- ad-item -->
                 </div><!-- tab-pane -->
+           @endforeach
+                <div class="row">
+                    <div class="pull-right">
+                            <!-- Only for numbers -->
+                         {{ $JobTitle->links() }}
+                    </div>
+                </div>
+                <div class="row" style="background-color:#f1e1d1; padding:7px;">
+                    <div class="col-lg-6 "></div>
+                    <div class="col-lg-6 ">
+                        <div class="pull-right">
+                            Page: <label>
+                                <input type='number' class="form-control" min="1" max="{{}}" style='width:70px;' />
+                            </label>
+                        </div>
+                    </div>
+                </div>
             </div><!-- tab-content -->
         </div><!-- trending ads -->
 
@@ -511,76 +325,7 @@
 </section><!-- download -->
 
 <!-- footer -->
-<footer id="footer" class="clearfix">
-    <!-- footer-top -->
-    <section class="footer-top clearfix">
-        <div class="container">
-            <div class="row">
-                <!-- footer-widget -->
-                <div class="col-sm-3">
-                    <div class="footer-widget">
-                        <h3>Quik Links</h3>
-                        <ul>
-                            <li><a href="https:http://localhost:8000/uiindex.html#">About Us</a></li>
-                            <li><a href="https:http://localhost:8000/uiindex.html#">Contact Us</a></li>
-                            <li><a href="https:http://localhost:8000/uiindex.html#">Careers</a></li>
-                            <li><a href="https:http://localhost:8000/uiindex.html#">All Cities</a></li>
-                            <li><a href="https:http://localhost:8000/uiindex.html#">Help &amp; Support</a></li>
-                            <li><a href="https:http://localhost:8000/uiindex.html#">Advertise With Us</a></li>
-                        </ul>
-                    </div>
-                </div><!-- footer-widget -->
-
-                <!-- footer-widget -->
-                <div class="col-sm-3">
-                    <div class="footer-widget">
-                        <h3>How to sell fast</h3>
-                        <ul>
-                            <li><a href="https:http://localhost:8000/uiindex.html#">How to sell fast</a></li>
-                            <li><a href="https:http://localhost:8000/uiindex.html#">Membership</a></li>
-                            <li><a href="https:http://localhost:8000/uiindex.html#">Banner Advertising</a></li>
-                            <li><a href="https:http://localhost:8000/uiindex.html#">Promote your ad</a></li>
-                            <li><a href="https:http://localhost:8000/uiindex.html#">Jobs Delivers</a></li>
-                            <li><a href="https:http://localhost:8000/uiindex.html#">FAQ</a></li>
-                        </ul>
-                    </div>
-                </div><!-- footer-widget -->
-
-                <!-- footer-widget -->
-                <div class="col-sm-3">
-                    <div class="footer-widget social-widget">
-                        <h3>Follow us on</h3>
-                        <ul>
-                            <li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-facebook-official"></i>Facebook</a></li>
-                            <li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-twitter-square"></i>Twitter</a></li>
-                            <li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-google-plus-square"></i>Google+</a></li>
-                            <li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-youtube-play"></i>youtube</a></li>
-                        </ul>
-                    </div>
-                </div><!-- footer-widget -->
-
-                <!-- footer-widget -->
-                <div class="col-sm-3">
-                    <div class="footer-widget news-letter">
-                        <h3>Newsletter</h3>
-                        <p>Jobs is Worldest leading Portal platform that brings!</p>
-                        <!-- form -->
-                        <form action="https:http://localhost:8000/uiindex.html#">
-                            <input type="email" class="form-control" placeholder="Your email id">
-                            <button type="submit" class="btn btn-primary">Sign Up</button>
-                        </form><!-- form -->
-                    </div>
-                </div><!-- footer-widget -->
-            </div><!-- row -->
-        </div><!-- container -->
-    </section><!-- footer-top -->
-
-    <div class="footer-bottom clearfix text-center">
-        <div class="container">
-            <p>Copyright © <a href="https:http://localhost:8000/uiindex.html#">Jobs</a> 2017. Developed by <a href="http://themeregion.com/">ThemeRegion</a></p>
-        </div>
-    </div><!-- footer-bottom -->
-</footer><!-- footer -->
+@include('frontend.partials.ui-footer')
 
 <!--/Preset Style Chooser-->
 <!--/End:Preset Style Chooser-->
