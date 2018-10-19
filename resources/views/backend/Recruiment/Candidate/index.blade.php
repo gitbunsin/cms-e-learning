@@ -50,9 +50,9 @@
                                 <tr>
                                     <th data-hide="phone">Vacany</th>
                                     <th data-class="expand"><i class="fa fa-fw fa-user text-muted hidden-md hidden-sm hidden-xs"></i>Candidate</th>
-                                    <th data-hide="phone"><i class="fa fa-fw fa-phone text-muted hidden-md hidden-sm hidden-xs"></i>status</th>
                                     <th data-hide="phone">commnet</th>
                                     <th data-hide="date">Date-of-Application</th>
+                                    <th data-hide="phone"><i class="fa fa-fw fa-phone text-muted hidden-md hidden-sm hidden-xs"></i>status</th>
                                     <th>Action</th>
                                 </tr>
                                 </thead>
@@ -61,9 +61,12 @@
                                     <tr>
                                         <td>{{$candidates->first_name}}</td>
                                         <td>{{$candidates->last_name}}</td>
-                                        <td>{{$candidates->status}}</td>
                                         <td>{{$candidates->comment}}</td>
                                         <td>{{$candidates->date_of_application}}</td>
+                                        <td>
+                                            <button class="btn btn-primary" type="submit" name="SubmitButton" value="Accept">Accept</button>
+                                            <button class="btn btn-danger" type="submit" name="SubmitButton" value="Decline">Decline</button>
+                                        </td>
                                         <td style="display: flex;" class="flex">
                                            <a href="{{ url('administration/candidate/' .$candidates->id. '/edit') }}"><button class="btn btn-primary btn-xs" ><span class="glyphicon glyphicon-pencil"></span></button></a>
                                             <form action="{{url('administration/candidate/' .$candidates->id)}}" method="post">

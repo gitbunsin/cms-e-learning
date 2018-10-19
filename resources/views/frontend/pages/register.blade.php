@@ -43,10 +43,8 @@
 
                                 <select class="form-control">
                                     <option value="#">Gender*</option>
-                                    <option value="#">London UK</option>
-                                    <option value="#">Newyork, USA</option>
-                                    <option value="#">Seoul, Korea</option>
-                                    <option value="#">Beijing, China</option>
+                                    <option value="#">Male</option>
+                                    <option value="#">Female</option>
                                 </select>
                                 <div class="form-group  {{ $errors->has('url_emp') ? 'has-error' : '' }}">
                                     <input id="url" name="url_emp" type="text" class="form-control" placeholder="url">

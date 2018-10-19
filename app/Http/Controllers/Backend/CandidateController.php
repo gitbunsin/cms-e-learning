@@ -19,7 +19,9 @@ class CandidateController extends Controller
      */
     public function index()
     {
-        $candidate = Candidate::all();
+        $candidate = (new \App\Candidate)->where('status', 1)
+            ->orderBy('id','DESC')
+            ->get();
         //dd($Candidate);
         return view('backend.Recruiment.Candidate.index',compact('candidate'));
     }
@@ -52,8 +54,8 @@ class CandidateController extends Controller
         $candidate->mode_of_application = 1;
         $candidate->cv_file_id = 1;
         $input  = Input::get('date-of-application');
-        $dat_of_application = Carbon::parse($input )->format('Y-m-d');
-        $candidate->date_of_application = $dat_of_application;
+        $date_of_application = Carbon::parse($input )->format('Y-m-d');
+        $candidate->date_of_application = $date_of_application;
         $candidate->save();
         $id = $candidate->id;
 //        dd($id);

@@ -19,7 +19,7 @@
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="http://localhost:8000/ui">Home</a></li>
                         <li><a href="http://localhost:8000/ui/lists">Job list</a></li>
-                        <li><a href="http://localhost:8000/uiresume.html">Resume</a></li>
+                        <li><a href="#">Resume</a></li>
                         <li class="dropdown"><a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">Pages<span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="http://localhost:8000/uiprofile.html">Profile</a></li>
@@ -27,7 +27,7 @@
                                 <li><a href="http://localhost:8000/uipost.html">Job Post</a></li>
                                 <li><a href="http://localhost:8000/uiedit-resume.html">About Us</a></li>
                                 <li><a href="http://localhost:8000/uiprofile-details.html">Contact Us</a></li>
-                                <li><a href="http://localhost:8000/policy">Privacy Policy</a></li>
+                                <li><a href="http://localhost:8000/ui/policy">Privacy Policy</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -38,7 +38,16 @@
             <div class="nav-right">
                 <ul class="sign-in">
                     <li><i class="fa fa-user"></i></li>
-                    <li><a href="http://localhost:8000/ui/singin">Sign In</a></li>
+                    @if(Session::get('user_data_login'))
+                        <li>
+                            <a href="#">{{ Session::get('user_data_login')->full_name }}</a>
+                        </li>
+                    @else
+                        <li>
+                            <a href="http://localhost:8000/ui/singin">Sign In</a>
+                        </li>
+                    @endif
+
                     <li><a href="{{ url('ui/registers/create') }}">Register</a></li>
                 </ul><!-- sign-in -->
 

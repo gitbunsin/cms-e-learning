@@ -4,13 +4,19 @@ namespace App\Http\Controllers\Frontend;
 
 // use Illuminate\Support\Facades\Input;
 // use Illuminate\Support\Facades\DB;
+use App\Candidate;
+use App\CandidateAttachment;
 use App\Http\Controllers\Backend\JobController;
 use App\Job;
+use App\JobApply;
 use App\JobCategory;
+use App\User;
+use App\Vacancy;
 use Illuminate\Http\Request;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class UiController extends Controller
 {
@@ -67,6 +73,73 @@ class UiController extends Controller
     public  function singin(){
 
         return view('frontend.pages.signin');
+    }
+    /**
+     * function Candidate apply Job.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public  function applyJobs($id , $user_id){
+        //Add to table Job Candidate
+        $job_candidate = new Candidate();
+        $user_candidate = DB::table('users as u')
+            ->select('c.*','c.id as cv_id','u.*')
+            ->join('tbl_cvs as c', 'c.user_id', '=','u.id')
+            ->where('c.user_id','=',$user_id)
+            ->get()
+            ->first();
+         $cv_name = $user_candidate->name;
+         $cv_image = $user_candidate->image;
+         $cv_type = $user_candidate->type;
+         $cv_size = $user_candidate->size;
+         $cv_id = $user_candidate->cv_id;
+
+         $first_name = $user_candidate->full_name;
+         $last_name = $user_candidate->full_name;
+         $user_email = $user_candidate->user_email;
+         $user_website = $user_candidate->website;
+         $user_status = $user_candidate->status;
+         $user_mobile = $user_candidate->mobile;
+//         $cv_name = $user_candidate->name;
+         $cv_date = $user_candidate->date;
+         $job_candidate->first_name = $first_name;
+         $job_candidate->last_name = $last_name;
+         $job_candidate->email = $user_email;
+         $job_candidate->mode_of_application = 1;
+         $job_candidate->status = $user_status;
+         $job_candidate->contact_number = $user_mobile;
+         $job_candidate->date_of_application = $cv_date;
+         $job_candidate->cv_file_id = $cv_id;
+         $job_candidate->save();
+         $candidate_vacancy_id = $job_candidate->id;
+
+         //add new table for Candidate Attachment
+         $Candidate_Attachment = new CandidateAttachment();
+         $Candidate_Attachment->candidate_id = $candidate_vacancy_id;
+         $Candidate_Attachment->file_name = $cv_image;
+         $Candidate_Attachment->file_type = $cv_type;
+         $Candidate_Attachment->file_size = $cv_size;
+         $Candidate_Attachment->save();
+        $vacancy = DB::table('tbl_job_vacancy as v')
+            ->select('v.*','v.id as vacancy_id','t.*')
+            ->join('tbl_job_title as t', 'v.job_title_code', '=','t.id')
+            ->where('v.job_title_code','=',$id)
+            ->get()
+            ->first();
+         $vacancy_id = $vacancy->vacancy_id;
+         //Add one table Job_Candidate_Vacancy
+         $job_apply = new JobApply();
+         $job_apply->candidate_id = $candidate_vacancy_id;
+         $job_apply->vacancy_id = $vacancy_id;
+         $job_apply->status = 1;
+         $job_apply->applied_date = '2018-10-19 00:00:00';
+         $job_apply->save();
+         return redirect('/ui');
+//        return response()->json([
+//            'name' => 'Abigail',
+//            'state' => 'CA'
+//        ]);
     }
 
     /**

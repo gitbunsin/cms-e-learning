@@ -96,7 +96,7 @@ class RegistrationController extends Controller
         $employee->tel = Input::get('phone_emp');
         $employee->website = Input::get('url_emp');
         $employee->pwd = Hash::make(Input::get('password_emp'));
-        $employee->status = 0;
+        $employee->status = 1;
         $employee->save();
      return redirect('ui/lists');
     }

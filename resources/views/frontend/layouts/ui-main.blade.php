@@ -138,6 +138,7 @@
                         </div><!-- item-info -->
                     </div><!-- ad-item -->
                 </div><!-- tab-pane -->
+                @php $i=1; @endphp
        @foreach($JobTitle as $JobTitles)
                 <div role="tabpanel" class="tab-pane fade in active" id="popular-jobs">
                     <div class="job-ad-item">
@@ -159,27 +160,18 @@
                                     </ul>
                                 </div><!-- ad-meta -->
                             </div><!-- ad-info -->
-                            <div class="button">
-                                <a href="https:http://localhost:8000/uiindex.html#" class="btn btn-primary">Apply Now</a>
+                            <div class="apply_dev">
+                                <a id="btn{{$JobTitles->id}}"  href="{{Session::get('user_data_login')->id }}"  data-id="{{$JobTitles->id}}" class="btn btn-primary apply_id">Apply Now</a>
                             </div>
                         </div><!-- item-info -->
                     </div><!-- ad-item -->
                 </div><!-- tab-pane -->
+                 @php $i++;@endphp
            @endforeach
                 <div class="row">
                     <div class="pull-right">
                             <!-- Only for numbers -->
                          {{ $JobTitle->links() }}
-                    </div>
-                </div>
-                <div class="row" style="background-color:#f1e1d1; padding:7px;">
-                    <div class="col-lg-6 "></div>
-                    <div class="col-lg-6 ">
-                        <div class="pull-right">
-                            Page: <label>
-                                <input type='number' class="form-control" min="1" max="{{}}" style='width:70px;' />
-                            </label>
-                        </div>
                     </div>
                 </div>
             </div><!-- tab-content -->
@@ -334,3 +326,32 @@
 @include('frontend.partials.ui-script')
 
 </body></html>
+<script>
+    jQuery(document).ready(function(){
+        jQuery('.apply_id').click(function(e){
+            // alert('ok');
+            let id = $(this).data("id");
+            let user_id = $(this).attr('href');
+            e.preventDefault();
+            $.ajaxSetup(
+                {
+                    headers:
+                        {
+                            'X-CSRF-Token': $('input[name="_token"]').val()
+                        }
+                });
+                  $.ajax({
+                    type: "GET",
+                      url: '/ui/apply-job/'+id+'/user_id/'+user_id,
+                    success: function() {
+                        $('#btn'+id).text('applied');
+                        $('#btn'+id).attr('disabled', 'disabled');
+                    },
+                    error:function(){
+                        alert('failure');
+                    }
+        });
+        });
+    });
+
+</script>

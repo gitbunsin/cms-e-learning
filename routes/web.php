@@ -46,8 +46,9 @@ Route::group(['namespace' => 'Frontend','prefix'=>'ui'], function () {
     });
 
     Route::get('/posts', 'UiController@posts');
-//    Route::get('/registers', 'UiController@register');
+    Route::get('/apply-job/{id}/user_id/{user_id}', 'UiController@applyJobs');
     Route::resource('jobs', 'JobController');
+    Route::resource('user_cv','CvController');
     Route::post('/search','UiController@scopeSearch');
     Route::get('/lists', 'UiController@lists');
     Route::get('/policy', 'UiController@policy');

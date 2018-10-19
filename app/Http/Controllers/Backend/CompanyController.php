@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
+use App\User;
 use Illuminate\Http\Request;
 use App\Company;
 
@@ -14,8 +15,9 @@ class CompanyController extends Controller
      */
     public function index()
     {
-        //
-        return view('backend.Recruiment.Company.index');
+
+        $CompanyProfiles = User::all();
+        return view('backend.Recruiment.Company.index',compact('CompanyProfiles'));
     }
 
     /**

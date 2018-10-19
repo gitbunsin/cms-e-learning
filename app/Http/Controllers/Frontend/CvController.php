@@ -1,10 +1,10 @@
 <?php
 
-namespace  App\Http\Controllers\Backend;
+namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
-use App\Cv;
+use App\UserCv;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Input;
 
 class CvController extends Controller
 {
@@ -15,13 +15,7 @@ class CvController extends Controller
      */
     public function index()
     {
-//        $Cv = Cv::all();
-        $Cv = DB::table('tbl_job_candidate_attachment')
-            ->join('tbl_job_candidate', 'tbl_job_candidate_attachment.candidate_id', '=', 'tbl_job_candidate.id')
-            ->select('tbl_job_candidate_attachment.*', 'tbl_job_candidate.*')
-            ->get();
-//        dd($Cv);
-        return view('backend.Recruiment.Cv.index',compact('Cv'));
+        //
     }
 
     /**
@@ -42,8 +36,28 @@ class CvController extends Controller
      */
     public function store(Request $request)
     {
-
-        //
+        $this->validate(request(), [
+            'cv_name' => 'required',
+            'cv_files' => 'required',
+            'cv_description'=>'required',
+        ]);
+        $user_cv = new UserCv();
+        $user_cv->name = Input::get('cv_name');
+        if ($request->hasFile('cv_files')) {
+            $image = $request->file('cv_files');
+            $name = $image->getClientOriginalName();
+            $size = $image->getClientSize();
+            $type = $image->getMimeType();
+            $destinationPath = public_path('/CVs');
+            $image->move($destinationPath,$name);
+            $user_cv->image= $name;
+            $user_cv->type = $type;
+            $user_cv->size = $size;
+        }
+        $user_cv->user_id = Input::get('user_id');
+        $user_cv->description = Input::get('cv_description');
+        $user_cv->save();
+        return redirect('/ui');
     }
 
     /**

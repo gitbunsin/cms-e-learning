@@ -131,49 +131,36 @@
 					</div><!-- accordion-->
 
 					<!-- recommended-ads -->
-					<div class="col-sm-9 col-md-8">
+					<div class="col-sm-10 col-md-9">
 						<div class="section job-list-item">
 							<div class="featured-top">
-								<h4>Showing 1-25 of 65,712 ads</h4>
+								<h4> CVs ads</h4>
 								<div class="dropdown pull-right">
-									<div class="dropdown category-dropdown">
-										<h5>Sort by:</h5>						
-										<a data-toggle="dropdown" href="https://demo.themeregion.com/jobs-updated/job-list.html#"><span class="change-text">Most Relevant</span><i class="fa fa-caret-square-o-down"></i></a>
-										<ul class="dropdown-menu category-change">
-											<li><a href="https://demo.themeregion.com/jobs-updated/job-list.html#">Most Relevant</a></li>
-											<li><a href="https://demo.themeregion.com/jobs-updated/job-list.html#">Most Popular</a></li>
-										</ul>								
-									</div><!-- category-change -->		
 								</div>							
 							</div><!-- featured-top -->
 							<div class="job-ad-item">
 								<div class="item-info">
-									<div class="item-image-box">
-										<div class="item-image">
-											<a href="https://demo.themeregion.com/jobs-updated/job-details.html"><img src="/img/18.png" alt="Image" class="img-responsive"></a>
-										</div><!-- item-image -->
-									</div>
-
-									<div class="ad-info">
-										<span><a href="https://demo.themeregion.com/jobs-updated/job-details.html" class="title">Program Development</a> @ <a href="https://demo.themeregion.com/jobs-updated/job-list.html#">HSBC</a></span>
-										<div class="ad-meta">
-											<ul>
-												<li><a href="https://demo.themeregion.com/jobs-updated/job-list.html#"><i class="fa fa-map-marker" aria-hidden="true"></i>San Francisco, CA, US </a></li>
-												<li><a href="https://demo.themeregion.com/jobs-updated/job-list.html#"><i class="fa fa-clock-o" aria-hidden="true"></i>Full Time</a></li>
-												<li><a href="https://demo.themeregion.com/jobs-updated/job-list.html#"><i class="fa fa-money" aria-hidden="true"></i>$25,000 - $35,000</a></li>
-											</ul>
-										</div><!-- ad-meta -->									
-									</div><!-- ad-info -->
+										<form method="POST" enctype="multipart/form-data" id="register" action="{{url('ui/user_cv')}}">
+											{{ csrf_field() }}
+											<input type="hidden" value="{{Session::get('user_data_login')->id }}" name="user_id" />
+											<div class="form-group  {{ $errors->has('cv_name') ? 'has-error' : '' }}" >
+												<input id="cv_name" name="cv_name" type="text" class="form-control" placeholder="CVs Title">
+												<span class="text-danger">{{ $errors->first('cv_name') }}</span>
+											</div>
+											<div {{ $errors->has('cv_files') ? 'has-error' : '' }} class="form-group">
+												<input type="file" class="form-control" placeholder="logo" id="cv_files" name="cv_files">
+												<span class="text-danger">{{ $errors->first('cv_files') }}</span>
+											</div>
+											<div class="form-group {{ $errors->has('cv_description') ? 'has-error' : '' }}">
+												<textarea rows="4" class="form-control  " placeholder="Description **" name="cv_description"></textarea>
+												<span class="text-danger">{{ $errors->first('cv_description') }}</span>
+											</div>
+											<button style="cursor: pointer" type="submit" class="btn">Registration</button>
+										</form>
 								</div><!-- item-info -->
 							</div><!-- job-ad-item -->
 						</div>
 					</div><!-- recommended-ads -->
-
-					<div class="col-md-2 hidden-xs hidden-sm">
-						<div class="advertisement text-center">
-							<a href="https://demo.themeregion.com/jobs-updated/job-list.html#"><img src="/img/1.jpg" alt="" class="img-responsive"></a>
-						</div>
-					</div>
 				</div>	
 			</div>
 		</div><!-- container -->
