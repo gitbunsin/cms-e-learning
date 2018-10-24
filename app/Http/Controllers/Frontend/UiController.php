@@ -6,7 +6,7 @@ namespace App\Http\Controllers\Frontend;
 // use Illuminate\Support\Facades\DB;
 use App\Candidate;
 use App\CandidateAttachment;
-use App\Http\Controllers\Backend\JobController;
+use App\Http\Controllers\Backend\JobTitleController;
 use App\Job;
 use App\JobApply;
 use App\JobCategory;
@@ -17,6 +17,9 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Response;
+use Psy\Util\Json;
 
 class UiController extends Controller
 {
@@ -42,7 +45,7 @@ class UiController extends Controller
             ->where('job_title', 'like', '%' .$searchTerm. '%')
             ->orWhere('job_description', 'like', '%' .$searchTerm. '%')
             ->get();
-//        dd($JobTitle);
+//       dd($JobTitle);
         $JobCategory = JobCategory::all();
 //        return redirect('/ui',compact('JobTitle','JobCategory'));
         return redirect('/ui')->with(compact('JobTitle','JobCategory'));
@@ -75,13 +78,14 @@ class UiController extends Controller
         return view('frontend.pages.signin');
     }
     /**
-     * function Candidate apply Job.
+     * function Candidate apply JobCategory.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public  function applyJobs($id , $user_id){
-        //Add to table Job Candidate
+    public  function applyJobs( $id , $user_id){
+//        dd($request);
+        //Add to table JobCategory Candidate
         $job_candidate = new Candidate();
         $user_candidate = DB::table('users as u')
             ->select('c.*','c.id as cv_id','u.*')
@@ -89,6 +93,9 @@ class UiController extends Controller
             ->where('c.user_id','=',$user_id)
             ->get()
             ->first();
+//        http://localhost/01.php?id=$user_id
+
+
          $cv_name = $user_candidate->name;
          $cv_image = $user_candidate->image;
          $cv_type = $user_candidate->type;
@@ -101,7 +108,7 @@ class UiController extends Controller
          $user_website = $user_candidate->website;
          $user_status = $user_candidate->status;
          $user_mobile = $user_candidate->mobile;
-//         $cv_name = $user_candidate->name;
+         $cv_name = $user_candidate->name;
          $cv_date = $user_candidate->date;
          $job_candidate->first_name = $first_name;
          $job_candidate->last_name = $last_name;
@@ -121,7 +128,7 @@ class UiController extends Controller
          $Candidate_Attachment->file_type = $cv_type;
          $Candidate_Attachment->file_size = $cv_size;
          $Candidate_Attachment->save();
-        $vacancy = DB::table('tbl_job_vacancy as v')
+         $vacancy = DB::table('tbl_job_vacancy as v')
             ->select('v.*','v.id as vacancy_id','t.*')
             ->join('tbl_job_title as t', 'v.job_title_code', '=','t.id')
             ->where('v.job_title_code','=',$id)
@@ -136,10 +143,10 @@ class UiController extends Controller
          $job_apply->applied_date = '2018-10-19 00:00:00';
          $job_apply->save();
          return redirect('/ui');
-//        return response()->json([
-//            'name' => 'Abigail',
-//            'state' => 'CA'
-//        ]);
+//        return Response::json(array(
+//            'success' => true,
+//            'data'   => $data
+//        ));
     }
 
     /**

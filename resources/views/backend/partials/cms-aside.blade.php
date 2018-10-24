@@ -125,11 +125,11 @@
                     <li>
                         <a href="table.html">Configuration</a>
                     </li>
-                    <li>
-                        <a href="datatables.html">Employee List<span class="badge inbox-badge bg-color-greenLight"></span></a>
+                    <li class="{{ Request::segment(2) == "employee" ? "active" : " " }}">
+                        <a href="{{ url('administration/employee') }}">List of employees</a>
                     </li>
-                    <li>
-                        <a href="jqgrid.html">Add Employee</a>
+                    <li class="{{ Request::segment(3) == "create" ? "active" : " " }}">
+                        <a href="{{url('administration/employee/create')}}">Add Employee</a>
                     </li>
                     <li>
                         <a href="jqgrid.html">Reports</a>
@@ -154,8 +154,8 @@
                     <li>
                         <a href="bootstrap-validator.html">Organaztion</a>
                     </li>
-                    <li>
-                        <a href="plugins.html">List of employees</a>
+                    <li {{ Request::segment(2) == "employee" ? "active" : " " }}>
+                        <a href="{{ url('administration/employee') }}">List of employees</a>
                     </li>
                     <li>
                         <a href="wizard.html">Calendars</a>
@@ -181,14 +181,18 @@
                     <li class="{{ Request::segment(2) == "cv" ? "active" : " " }}">
                         <a href="{{ url('administration/cv') }}">Query CV</a>
                     </li>
+
                     <li>
-                        <a href="">Department</a>
+                        <a href="">InterView</a>
                     </li>
                     <li class="{{ Request::segment(2) == "companyProfile" ? "active" : " " }}">
                         <a href="{{ url('administration/companyProfile') }}">Company Profiles</a>
                     </li>
-                    <li class="{{ Request::segment(2) == "job" ? "active" : " " }}">
-                        <a href="{{url ('administration/job')}}">Post Job</a>
+                    <li class="{{ Request::segment(2) == "jobs" ? "active" : " " }}">
+                        <a href="{{ url('administration/jobs') }}">Jobs</a>
+                    </li>
+                    <li class="{{ Request::segment(2) == "jobs-categories" ? "active" : " " }}">
+                        <a href="{{url ('administration/jobs-categories')}}">Job categories</a>
                     </li>
                     <li class="{{ Request::segment(2) == "candidate" ? "active" : " " }}">
                         <a href="{{url('administration/candidate')}}">Candidate</a>

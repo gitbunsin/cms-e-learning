@@ -118,7 +118,7 @@ class VacanciesController extends Controller
 
         $vacancy = Vacancy::findOrFail($id);
         $vacancy->delete();
-        Session::flash('alert-danger', 'Job successfully deleted!');
+        Session::flash('alert-danger', 'JobCategory successfully deleted!');
         return redirect('/administration/vacancy');
 
     }

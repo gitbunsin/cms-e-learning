@@ -8,7 +8,7 @@ class JobCategory extends Model
 {
     //
     protected $table = 'tbl_job_category';
-    protected $fillable = ['id', 'name'];
+    protected $fillable = ['id', 'job_title','job_description'];
 //    public function saveTicket($data)
 //    {
 //        $this->user_id = auth()->user()->id;

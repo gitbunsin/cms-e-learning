@@ -12,7 +12,7 @@
 
                     <header>
                         <span class="widget-icon"> <i class="fa fa-edit"></i> </span>
-                        <h2>Add Job Title</h2>
+                        <h2> Post Your Job</h2>
                     </header>
                     <!-- widget div-->
                     <div>
@@ -24,11 +24,91 @@
                         <!-- widget content -->
                         <div class="widget-body no-padding">
 
-                            <form id="validate_job" method="POST" enctype="multipart/form-data" action="{{url('administration/job ')}}" class="smart-form">
+                            <form id="validate_job" method="POST" enctype="multipart/form-data" action="{{url('administration/jobs-categories ')}}" class="smart-form">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                 <fieldset>
                                     <section>
-                                        <label class="label">Job Title</label>
+                                        <label class="label">Job Category</label>
+                                        <label class="input">
+                                            <input type="text" name="job_title" id="job_title" list="list">
+                                            @php  use App\JobCategory; $jobCategories = JobCategory::all();  @endphp
+                                            @foreach($jobCategories as $jobCate)
+                                            <datalist id="list">
+                                                <option value="{{$jobCate->id}}">{{$jobCate->name}}</option>
+                                            </datalist>
+                                            @endforeach
+                                        </label>
+                                    </section>
+                                    <section>
+                                        <label class="label">Job Types</label>
+                                        <div class="inline-group">
+                                            <label class="radio">
+                                                <input type="radio" name="radio-inline" checked="checked">
+                                                <i></i>Full time</label>
+                                            <label class="radio">
+                                                <input type="radio" name="radio-inline">
+                                                <i></i>Part Time</label>
+                                            <label class="radio">
+                                                <input type="radio" name="radio-inline">
+                                                <i></i>Freelance</label>
+                                            <label class="radio">
+                                                <input type="radio" name="radio-inline">
+                                                <i></i>Contract</label>
+                                        </div>
+                                    </section>
+                                    <section>
+                                        <label class="label">Title for your job*</label>
+                                        <label class="input">
+                                            <input type="text" class="custom-scroll">
+                                        </label>
+                                        <div class="note">
+                                            <strong>Note:</strong> height of the textarea depends on the rows attribute.
+                                        </div>
+                                    </section>
+                                    <section>
+                                        <label class="label"> Location *</label>
+                                        <label class="input">
+                                            <input type="text" name="job_title" id="job_title" list="list">
+                                            <datalist id="list">
+                                                <option value="Alexandra">cambodia</option>
+                                                <option value="Alice">Alice</option>
+                                            </datalist> </label>
+                                    </section>
+                                    <div class="row">
+                                        <section class="col col-4">
+                                            <label class="label"> Salary*</label>
+                                            <label class="input">
+                                                <input type="text" placeholder="mix ($)" class="custom-scroll">
+                                            </label>
+                                            <div class="note">
+                                                <strong>Note:</strong> height of the textarea depends on the rows attribute.
+                                            </div>
+                                        </section>
+                                        <section class="col col-4">
+                                            <label class="label">**</label>
+                                            <label class="input">
+                                                <input type="text" placeholder="max ($)">
+                                            </label>
+                                        </section>
+                                        <section class="col col-4">
+                                            <label class="label"> Negotiable *</label>
+                                            <div class="inline-group">
+                                                <label class="radio">
+                                                    <input type="radio" name="radio-inline" checked="checked">
+                                                    <i></i>Alexandra</label>
+                                            </div>
+                                        </section>
+                                    </div>
+                                    <section>
+                                        <label class="label">Salary Type **</label>
+                                        <label class="input">
+                                            <input type="text" name="job_type" id="job_type" list="list">
+                                            <datalist id="list">
+                                                <option value="">hello</option>
+                                            </datalist> </label>
+                                    </section>
+                                    <section>
+                                        <label class="label"> Experience **</label>
                                         <label class="input">
                                             <input type="text" name="job_title" id="job_title" list="list">
                                             <datalist id="list">
@@ -42,23 +122,47 @@
                                             </datalist> </label>
                                     </section>
                                     <section>
-                                        <label class="label"> Job description</label>
-                                        <label class="textarea">
-                                            <textarea rows="3" id="job_description" name="job_description" class="custom-scroll"></textarea>
+                                        <label class="label"> Job function**</label>
+                                        <label class="input">
+                                            <input type="text" name="job_title" id="job_title">
+                                           </label>
+                                    </section>
+                                    <hr>
+                                    <br/>
+                                    <h5><strong>Company Profiles</strong></h5>
+                                    <br/>
+                                        <section>
+                                            <label class="label">Industry* </label>
+                                            <label class="input">
+                                                <input type="text" name="job_title" id="job_title" placeholder="Maketing and Advertising">
+                                            </label>
+                                        </section>
+
+                                    <section>
+                                        <label class="label">Company Name*</label>
+                                        <label class="input">
+                                            <input placeholder="ex, Jhon Doe" type="text" name="radio-inline">
                                         </label>
-                                        <div class="note">
-                                            <strong>Note:</strong> height of the textarea depends on the rows attribute.
-                                        </div>
                                     </section>
                                     <section>
-                                        <label class="label"> Noted</label>
-                                        <label class="textarea">
-                                            <textarea rows="3" id="note" name="note" class="custom-scroll"></textarea>
+                                        <label class="label">Email ID*</label>
+                                        <label class="input">
+                                            <input placeholder="ex , example@gmail.com" type="text" name="radio-inline">
                                         </label>
-                                        <div class="note">
-                                            <strong>Note:</strong> height of the textarea depends on the rows attribute.
-                                        </div>
                                     </section>
+                                    <section>
+                                        <label class="label">Mobile Number *</label>
+                                        <label class="input">
+                                            <input placeholder="ex, 962711117" type="text" name="radio-inline">
+                                        </label>
+                                    </section>
+                                    <section>
+                                        <label class="label"> Address *</label>
+                                        <label class="input">
+                                            <input placeholder="ex, " type="text" name="radio-inline">
+                                        </label>
+                                    </section>
+
                                     <section>
                                         <label class="label">Active</label>
                                         <div class="inline-group">
@@ -73,6 +177,7 @@
                                         </div>
                                     </section>
                                 </fieldset>
+
                                 <footer>
                                     <button type="submit" class="btn btn-primary">Submit</button>
                                     <button type="button" class="btn btn-default" onclick="window.history.back();">

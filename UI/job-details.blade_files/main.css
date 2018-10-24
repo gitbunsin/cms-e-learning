@@ -17,7 +17,7 @@
 # Accordion
 # Pagination
 # something-sell
-# Job Details
+# JobCategory Details
 # Post Page
 # Profile
 # Post Resume
@@ -2063,7 +2063,7 @@ input:-moz-placeholder {
 
 
 /* ==========================================================================
- 	Banner Job
+ 	Banner JobCategory
 ========================================================================== */
 
 .banner-job {
@@ -2328,7 +2328,7 @@ input:-moz-placeholder {
 	margin-bottom: 25px;
 }
 
-/* Job List Page */
+/* JobCategory List Page */
 
 .job-bg {
 	background-image: url(../images/bg/job-list-bg.jpg);
@@ -2343,7 +2343,7 @@ input:-moz-placeholder {
 }
 
 
-/* Job Details */
+/* JobCategory Details */
 
 .job-details .job-ad-item {
 	border: 0;

@@ -24,7 +24,7 @@
                         </div>
                         <!-- widget content -->
                         <div class="widget-body no-padding">
-                            <form action="{{url('administration/job',$id)}}" class="smart-form" id="validate_job" method="post">
+                            <form action="{{url('administration/jobs-categories',$id)}}" class="smart-form" id="validate_job" method="post">
                                 {{csrf_field()}}
                                 <input name="_method" type="hidden" value="PATCH">
                                 <fieldset>

@@ -31,7 +31,9 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'administration'], function 
     Route::resource('candidate', 'CandidateController');
     Route::resource('companyProfile', 'CompanyController');
     Route::resource('vacancy', 'VacanciesController');
-    Route::resource('job','JobController');
+    Route::resource('jobs-categories','JobTitleController');
+    Route::resource('jobs','JobController');
+    Route::resource('employee','EmployeeController');
     Route::resource('cv','CvController');
 
 });
@@ -46,10 +48,10 @@ Route::group(['namespace' => 'Frontend','prefix'=>'ui'], function () {
     });
 
     Route::get('/posts', 'UiController@posts');
-    Route::get('/apply-job/{id}/user_id/{user_id}', 'UiController@applyJobs');
+    Route::post('/apply-job/{id}/user_id/{user_id}', 'UiController@applyJobs');
     Route::resource('jobs', 'JobController');
     Route::resource('user_cv','CvController');
-    Route::post('/search','UiController@scopeSearch');
+    Route::get('/search','UiController@scopeSearch');
     Route::get('/lists', 'UiController@lists');
     Route::get('/policy', 'UiController@policy');
     Route::get('/singin', 'UiController@singin');

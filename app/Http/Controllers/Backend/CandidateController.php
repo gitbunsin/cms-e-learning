@@ -136,7 +136,7 @@ class CandidateController extends Controller
     {
         $candidate = Candidate::findOrFail($id);
         $candidate->delete();
-        Session::flash('alert-danger', 'Job successfully deleted!');
+        Session::flash('alert-danger', 'JobCategory successfully deleted!');
         return redirect('/administration/candidate');
         //
     }

@@ -9,7 +9,7 @@
 
     <title> 1 Jobs | Job Portal / Job Board HTML Template</title>
 
-{{--<style></style>--}}
+    {{--<style></style>--}}
     @include('frontend.partials.ui-styles')
     <![endif]-->
     <!-- Template Developed By ThemeRegion -->
@@ -30,9 +30,9 @@
                 <div class="dropdown category-dropdown">
                     <a data-toggle="dropdown" href="#" aria-expanded="false"><span class="change-text">Job Category</span> <i class="fa fa-angle-down"></i></a>
                     <ul class="dropdown-menu category-change">
-                         @foreach($JobCategory as $JobCategorys)
-                        <li><a href="#">{{$JobCategorys->name}}</a></li>
-                        @endforeach
+                        {{--@foreach($JobCategory as $JobCategorys)--}}
+                            {{--<li><a href="#">{{$JobCategorys->name}}</a></li>--}}
+                        {{--@endforeach--}}
                     </ul>
                 </div><!-- category-change -->
                 <button type="submit" class="btn btn-primary" value="Search">Search</button>
@@ -139,39 +139,39 @@
                     </div><!-- ad-item -->
                 </div><!-- tab-pane -->
                 @php $i=1; @endphp
-       @foreach($JobTitle as $JobTitles)
-                <div role="tabpanel" class="tab-pane fade in active" id="popular-jobs">
-                    <div class="job-ad-item">
-                        <div class="item-info">
-                            <div class="item-image-box">
-                                <div class="item-image">
-                                    <a href="https:http://localhost:8000/uijob-details.html"><img src="/img/1(1).png" alt="Image" class="img-responsive"></a>
-                                </div><!-- item-image -->
-                            </div>
+                @foreach($JobTitle as $JobTitles)
+                    <div role="tabpanel" class="tab-pane fade in active" id="popular-jobs">
+                        <div class="job-ad-item">
+                            <div class="item-info">
+                                <div class="item-image-box">
+                                    <div class="item-image">
+                                        <a href="https:http://localhost:8000/uijob-details.html"><img src="/img/1(1).png" alt="Image" class="img-responsive"></a>
+                                    </div><!-- item-image -->
+                                </div>
 
-                            <div class="ad-info">
-                                <span><a target="_blank" href="{{url('ui/jobs/'.$JobTitles->id)}}" class="title">{{$JobTitles->job_title}}</a></span>
-                                <div class="ad-meta">
-                                    <ul>
-                                        <li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-map-marker" aria-hidden="true"></i>San Francisco, CA, US </a></li>
-                                        <li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-clock-o" aria-hidden="true"></i>Full Time</a></li>
-                                        <li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-money" aria-hidden="true"></i>$25,000 - $35,000</a></li>
-                                        <li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-tags" aria-hidden="true"></i>HR/Org. Development</a></li>
-                                    </ul>
-                                </div><!-- ad-meta -->
-                            </div><!-- ad-info -->
-                            <div class="apply_dev">
-                                <a id="btn{{$JobTitles->id}}"  href="{{Session::get('user_data_login')->id }}"  data-id="{{$JobTitles->id}}" class="btn btn-primary apply_id">Apply Now</a>
-                            </div>
-                        </div><!-- item-info -->
-                    </div><!-- ad-item -->
-                </div><!-- tab-pane -->
-                 @php $i++;@endphp
-           @endforeach
+                                <div class="ad-info">
+                                    <span><a target="_blank" href="{{url('ui/jobs/'.$JobTitles->id)}}" class="title">OK</a></span>
+                                    {{--<div class="ad-meta">--}}
+                                        {{--<ul>--}}
+                                            {{--<li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-map-marker" aria-hidden="true"></i>San Francisco, CA, US </a></li>--}}
+                                            {{--<li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-clock-o" aria-hidden="true"></i>Full Time</a></li>--}}
+                                            {{--<li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-money" aria-hidden="true"></i>$25,000 - $35,000</a></li>--}}
+                                            {{--<li><a href="https:http://localhost:8000/uiindex.html#"><i class="fa fa-tags" aria-hidden="true"></i>HR/Org. Development</a></li>--}}
+                                        {{--</ul>--}}
+                                    {{--</div><!-- ad-meta -->--}}
+                                </div><!-- ad-info -->
+                                <div class="apply_dev">
+                                    <a id="btn{{$JobTitles->id}}"  href="{{Session::get('user_data_login')->id }}"  data-id="{{$JobTitles->id}}" class="btn btn-primary apply_id">Apply Now</a>
+                                </div>
+                            </div><!-- item-info -->
+                        </div><!-- ad-item -->
+                    </div><!-- tab-pane -->
+                    @php $i++;@endphp
+                @endforeach
                 <div class="row">
                     <div class="pull-right">
-                            <!-- Only for numbers -->
-                         {{ $JobTitle->links() }}
+                        <!-- Only for numbers -->
+                        {{ $JobTitle->links() }}
                     </div>
                 </div>
             </div><!-- tab-content -->
@@ -340,20 +340,20 @@
                             'X-CSRF-Token': $('input[name="_token"]').val()
                         }
                 });
-                  $.ajax({
-                      type: "POST",
-                      url: '/ui/apply-job/'+id+'/user_id/'+user_id,
-                      // dataType: 'JSON',
-                      // data:{id:id,user_id : user_id},
-                    success: function(response) {
-                        // alert(JSON.stringify(data));
-                        $('#btn'+id).text('applied');
-                        $('#btn'+id).attr('disabled', 'disabled');
-                    },
-                    error:function(){
-                        alert('failure');
-                    }
-        });
+            $.ajax({
+                type: "POST",
+                url: '/ui/apply-job/'+id+'/user_id/'+user_id,
+                // dataType: 'JSON',
+                // data:{id:id,user_id : user_id},
+                success: function(response) {
+                    // alert(JSON.stringify(data));
+                    $('#btn'+id).text('applied');
+                    $('#btn'+id).attr('disabled', 'disabled');
+                },
+                error:function(){
+                    alert('failure');
+                }
+            });
         });
     });
 

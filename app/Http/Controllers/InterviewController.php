@@ -1,13 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Backend;
-use App\Http\Controllers\Controller;
-use App\User;
-use Illuminate\Http\Request;
-use App\Company;
-use Illuminate\Support\Facades\DB;
+namespace App\Http\Controllers;
 
-class CompanyController extends Controller
+use Illuminate\Http\Request;
+
+class InterviewController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +13,7 @@ class CompanyController extends Controller
      */
     public function index()
     {
-
-        $CompanyProfiles = DB::table('tbl_organization_gen_info')->get()->first();
-        return view('backend.Recruiment.Company.index',compact('CompanyProfiles'));
+        //
     }
 
     /**
@@ -45,10 +40,10 @@ class CompanyController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Company  $company
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Company $company)
+    public function show($id)
     {
         //
     }
@@ -56,10 +51,10 @@ class CompanyController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Company  $company
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Company $company)
+    public function edit($id)
     {
         //
     }
@@ -68,10 +63,10 @@ class CompanyController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Company  $company
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Company $company)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -79,10 +74,10 @@ class CompanyController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Company  $company
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Company $company)
+    public function destroy($id)
     {
         //
     }

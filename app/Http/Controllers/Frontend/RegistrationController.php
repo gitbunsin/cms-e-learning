@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Frontend;
 
-use App\Employer;
+use App\Company;
 use App\Http\Controllers\Controller;
 
 
@@ -56,7 +56,7 @@ class RegistrationController extends Controller
             'confirm_password' => 'required|min:3|max:20|same:password',
         ]);
 //        dd('I am here');
-        $employer = new Employer();
+        $employer = new Company();
         $employer->name = Input::get('name');
         $employer->email = Input::get('email');
         $employer->postal_address = Input::get('Postal_Address');
@@ -98,6 +98,7 @@ class RegistrationController extends Controller
         $employee->pwd = Hash::make(Input::get('password_emp'));
         $employee->status = 1;
         $employee->save();
+        Session::put('user_data_login', $employee);
      return redirect('ui/lists');
     }
         //

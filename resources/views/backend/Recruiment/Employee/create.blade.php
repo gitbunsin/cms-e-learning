@@ -12,92 +12,86 @@
 
                     <header>
                         <span class="widget-icon"> <i class="fa fa-edit"></i> </span>
-                        <h2> Edit Company Profiles</h2>
+                        <h2>Add New Employee</h2>
+
                     </header>
+
                     <!-- widget div-->
                     <div>
 
                         <!-- widget edit box -->
                         <div class="jarviswidget-editbox">
                             <!-- This area used as dropdown edit box -->
+
                         </div>
+                        <!-- end widget edit box -->
+
                         <!-- widget content -->
                         <div class="widget-body no-padding">
 
-                            <form id="validate_job" method="POST" enctype="multipart/form-data" action="{{url('administration/jobs-categories ')}}" class="smart-form">
+                            <form id="validate_vacancy" method="POST" enctype="multipart/form-data" action="{{url('administration/employee ')}}" class="smart-form">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                 <fieldset>
                                     <section>
-                                        <label class="label">Campany Profiles</label>
+                                        <label class="label">First Name</label>
                                         <label class="input">
-                                            <input disabled value="{{$CompanyProfiles->name}}" type="text" name="company_profiles" id="company_profiles">
-                                        </label>
-                                    </section>
-                                    <section>
-                                            <label class="label">Company Email</label>
-                                            <label class="input">
-                                                <input disabled value="{{$CompanyProfiles->email}}" type="text" name="company_profiles" id="company_profiles">
+                                            <input type="text" name="last_name" id="first_name">
                                             </label>
                                     </section>
                                     <section>
-                                        <label class="label">Postal Address *</label>
+                                        <label class="label">Middle Name</label>
                                         <label class="input">
-                                            <textarea  rows="10" cols="150">{{$CompanyProfiles->postal_address}}</textarea>
+                                            <input type="text" name="middle_name" id="middle_name" maxlength="10">
+                                        </label>
+                                    </section>
+                                    <section>
+                                        <label class="label">Last Name</label>
+                                        <label class="input">
+                                            <input type="text" name="last_name" id="last_name" maxlength="10">
+                                        </label>
+                                    </section>
+                                    <section>
+                                        <label class="label"> Employee Id</label>
+                                        <label class="input">
+                                            <input type="text" name="last_name" id="last_name" maxlength="10">
                                         </label>
                                         <div class="note">
                                             <strong>Note:</strong> height of the textarea depends on the rows attribute.
                                         </div>
                                     </section>
                                     <section>
-                                        <label class="label">Websites</label>
+                                        <label class="label">Location </label>
                                         <label class="input">
-                                            <input disabled value="{{$CompanyProfiles->website}}" type="text" name="company_profiles" id="company_profiles">
-                                        </label>
+                                            <input type="text" list="list" id="hiring_manager" name="hiring_manager">
+                                            <datalist id="list">
+                                                <option value="Alexandra">Alexandra1</option>
+                                                <option value="Alice">Alice</option>
+                                                <option value="Anastasia">Anastasia</option>
+                                            </datalist> </label>
                                     </section>
                                     <section>
-                                        <label class="label">Company Profiles *</label>
+                                        <label class="label"> Employee Id</label>
                                         <label class="input">
-                                                <textarea name="com_note" rows="10" cols="150">{{$CompanyProfiles->note    }}</textarea>
+                                            <input type="file" name="last_name" id="last_name">
                                         </label>
                                         <div class="note">
                                             <strong>Note:</strong> height of the textarea depends on the rows attribute.
                                         </div>
                                     </section>
                                     <section>
-                                        <label class="label">Phone *</label>
-                                        <label class="input">
-                                            <input disabled value="{{$CompanyProfiles->phone}}" type="text" name="com_phone" id="com_phone">
-                                        </label>
-                                        <div class="note">
-                                            <strong>Note:</strong> height of the textarea depends on the rows attribute.
+                                        <label class="label">Active</label>
+                                        <div class="inline-group">
+                                            <label class="checkbox">
+                                                <input  type="checkbox"  name="checkbox-inline" checked>
+                                                <i></i>
+                                            </label>
+                                            <label class="checkbox">
+                                                <input type="checkbox" name="checkbox-inline" checked>
+                                                <i></i>Publish in RSS feed(1) and web page(2)
+                                            </label>
                                         </div>
-                                    </section>
-                                    <section>
-                                        <label class="label">fax *</label>
-                                        <label class="input">
-                                            <input disabled value="{{$CompanyProfiles->fax}}" type="text" name="com_phone" id="com_phone">
-                                        </label>
-                                        <div class="note">
-                                            <strong>Note:</strong> height of the textarea depends on the rows attribute.
-                                        </div>
-                                    </section>
-                                    <section>
-                                        <label class="label">mobile *</label>
-                                        <label class="input">
-                                            <input disabled value="{{$CompanyProfiles->mobile}}" type="text" name="com_phone" id="com_phone">
-                                        </label>
-                                        <div class="note">
-                                            <strong>Note:</strong> height of the textarea depends on the rows attribute.
-                                        </div>
-                                    </section>
-                                    <section>
-                                        <label class="label">Company Logos *</label>
-                                        <label class="input">
-                                            <input disabled value="{{$CompanyProfiles->mobile}}" type="file" name="com_phone" id="com_phone">
-                                        </label>
                                     </section>
                                 </fieldset>
-
                                 <footer>
                                     <button type="submit" class="btn btn-primary">Submit</button>
                                     <button type="button" class="btn btn-default" onclick="window.history.back();">
@@ -138,30 +132,24 @@
             $('#startdate').datepicker({
                 // format: 'DD - dd MM yyyy'
             });
-            var $loginForm = $("#validate_job").validate({
+            var $loginForm = $("#validate_vacancy").validate({
                 // Rules for form validation
                 rules : {
-                    job_title : {
+                    name : {
                         required : true
                     },
-                    job_description : {
+                    description : {
                         required : true,
-                    },
-                    note:{
-                        required:true
                     }
                 },
 
                 // Messages for form validation
                 messages : {
-                    job_title : {
-                        required : 'Please enter Job_title'
+                    name : {
+                        required : 'Please enter first name'
                     },
-                    job_description : {
-                        required: 'Please enter your job desciption'
-                    },
-                    note:{
-                        required:'please enter noted of job description'
+                    description : {
+                        required: 'Please enter your last name'
                     }
                 },
                 // Do not change code below

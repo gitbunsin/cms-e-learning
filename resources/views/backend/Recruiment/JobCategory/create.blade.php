@@ -12,7 +12,7 @@
 
                     <header>
                         <span class="widget-icon"> <i class="fa fa-edit"></i> </span>
-                        <h2> Edit Company Profiles</h2>
+                        <h2>Add Job Title</h2>
                     </header>
                     <!-- widget div-->
                     <div>
@@ -28,76 +28,51 @@
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                 <fieldset>
                                     <section>
-                                        <label class="label">Campany Profiles</label>
+                                        <label class="label">Job Title</label>
                                         <label class="input">
-                                            <input disabled value="{{$CompanyProfiles->name}}" type="text" name="company_profiles" id="company_profiles">
-                                        </label>
+                                            <input type="text" name="job_title" id="job_title" list="list">
+                                            <datalist id="list">
+                                                <option value="Alexandra">Alexandra</option>
+                                                <option value="Alice">Alice</option>
+                                                <option value="Anastasia">Anastasia</option>
+                                                <option value="Avelina">Avelina</option>
+                                                <option value="Basilia">Basilia</option>
+                                                <option value="Beatrice">Beatrice</option>
+                                                <option value="Cassandra">Cassandra</option>
+                                            </datalist> </label>
                                     </section>
                                     <section>
-                                            <label class="label">Company Email</label>
-                                            <label class="input">
-                                                <input disabled value="{{$CompanyProfiles->email}}" type="text" name="company_profiles" id="company_profiles">
+                                        <label class="label"> Job description</label>
+                                        <label class="textarea">
+                                            <textarea rows="3" id="job_description" name="job_description" class="custom-scroll"></textarea>
+                                        </label>
+                                        <div class="note">
+                                            <strong>Note:</strong> height of the textarea depends on the rows attribute.
+                                        </div>
+                                    </section>
+                                    <section>
+                                        <label class="label"> Noted</label>
+                                        <label class="textarea">
+                                            <textarea rows="3" id="note" name="note" class="custom-scroll"></textarea>
+                                        </label>
+                                        <div class="note">
+                                            <strong>Note:</strong> height of the textarea depends on the rows attribute.
+                                        </div>
+                                    </section>
+                                    <section>
+                                        <label class="label">Active</label>
+                                        <div class="inline-group">
+                                            <label class="checkbox">
+                                                <input  type="checkbox"  name="checkbox-inline" checked>
+                                                <i></i>
                                             </label>
-                                    </section>
-                                    <section>
-                                        <label class="label">Postal Address *</label>
-                                        <label class="input">
-                                            <textarea  rows="10" cols="150">{{$CompanyProfiles->postal_address}}</textarea>
-                                        </label>
-                                        <div class="note">
-                                            <strong>Note:</strong> height of the textarea depends on the rows attribute.
+                                            <label class="checkbox">
+                                                <input type="checkbox" name="checkbox-inline" checked>
+                                                <i></i>Publish in RSS feed(1) and web page(2)
+                                            </label>
                                         </div>
-                                    </section>
-                                    <section>
-                                        <label class="label">Websites</label>
-                                        <label class="input">
-                                            <input disabled value="{{$CompanyProfiles->website}}" type="text" name="company_profiles" id="company_profiles">
-                                        </label>
-                                    </section>
-                                    <section>
-                                        <label class="label">Company Profiles *</label>
-                                        <label class="input">
-                                                <textarea name="com_note" rows="10" cols="150">{{$CompanyProfiles->note    }}</textarea>
-                                        </label>
-                                        <div class="note">
-                                            <strong>Note:</strong> height of the textarea depends on the rows attribute.
-                                        </div>
-                                    </section>
-                                    <section>
-                                        <label class="label">Phone *</label>
-                                        <label class="input">
-                                            <input disabled value="{{$CompanyProfiles->phone}}" type="text" name="com_phone" id="com_phone">
-                                        </label>
-                                        <div class="note">
-                                            <strong>Note:</strong> height of the textarea depends on the rows attribute.
-                                        </div>
-                                    </section>
-                                    <section>
-                                        <label class="label">fax *</label>
-                                        <label class="input">
-                                            <input disabled value="{{$CompanyProfiles->fax}}" type="text" name="com_phone" id="com_phone">
-                                        </label>
-                                        <div class="note">
-                                            <strong>Note:</strong> height of the textarea depends on the rows attribute.
-                                        </div>
-                                    </section>
-                                    <section>
-                                        <label class="label">mobile *</label>
-                                        <label class="input">
-                                            <input disabled value="{{$CompanyProfiles->mobile}}" type="text" name="com_phone" id="com_phone">
-                                        </label>
-                                        <div class="note">
-                                            <strong>Note:</strong> height of the textarea depends on the rows attribute.
-                                        </div>
-                                    </section>
-                                    <section>
-                                        <label class="label">Company Logos *</label>
-                                        <label class="input">
-                                            <input disabled value="{{$CompanyProfiles->mobile}}" type="file" name="com_phone" id="com_phone">
-                                        </label>
                                     </section>
                                 </fieldset>
-
                                 <footer>
                                     <button type="submit" class="btn btn-primary">Submit</button>
                                     <button type="button" class="btn btn-default" onclick="window.history.back();">

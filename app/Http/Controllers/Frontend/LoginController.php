@@ -63,7 +63,7 @@ class LoginController extends Controller
                }
 
            }else{
-               $request->Session()->flash('message', "Special message goes here");
+               $request->Session()->flash('message', "User doesn't not exit Please Register !");
                return Redirect('ui/singin');
            }
 //               if ($validate_admin && Hash::check(Input::get('password'), $validate_admin->password)) {
