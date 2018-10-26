@@ -1,14 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Frontend;
+namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 
-use App\JobCategory;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Input;
 
-class JobController extends Controller
+class InterviewController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,8 +14,9 @@ class JobController extends Controller
      */
     public function index()
     {
-        return view('frontend.kh-works.Jobs.show');
+
         //
+        return view('backend.Recruiment.Interview.index');
     }
 
     /**
@@ -50,14 +48,7 @@ class JobController extends Controller
      */
     public function show($id)
     {
-        $db_ext = DB::connection('mysql2');
-        $JobDetail= $db_ext->table('tbl_jobs as j')
-            ->select('j.*')
-            ->where('j.id','=',$id)
-            ->get()
-            ->first();
-//        dd($JobDetail);
-        return view('frontend.kh-works.Jobs.show',compact('JobDetail'));
+        //
     }
 
     /**

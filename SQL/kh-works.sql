@@ -433,7 +433,7 @@ CREATE TABLE `tbl_organization_gen_info` (
 --
 
 INSERT INTO `tbl_organization_gen_info` (`id`, `name`, `tax_id`, `registration_number`, `phone`, `fax`, `email`, `country`, `province`, `city`, `zip_code`, `street1`, `street2`, `note`, `postal_address`, `website`, `pwd`, `mobile`, `status`) VALUES
-(5, 'reamea', NULL, NULL, '033333', NULL, 'reamea@gmail.com', NULL, NULL, '3333', NULL, NULL, NULL, 'Company Profiles', 'Postal code', 'http://localhost:8000/ui/registers/create', '$2y$10$6gF01BHoEmPBVMKkEHqCdOkUDYrqpFr6iz9vMUxDVhxqj413ezDcm', '33333', 1);
+(5, 'reamea', NULL, NULL, '033333', NULL, 'reamea@gmail.com', NULL, NULL, '3333', NULL, NULL, NULL, 'organization Profiles', 'Postal code', 'http://localhost:8000/ui/registers/create', '$2y$10$6gF01BHoEmPBVMKkEHqCdOkUDYrqpFr6iz9vMUxDVhxqj413ezDcm', '33333', 1);
 
 -- --------------------------------------------------------
 

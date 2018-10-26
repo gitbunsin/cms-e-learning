@@ -18,6 +18,6 @@ class BackendController extends Controller
      */ 
     public function index()
     {
-        return view('Backend.layouts.cms-layouts');
+        return view('Backend.HRIS.layouts.cms-layouts');
     }
 }

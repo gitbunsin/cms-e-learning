@@ -21,6 +21,12 @@ class LoginController extends Controller
      *
      * @return string
      */
+
+    public function create()
+    {
+        return view('frontend.Kh-Works.auth.login');
+        //
+    }
    public function singin(Request $request)
    {
       // TODO: Integrateion login user
@@ -74,4 +80,10 @@ class LoginController extends Controller
 //               }
            }
        }
+        public function getLogout()
+        {
+            Session::flush();
+            Auth::logout();
+            Return Redirect::back();
+        }
 }

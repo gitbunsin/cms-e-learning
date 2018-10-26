@@ -11,15 +11,16 @@
 |
 */
 
+use Illuminate\Support\Facades\Auth;
+
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('kh-works');
 });
 
 Auth::routes();
 
 //Route::get('/home', 'FrontendController@index')->name('home');
 Route::get('/administration' ,'Backend\BackendController@index');
-
 
 
 /************************************************************************************
@@ -34,6 +35,7 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'administration'], function 
     Route::resource('jobs-categories','JobTitleController');
     Route::resource('jobs','JobController');
     Route::resource('employee','EmployeeController');
+    Route::resource('interview','InterviewController');
     Route::resource('cv','CvController');
 
 });
@@ -42,41 +44,25 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'administration'], function 
  *                                  Frontend routes
  ************************************************************************************/
 
-Route::group(['namespace' => 'Frontend','prefix'=>'ui'], function () {
-    Route::get('/', function () {
-        return redirect('ui');
-    });
-
-    Route::get('/posts', 'UiController@posts');
-    Route::post('/apply-job/{id}/user_id/{user_id}', 'UiController@applyJobs');
+Route::group(['namespace' => 'Frontend','prefix'=>'kh-works'], function () {
+    Route::get('/posts', 'KhWorksController@posts');
+    Route::get('/apply-job/{id}/user_id/{user_id}', 'KhWorksController@applyJobs');
     Route::resource('jobs', 'JobController');
     Route::resource('user_cv','CvController');
-    Route::get('/search','UiController@scopeSearch');
-    Route::get('/lists', 'UiController@lists');
-    Route::get('/policy', 'UiController@policy');
-    Route::get('/singin', 'UiController@singin');
-    Route::resource('registers', 'RegistrationController');
-    Route::post('/RegisterEmployee','RegistrationController@RegisterEmployee');
-    Route::post('/singin','LoginController@singin');
+    Route::get('/search','KhWorksController@scopeSearch');
+    Route::get('/lists', 'KhWorksController@lists');
+    Route::get('/policy', 'KhWorksController@policy');
+//    Route::get('/singing', 'KhWorksController@signing');
+    Route::resource('registers', 'RegisterController');
+    Route::resource('login','LoginController');
+    Route::get('logout','LoginController@getLogout');
+    Route::post('/RegisterEmployee','RegisterController@RegisterEmployee');
+//    Route::post('/signing','LoginController@signing');
+//    Route::get('/signout','LoginController@signout');
 });
+/************************************************************************************
+ *                                  Frontend routes
+ ************************************************************************************/
 
-
-
-Route::get('/ui', 'Frontend\UiController@index');
-
-
-
-//Route::post('registers', 'RegistrationController@store');
-
-
-
-
-Route::get('/tickets', 'ticketController@index');
-Route::get('/create/ticket','TicketController@create');
-Route::post('/create/ticket','TicketController@store');
-
-Route::get('/edit/ticket/{id}','TicketController@edit');
-Route::patch('/edit/ticket/{id}','TicketController@update');
-
-
-Route::delete('/delete/ticket/{id}','TicketController@destroy');
+Route::get('/kh-works', 'Frontend\KhWorksController@index');
+//Route::post('registers', 'RegisterController@store');

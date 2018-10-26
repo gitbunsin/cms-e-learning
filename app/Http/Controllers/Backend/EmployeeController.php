@@ -15,7 +15,7 @@ class EmployeeController extends Controller
     public function index()
     {
         //
-        return view('backend.Recruiment.Employee.index');
+        return view('backend.PIM.Employee.index');
     }
 
     /**
@@ -26,7 +26,7 @@ class EmployeeController extends Controller
     public function create()
     {
         //
-        return view('backend.Recruiment.Employee.create');
+        return view('backend.PIM.Employee.create');
     }
 
     /**
